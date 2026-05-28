@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/core/guards/auth.guard.ts"],
+  "sourcesContent": ["import { Injectable } from '@angular/core';\r\nimport { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';\r\nimport { Auth } from '../services/auth';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class AuthGuard implements CanActivate {\r\n  constructor(\r\n    private auth: Auth,\r\n    private router: Router\r\n  ) {}\r\n\r\n  canActivate(\r\n    route: ActivatedRouteSnapshot,\r\n    state: RouterStateSnapshot\r\n  ): boolean {\r\n    if (this.auth.isAuthenticated()) {\r\n      return true;\r\n    }\r\n\r\n    // Store the intended destination URL\r\n    this.router.navigate(['/auth/login'], { queryParams: { returnUrl: state.url } });\r\n    return false;\r\n  }\r\n}\r\n"],
+  "mappings": ";;;;;;;;;;;;;;AAOM,IAAO,YAAP,MAAO,WAAS;EAEV;EACA;EAFV,YACU,MACA,QAAc;AADd,SAAA,OAAA;AACA,SAAA,SAAA;EACP;EAEH,YACE,OACA,OAA0B;AAE1B,QAAI,KAAK,KAAK,gBAAe,GAAI;AAC/B,aAAO;IACT;AAGA,SAAK,OAAO,SAAS,CAAC,aAAa,GAAG,EAAE,aAAa,EAAE,WAAW,MAAM,IAAG,EAAE,CAAE;AAC/E,WAAO;EACT;;qCAjBW,YAAS,mBAAA,IAAA,GAAA,mBAAA,MAAA,CAAA;EAAA;4EAAT,YAAS,SAAT,WAAS,WAAA,YAFR,OAAM,CAAA;;;sEAEP,WAAS,CAAA;UAHrB;WAAW;MACV,YAAY;KACb;;;",
+  "names": []
+}

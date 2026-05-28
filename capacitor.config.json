@@ -1,0 +1,9 @@
+{
+  "appId": "com.yprohub.android",
+  "appName": "prohub-android",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "http",
+    "cleartext": true
+  }
+}

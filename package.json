@@ -1,0 +1,26 @@
+{
+  "name": "prohub-android",
+  "version": "1.0.0",
+  "description": "Standalone Android Capacitor shell for yProHub",
+  "main": "index.js",
+  "scripts": {
+    "web:build": "npm --prefix ../prohub-ui run build -- --configuration development",
+    "web:copy": "powershell -NoProfile -ExecutionPolicy Bypass -Command \"if (Test-Path .\\www\\*) { Remove-Item .\\www\\* -Recurse -Force }; Copy-Item ..\\prohub-ui\\dist\\prohub-ui\\browser\\* .\\www\\ -Recurse -Force\"",
+    "web:patch-android-api": "powershell -NoProfile -ExecutionPolicy Bypass -Command \"$files = Get-ChildItem .\\www -Recurse -File -Include *.js,*.html,*.json,*.css; foreach ($f in $files) { $txt = Get-Content $f.FullName -Raw; $txt = $txt -replace 'https://localhost:7042', 'http://10.0.2.2:5101'; $txt = $txt -replace 'http://localhost:7042', 'http://10.0.2.2:5101'; $txt = $txt -replace 'https://localhost:5001', 'http://10.0.2.2:5101'; $txt = $txt -replace 'http://localhost:5001', 'http://10.0.2.2:5101'; Set-Content -Path $f.FullName -Value $txt }\"",
+    "web:sync": "npm run web:build && npm run web:copy && npm run web:patch-android-api && npm run cap:sync",
+    "cap:sync": "npx cap sync android",
+    "cap:copy": "npx cap copy android",
+    "cap:open": "npx cap open android",
+    "android": "npx cap run android",
+    "test": "echo \"No tests configured\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@capacitor/android": "^8.3.4",
+    "@capacitor/cli": "^8.3.4",
+    "@capacitor/core": "^8.3.4"
+  }
+}
