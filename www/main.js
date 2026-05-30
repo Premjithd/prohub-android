@@ -5,21 +5,21 @@ import {
   MatListItem,
   MatListModule,
   MatNavList
-} from "./chunk-ZHNVQCHZ.js";
+} from "./chunk-7JBEJJ2H.js";
 import {
   NotificationService,
   SignalRService
-} from "./chunk-DW26NECD.js";
-import "./chunk-SCUIT22V.js";
+} from "./chunk-UMLLRED7.js";
+import "./chunk-4RDKSTJ4.js";
 import {
   AuthGuard
-} from "./chunk-S6MOIKTI.js";
-import "./chunk-IQQAMAZF.js";
-import "./chunk-ZIGP4DPN.js";
+} from "./chunk-2GNMN7HM.js";
+import "./chunk-DLWAKDLA.js";
+import "./chunk-HU3FUKMP.js";
 import {
   MatSnackBar,
   MatSnackBarModule
-} from "./chunk-5P6744AO.js";
+} from "./chunk-Z5YC3QOU.js";
 import {
   CdkScrollable,
   CdkScrollableModule,
@@ -32,7 +32,7 @@ import {
   createFlexibleConnectedPositionStrategy,
   createOverlayRef,
   createRepositionScrollStrategy
-} from "./chunk-KOQ7ZT3J.js";
+} from "./chunk-YFVGD4AB.js";
 import "./chunk-UVREA7F7.js";
 import {
   MatButton,
@@ -42,14 +42,14 @@ import {
   MatRippleModule,
   _StructuralStylesLoader,
   coerceBooleanProperty
-} from "./chunk-KQMSNT2S.js";
+} from "./chunk-LWBGNZR5.js";
 import {
   _animationsDisabled
-} from "./chunk-XBTNCZLM.js";
+} from "./chunk-B52SAYO3.js";
 import {
   MatIcon,
   MatIconModule
-} from "./chunk-Z4HON7ZA.js";
+} from "./chunk-GE3YQJYL.js";
 import {
   DOWN_ARROW,
   Directionality,
@@ -73,14 +73,14 @@ import {
   hasModifierKey,
   isFakeMousedownFromScreenReader,
   isFakeTouchstartFromScreenReader
-} from "./chunk-24VDEUMT.js";
+} from "./chunk-CSFNIUM5.js";
 import {
   FormsModule
-} from "./chunk-DLR4BDQH.js";
+} from "./chunk-QP32PFWE.js";
 import {
   Auth,
   StorageService
-} from "./chunk-MJ2Z243I.js";
+} from "./chunk-A4EHLAJD.js";
 import {
   environment
 } from "./chunk-UGJKRHBV.js";
@@ -92,7 +92,7 @@ import {
   RouterModule,
   RouterOutlet,
   provideRouter
-} from "./chunk-Z7MI56JG.js";
+} from "./chunk-NMZ5GJTW.js";
 import {
   ApplicationRef,
   BehaviorSubject,
@@ -211,7 +211,7 @@ import {
   ɵɵtextInterpolate,
   ɵɵtextInterpolate1,
   ɵɵviewQuery
-} from "./chunk-STXT6R65.js";
+} from "./chunk-ANTPJ2CK.js";
 import {
   __export,
   __objRest,
@@ -17558,13 +17558,30 @@ var NavbarComponent = class _NavbarComponent {
 
 // src/app/layout/sidebar/sidebar.ts
 var _c04 = () => ({ exact: true });
-function SidebarComponent_ng_container_27_Template(rf, ctx) {
+function SidebarComponent_a_11_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "a", 6);
-    \u0275\u0275listener("click", function SidebarComponent_ng_container_27_Template_a_click_1_listener() {
+    \u0275\u0275elementStart(0, "a", 6);
+    \u0275\u0275listener("click", function SidebarComponent_a_11_Template_a_click_0_listener() {
       \u0275\u0275restoreView(_r1);
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
+    });
+    \u0275\u0275elementStart(1, "mat-icon");
+    \u0275\u0275text(2, "engineering");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "span");
+    \u0275\u0275text(4, "Find a Pro");
+    \u0275\u0275elementEnd()();
+  }
+}
+function SidebarComponent_ng_container_23_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r3 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementContainerStart(0);
+    \u0275\u0275elementStart(1, "a", 7);
+    \u0275\u0275listener("click", function SidebarComponent_ng_container_23_Template_a_click_1_listener() {
+      \u0275\u0275restoreView(_r3);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
     });
@@ -17574,9 +17591,9 @@ function SidebarComponent_ng_container_27_Template(rf, ctx) {
     \u0275\u0275elementStart(4, "span");
     \u0275\u0275text(5, "Login");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(6, "a", 7);
-    \u0275\u0275listener("click", function SidebarComponent_ng_container_27_Template_a_click_6_listener() {
-      \u0275\u0275restoreView(_r1);
+    \u0275\u0275elementStart(6, "a", 8);
+    \u0275\u0275listener("click", function SidebarComponent_ng_container_23_Template_a_click_6_listener() {
+      \u0275\u0275restoreView(_r3);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
     });
@@ -17589,12 +17606,12 @@ function SidebarComponent_ng_container_27_Template(rf, ctx) {
     \u0275\u0275elementContainerEnd();
   }
 }
-function SidebarComponent_ng_container_28_a_1_Template(rf, ctx) {
+function SidebarComponent_ng_container_24_a_1_Template(rf, ctx) {
   if (rf & 1) {
-    const _r4 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "a", 17);
-    \u0275\u0275listener("click", function SidebarComponent_ng_container_28_a_1_Template_a_click_0_listener() {
-      \u0275\u0275restoreView(_r4);
+    const _r5 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "a", 18);
+    \u0275\u0275listener("click", function SidebarComponent_ng_container_24_a_1_Template_a_click_0_listener() {
+      \u0275\u0275restoreView(_r5);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
     });
@@ -17606,17 +17623,17 @@ function SidebarComponent_ng_container_28_a_1_Template(rf, ctx) {
     \u0275\u0275elementEnd()();
   }
 }
-function SidebarComponent_ng_container_28_mat_divider_2_Template(rf, ctx) {
+function SidebarComponent_ng_container_24_mat_divider_2_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275element(0, "mat-divider");
   }
 }
-function SidebarComponent_ng_container_28_a_3_Template(rf, ctx) {
+function SidebarComponent_ng_container_24_a_3_Template(rf, ctx) {
   if (rf & 1) {
-    const _r5 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "a", 18);
-    \u0275\u0275listener("click", function SidebarComponent_ng_container_28_a_3_Template_a_click_0_listener() {
-      \u0275\u0275restoreView(_r5);
+    const _r6 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "a", 19);
+    \u0275\u0275listener("click", function SidebarComponent_ng_container_24_a_3_Template_a_click_0_listener() {
+      \u0275\u0275restoreView(_r6);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
     });
@@ -17628,12 +17645,12 @@ function SidebarComponent_ng_container_28_a_3_Template(rf, ctx) {
     \u0275\u0275elementEnd()();
   }
 }
-function SidebarComponent_ng_container_28_a_4_Template(rf, ctx) {
+function SidebarComponent_ng_container_24_a_4_Template(rf, ctx) {
   if (rf & 1) {
-    const _r6 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "a", 19);
-    \u0275\u0275listener("click", function SidebarComponent_ng_container_28_a_4_Template_a_click_0_listener() {
-      \u0275\u0275restoreView(_r6);
+    const _r7 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "a", 20);
+    \u0275\u0275listener("click", function SidebarComponent_ng_container_24_a_4_Template_a_click_0_listener() {
+      \u0275\u0275restoreView(_r7);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
     });
@@ -17645,12 +17662,12 @@ function SidebarComponent_ng_container_28_a_4_Template(rf, ctx) {
     \u0275\u0275elementEnd()();
   }
 }
-function SidebarComponent_ng_container_28_a_5_Template(rf, ctx) {
+function SidebarComponent_ng_container_24_a_5_Template(rf, ctx) {
   if (rf & 1) {
-    const _r7 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "a", 20);
-    \u0275\u0275listener("click", function SidebarComponent_ng_container_28_a_5_Template_a_click_0_listener() {
-      \u0275\u0275restoreView(_r7);
+    const _r8 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "a", 21);
+    \u0275\u0275listener("click", function SidebarComponent_ng_container_24_a_5_Template_a_click_0_listener() {
+      \u0275\u0275restoreView(_r8);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
     });
@@ -17662,12 +17679,12 @@ function SidebarComponent_ng_container_28_a_5_Template(rf, ctx) {
     \u0275\u0275elementEnd()();
   }
 }
-function SidebarComponent_ng_container_28_a_6_Template(rf, ctx) {
+function SidebarComponent_ng_container_24_a_6_Template(rf, ctx) {
   if (rf & 1) {
-    const _r8 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "a", 21);
-    \u0275\u0275listener("click", function SidebarComponent_ng_container_28_a_6_Template_a_click_0_listener() {
-      \u0275\u0275restoreView(_r8);
+    const _r9 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "a", 22);
+    \u0275\u0275listener("click", function SidebarComponent_ng_container_24_a_6_Template_a_click_0_listener() {
+      \u0275\u0275restoreView(_r9);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
     });
@@ -17679,12 +17696,12 @@ function SidebarComponent_ng_container_28_a_6_Template(rf, ctx) {
     \u0275\u0275elementEnd()();
   }
 }
-function SidebarComponent_ng_container_28_a_7_Template(rf, ctx) {
+function SidebarComponent_ng_container_24_a_7_Template(rf, ctx) {
   if (rf & 1) {
-    const _r9 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "a", 22);
-    \u0275\u0275listener("click", function SidebarComponent_ng_container_28_a_7_Template_a_click_0_listener() {
-      \u0275\u0275restoreView(_r9);
+    const _r10 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "a", 23);
+    \u0275\u0275listener("click", function SidebarComponent_ng_container_24_a_7_Template_a_click_0_listener() {
+      \u0275\u0275restoreView(_r10);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
     });
@@ -17696,12 +17713,12 @@ function SidebarComponent_ng_container_28_a_7_Template(rf, ctx) {
     \u0275\u0275elementEnd()();
   }
 }
-function SidebarComponent_ng_container_28_a_8_Template(rf, ctx) {
+function SidebarComponent_ng_container_24_a_8_Template(rf, ctx) {
   if (rf & 1) {
-    const _r10 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "a", 23);
-    \u0275\u0275listener("click", function SidebarComponent_ng_container_28_a_8_Template_a_click_0_listener() {
-      \u0275\u0275restoreView(_r10);
+    const _r11 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "a", 24);
+    \u0275\u0275listener("click", function SidebarComponent_ng_container_24_a_8_Template_a_click_0_listener() {
+      \u0275\u0275restoreView(_r11);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
     });
@@ -17713,14 +17730,14 @@ function SidebarComponent_ng_container_28_a_8_Template(rf, ctx) {
     \u0275\u0275elementEnd()();
   }
 }
-function SidebarComponent_ng_container_28_Template(rf, ctx) {
+function SidebarComponent_ng_container_24_Template(rf, ctx) {
   if (rf & 1) {
-    const _r3 = \u0275\u0275getCurrentView();
+    const _r4 = \u0275\u0275getCurrentView();
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275template(1, SidebarComponent_ng_container_28_a_1_Template, 5, 0, "a", 8)(2, SidebarComponent_ng_container_28_mat_divider_2_Template, 1, 0, "mat-divider", 5)(3, SidebarComponent_ng_container_28_a_3_Template, 5, 0, "a", 9)(4, SidebarComponent_ng_container_28_a_4_Template, 5, 0, "a", 10)(5, SidebarComponent_ng_container_28_a_5_Template, 5, 0, "a", 11)(6, SidebarComponent_ng_container_28_a_6_Template, 5, 0, "a", 12)(7, SidebarComponent_ng_container_28_a_7_Template, 5, 0, "a", 13)(8, SidebarComponent_ng_container_28_a_8_Template, 5, 0, "a", 14);
-    \u0275\u0275elementStart(9, "a", 15);
-    \u0275\u0275listener("click", function SidebarComponent_ng_container_28_Template_a_click_9_listener() {
-      \u0275\u0275restoreView(_r3);
+    \u0275\u0275template(1, SidebarComponent_ng_container_24_a_1_Template, 5, 0, "a", 9)(2, SidebarComponent_ng_container_24_mat_divider_2_Template, 1, 0, "mat-divider", 5)(3, SidebarComponent_ng_container_24_a_3_Template, 5, 0, "a", 10)(4, SidebarComponent_ng_container_24_a_4_Template, 5, 0, "a", 11)(5, SidebarComponent_ng_container_24_a_5_Template, 5, 0, "a", 12)(6, SidebarComponent_ng_container_24_a_6_Template, 5, 0, "a", 13)(7, SidebarComponent_ng_container_24_a_7_Template, 5, 0, "a", 14)(8, SidebarComponent_ng_container_24_a_8_Template, 5, 0, "a", 15);
+    \u0275\u0275elementStart(9, "a", 16);
+    \u0275\u0275listener("click", function SidebarComponent_ng_container_24_Template_a_click_9_listener() {
+      \u0275\u0275restoreView(_r4);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
     });
@@ -17730,9 +17747,9 @@ function SidebarComponent_ng_container_28_Template(rf, ctx) {
     \u0275\u0275elementStart(12, "span");
     \u0275\u0275text(13, "Profile");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(14, "a", 16);
-    \u0275\u0275listener("click", function SidebarComponent_ng_container_28_Template_a_click_14_listener() {
-      \u0275\u0275restoreView(_r3);
+    \u0275\u0275elementStart(14, "a", 17);
+    \u0275\u0275listener("click", function SidebarComponent_ng_container_24_Template_a_click_14_listener() {
+      \u0275\u0275restoreView(_r4);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
     });
@@ -17782,7 +17799,7 @@ var SidebarComponent = class _SidebarComponent {
   static \u0275fac = function SidebarComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _SidebarComponent)(\u0275\u0275directiveInject(Auth));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SidebarComponent, selectors: [["app-sidebar"]], outputs: { menuItemClicked: "menuItemClicked" }, decls: 29, vars: 4, consts: [["mat-list-item", "", "routerLink", "/", "routerLinkActive", "active", 3, "click", "routerLinkActiveOptions"], ["mat-list-item", "", "routerLink", "/services", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/find-a-pro", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/about", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/contact", "routerLinkActive", "active", 3, "click"], [4, "ngIf"], ["mat-list-item", "", "routerLink", "/auth/login", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/auth/register", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/admin-users", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/pending-jobs", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/my-jobs-pro", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/available-jobs", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/my-services", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/add-service", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/post-job", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/profile", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/messages", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/admin-users", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/pending-jobs", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/my-jobs-pro", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/available-jobs", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/my-services", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/add-service", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/post-job", "routerLinkActive", "active", 3, "click"]], template: function SidebarComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SidebarComponent, selectors: [["app-sidebar"]], outputs: { menuItemClicked: "menuItemClicked" }, decls: 25, vars: 5, consts: [["mat-list-item", "", "routerLink", "/", "routerLinkActive", "active", 3, "click", "routerLinkActiveOptions"], ["mat-list-item", "", "routerLink", "/services", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/find-a-pro", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/about", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/contact", "routerLinkActive", "active", 3, "click"], [4, "ngIf"], ["mat-list-item", "", "routerLink", "/find-a-pro", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/auth/login", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/auth/register", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/admin-users", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/pending-jobs", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/my-jobs-pro", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/available-jobs", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/my-services", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/add-service", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/post-job", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/profile", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/messages", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/admin-users", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/pending-jobs", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/my-jobs-pro", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/available-jobs", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/my-services", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/add-service", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/post-job", "routerLinkActive", "active", 3, "click"]], template: function SidebarComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "mat-nav-list")(1, "a", 0);
       \u0275\u0275listener("click", function SidebarComponent_Template_a_click_1_listener() {
@@ -17804,44 +17821,37 @@ var SidebarComponent = class _SidebarComponent {
       \u0275\u0275elementStart(9, "span");
       \u0275\u0275text(10, "Services");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(11, "a", 2);
-      \u0275\u0275listener("click", function SidebarComponent_Template_a_click_11_listener() {
+      \u0275\u0275template(11, SidebarComponent_a_11_Template, 5, 0, "a", 2);
+      \u0275\u0275elementStart(12, "a", 3);
+      \u0275\u0275listener("click", function SidebarComponent_Template_a_click_12_listener() {
         return ctx.onMenuItemClick();
       });
-      \u0275\u0275elementStart(12, "mat-icon");
-      \u0275\u0275text(13, "engineering");
+      \u0275\u0275elementStart(13, "mat-icon");
+      \u0275\u0275text(14, "info");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(14, "span");
-      \u0275\u0275text(15, "Find a Pro");
+      \u0275\u0275elementStart(15, "span");
+      \u0275\u0275text(16, "About");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(16, "a", 3);
-      \u0275\u0275listener("click", function SidebarComponent_Template_a_click_16_listener() {
+      \u0275\u0275elementStart(17, "a", 4);
+      \u0275\u0275listener("click", function SidebarComponent_Template_a_click_17_listener() {
         return ctx.onMenuItemClick();
       });
-      \u0275\u0275elementStart(17, "mat-icon");
-      \u0275\u0275text(18, "info");
+      \u0275\u0275elementStart(18, "mat-icon");
+      \u0275\u0275text(19, "contact_support");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(19, "span");
-      \u0275\u0275text(20, "About");
+      \u0275\u0275elementStart(20, "span");
+      \u0275\u0275text(21, "Contact");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(21, "a", 4);
-      \u0275\u0275listener("click", function SidebarComponent_Template_a_click_21_listener() {
-        return ctx.onMenuItemClick();
-      });
-      \u0275\u0275elementStart(22, "mat-icon");
-      \u0275\u0275text(23, "contact_support");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(24, "span");
-      \u0275\u0275text(25, "Contact");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275element(26, "mat-divider");
-      \u0275\u0275template(27, SidebarComponent_ng_container_27_Template, 11, 0, "ng-container", 5)(28, SidebarComponent_ng_container_28_Template, 19, 8, "ng-container", 5);
+      \u0275\u0275element(22, "mat-divider");
+      \u0275\u0275template(23, SidebarComponent_ng_container_23_Template, 11, 0, "ng-container", 5)(24, SidebarComponent_ng_container_24_Template, 19, 8, "ng-container", 5);
       \u0275\u0275elementEnd();
     }
     if (rf & 2) {
       \u0275\u0275advance();
-      \u0275\u0275property("routerLinkActiveOptions", \u0275\u0275pureFunction0(3, _c04));
-      \u0275\u0275advance(26);
+      \u0275\u0275property("routerLinkActiveOptions", \u0275\u0275pureFunction0(4, _c04));
+      \u0275\u0275advance(10);
+      \u0275\u0275property("ngIf", !ctx.isProUser() && !ctx.isAdmin());
+      \u0275\u0275advance(12);
       \u0275\u0275property("ngIf", !ctx.auth.isAuthenticated());
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.auth.isAuthenticated());
@@ -17856,7 +17866,7 @@ var SidebarComponent = class _SidebarComponent {
       RouterModule,
       MatListModule,
       MatIconModule
-    ], template: '<mat-nav-list>\r\n  <a mat-list-item routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="onMenuItemClick()">\r\n    <mat-icon>home</mat-icon>\r\n    <span>Home</span>\r\n  </a>\r\n\r\n  <a mat-list-item routerLink="/services" routerLinkActive="active" (click)="onMenuItemClick()">\r\n    <mat-icon>work</mat-icon>\r\n    <span>Services</span>\r\n  </a>\r\n\r\n  <a mat-list-item routerLink="/find-a-pro" routerLinkActive="active" (click)="onMenuItemClick()">\r\n    <mat-icon>engineering</mat-icon>\r\n    <span>Find a Pro</span>\r\n  </a>\r\n\r\n  <a mat-list-item routerLink="/about" routerLinkActive="active" (click)="onMenuItemClick()">\r\n    <mat-icon>info</mat-icon>\r\n    <span>About</span>\r\n  </a>\r\n\r\n  <a mat-list-item routerLink="/contact" routerLinkActive="active" (click)="onMenuItemClick()">\r\n    <mat-icon>contact_support</mat-icon>\r\n    <span>Contact</span>\r\n  </a>\r\n\r\n  <mat-divider></mat-divider>\r\n\r\n  <ng-container *ngIf="!auth.isAuthenticated()">\r\n    <a mat-list-item routerLink="/auth/login" routerLinkActive="active" (click)="onMenuItemClick()">\r\n      <mat-icon>login</mat-icon>\r\n      <span>Login</span>\r\n    </a>\r\n\r\n    <a mat-list-item routerLink="/auth/register" routerLinkActive="active" (click)="onMenuItemClick()">\r\n      <mat-icon>person_add</mat-icon>\r\n      <span>Register</span>\r\n    </a>\r\n  </ng-container>\r\n\r\n  <ng-container *ngIf="auth.isAuthenticated()">\r\n    <!-- Admin Dashboard -->\r\n    <a *ngIf="isAdmin()" mat-list-item routerLink="/admin-users" routerLinkActive="active" (click)="onMenuItemClick()">\r\n      <mat-icon>admin_panel_settings</mat-icon>\r\n      <span>Admin Dashboard</span>\r\n    </a>\r\n\r\n    <mat-divider *ngIf="isAdmin()"></mat-divider>\r\n\r\n    <!-- Show "My Jobs" for regular users -->\r\n    <a *ngIf="!isProUser() && !isAdmin()" mat-list-item routerLink="/pending-jobs" routerLinkActive="active" (click)="onMenuItemClick()">\r\n      <mat-icon>assignment</mat-icon>\r\n      <span>My Jobs</span>\r\n    </a>\r\n    \r\n    <!-- Show "My Jobs" link for Pro users (assigned jobs) -->\r\n    <a *ngIf="isProUser()" mat-list-item routerLink="/my-jobs-pro" routerLinkActive="active" (click)="onMenuItemClick()">\r\n      <mat-icon>task_alt</mat-icon>\r\n      <span>Assigned Jobs</span>\r\n    </a>\r\n    \r\n    <!-- Show "Available Jobs" link for Pro users -->\r\n    <a *ngIf="isProUser()" mat-list-item routerLink="/available-jobs" routerLinkActive="active" (click)="onMenuItemClick()">\r\n      <mat-icon>assignment</mat-icon>\r\n      <span>Available Jobs</span>\r\n    </a>\r\n\r\n    <!-- Show "My Services" for Pro users -->\r\n    <a *ngIf="isProUser()" mat-list-item routerLink="/my-services" routerLinkActive="active" (click)="onMenuItemClick()">\r\n      <mat-icon>build</mat-icon>\r\n      <span>My Services</span>\r\n    </a>\r\n\r\n    <!-- Show "Add Service" link for Pro users -->\r\n    <a *ngIf="isProUser()" mat-list-item routerLink="/add-service" routerLinkActive="active" (click)="onMenuItemClick()">\r\n      <mat-icon>add_circle</mat-icon>\r\n      <span>Add Service</span>\r\n    </a>\r\n\r\n    <!-- Show "Post Job" link for regular users only -->\r\n    <a *ngIf="!isProUser() && !isAdmin()" mat-list-item routerLink="/post-job" routerLinkActive="active" (click)="onMenuItemClick()">\r\n      <mat-icon>add_circle</mat-icon>\r\n      <span>Post Job</span>\r\n    </a>\r\n\r\n    <a mat-list-item routerLink="/profile" routerLinkActive="active" (click)="onMenuItemClick()">\r\n      <mat-icon>person</mat-icon>\r\n      <span>Profile</span>\r\n    </a>\r\n\r\n    <a mat-list-item routerLink="/messages" routerLinkActive="active" (click)="onMenuItemClick()">\r\n      <mat-icon>mail</mat-icon>\r\n      <span>Messages</span>\r\n    </a>\r\n  </ng-container>\r\n</mat-nav-list>\r\n', styles: ["/* src/app/layout/sidebar/sidebar.scss */\nmat-nav-list {\n  width: 250px;\n  padding-top: 1rem;\n  background:\n    linear-gradient(\n      180deg,\n      #f5f7fa 0%,\n      #eef2f8 100%);\n  min-height: 100vh;\n  box-shadow: inset -2px 0 10px rgba(102, 126, 234, 0.08);\n}\n.mat-list-item.active {\n  background:\n    linear-gradient(\n      90deg,\n      rgba(102, 126, 234, 0.15) 0%,\n      rgba(102, 126, 234, 0.05) 100%);\n  color: #667eea;\n  font-weight: 500;\n  border-left: 4px solid #667eea;\n  padding-left: calc(1rem - 4px) !important;\n}\n.mat-list-item:hover:not(.active) {\n  background-color: rgba(102, 126, 234, 0.08);\n  transition: all 0.3s ease;\n}\n.mat-list-item.sub-item {\n  font-size: 0.9rem;\n  padding-left: 1rem;\n  background-color: rgba(0, 0, 0, 0.02);\n}\n.mat-list-item.sub-item:hover {\n  background-color: rgba(102, 126, 234, 0.08);\n}\n.mat-list-item.sub-item.active {\n  background-color: rgba(102, 126, 234, 0.15);\n  color: #667eea;\n  border-left: 4px solid #667eea;\n  padding-left: calc(1rem - 4px) !important;\n}\nmat-icon {\n  margin-right: 1rem;\n}\nmat-divider {\n  margin: 1rem 0;\n}\n/*# sourceMappingURL=sidebar.css.map */\n"] }]
+    ], template: '<mat-nav-list>\r\n  <a mat-list-item routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="onMenuItemClick()">\r\n    <mat-icon>home</mat-icon>\r\n    <span>Home</span>\r\n  </a>\r\n\r\n  <a mat-list-item routerLink="/services" routerLinkActive="active" (click)="onMenuItemClick()">\r\n    <mat-icon>work</mat-icon>\r\n    <span>Services</span>\r\n  </a>\r\n\r\n  <a *ngIf="!isProUser() && !isAdmin()" mat-list-item routerLink="/find-a-pro" routerLinkActive="active" (click)="onMenuItemClick()">\r\n    <mat-icon>engineering</mat-icon>\r\n    <span>Find a Pro</span>\r\n  </a>\r\n\r\n  <a mat-list-item routerLink="/about" routerLinkActive="active" (click)="onMenuItemClick()">\r\n    <mat-icon>info</mat-icon>\r\n    <span>About</span>\r\n  </a>\r\n\r\n  <a mat-list-item routerLink="/contact" routerLinkActive="active" (click)="onMenuItemClick()">\r\n    <mat-icon>contact_support</mat-icon>\r\n    <span>Contact</span>\r\n  </a>\r\n\r\n  <mat-divider></mat-divider>\r\n\r\n  <ng-container *ngIf="!auth.isAuthenticated()">\r\n    <a mat-list-item routerLink="/auth/login" routerLinkActive="active" (click)="onMenuItemClick()">\r\n      <mat-icon>login</mat-icon>\r\n      <span>Login</span>\r\n    </a>\r\n\r\n    <a mat-list-item routerLink="/auth/register" routerLinkActive="active" (click)="onMenuItemClick()">\r\n      <mat-icon>person_add</mat-icon>\r\n      <span>Register</span>\r\n    </a>\r\n  </ng-container>\r\n\r\n  <ng-container *ngIf="auth.isAuthenticated()">\r\n    <!-- Admin Dashboard -->\r\n    <a *ngIf="isAdmin()" mat-list-item routerLink="/admin-users" routerLinkActive="active" (click)="onMenuItemClick()">\r\n      <mat-icon>admin_panel_settings</mat-icon>\r\n      <span>Admin Dashboard</span>\r\n    </a>\r\n\r\n    <mat-divider *ngIf="isAdmin()"></mat-divider>\r\n\r\n    <!-- Show "My Jobs" for regular users -->\r\n    <a *ngIf="!isProUser() && !isAdmin()" mat-list-item routerLink="/pending-jobs" routerLinkActive="active" (click)="onMenuItemClick()">\r\n      <mat-icon>assignment</mat-icon>\r\n      <span>My Jobs</span>\r\n    </a>\r\n    \r\n    <!-- Show "My Jobs" link for Pro users (assigned jobs) -->\r\n    <a *ngIf="isProUser()" mat-list-item routerLink="/my-jobs-pro" routerLinkActive="active" (click)="onMenuItemClick()">\r\n      <mat-icon>task_alt</mat-icon>\r\n      <span>Assigned Jobs</span>\r\n    </a>\r\n    \r\n    <!-- Show "Available Jobs" link for Pro users -->\r\n    <a *ngIf="isProUser()" mat-list-item routerLink="/available-jobs" routerLinkActive="active" (click)="onMenuItemClick()">\r\n      <mat-icon>assignment</mat-icon>\r\n      <span>Available Jobs</span>\r\n    </a>\r\n\r\n    <!-- Show "My Services" for Pro users -->\r\n    <a *ngIf="isProUser()" mat-list-item routerLink="/my-services" routerLinkActive="active" (click)="onMenuItemClick()">\r\n      <mat-icon>build</mat-icon>\r\n      <span>My Services</span>\r\n    </a>\r\n\r\n    <!-- Show "Add Service" link for Pro users -->\r\n    <a *ngIf="isProUser()" mat-list-item routerLink="/add-service" routerLinkActive="active" (click)="onMenuItemClick()">\r\n      <mat-icon>add_circle</mat-icon>\r\n      <span>Add Service</span>\r\n    </a>\r\n\r\n    <!-- Show "Post Job" link for regular users only -->\r\n    <a *ngIf="!isProUser() && !isAdmin()" mat-list-item routerLink="/post-job" routerLinkActive="active" (click)="onMenuItemClick()">\r\n      <mat-icon>add_circle</mat-icon>\r\n      <span>Post Job</span>\r\n    </a>\r\n\r\n    <a mat-list-item routerLink="/profile" routerLinkActive="active" (click)="onMenuItemClick()">\r\n      <mat-icon>person</mat-icon>\r\n      <span>Profile</span>\r\n    </a>\r\n\r\n    <a mat-list-item routerLink="/messages" routerLinkActive="active" (click)="onMenuItemClick()">\r\n      <mat-icon>mail</mat-icon>\r\n      <span>Messages</span>\r\n    </a>\r\n  </ng-container>\r\n</mat-nav-list>\r\n', styles: ["/* src/app/layout/sidebar/sidebar.scss */\nmat-nav-list {\n  width: 250px;\n  padding-top: 1rem;\n  background:\n    linear-gradient(\n      180deg,\n      #f5f7fa 0%,\n      #eef2f8 100%);\n  min-height: 100vh;\n  box-shadow: inset -2px 0 10px rgba(102, 126, 234, 0.08);\n}\n.mat-list-item.active {\n  background:\n    linear-gradient(\n      90deg,\n      rgba(102, 126, 234, 0.15) 0%,\n      rgba(102, 126, 234, 0.05) 100%);\n  color: #667eea;\n  font-weight: 500;\n  border-left: 4px solid #667eea;\n  padding-left: calc(1rem - 4px) !important;\n}\n.mat-list-item:hover:not(.active) {\n  background-color: rgba(102, 126, 234, 0.08);\n  transition: all 0.3s ease;\n}\n.mat-list-item.sub-item {\n  font-size: 0.9rem;\n  padding-left: 1rem;\n  background-color: rgba(0, 0, 0, 0.02);\n}\n.mat-list-item.sub-item:hover {\n  background-color: rgba(102, 126, 234, 0.08);\n}\n.mat-list-item.sub-item.active {\n  background-color: rgba(102, 126, 234, 0.15);\n  color: #667eea;\n  border-left: 4px solid #667eea;\n  padding-left: calc(1rem - 4px) !important;\n}\nmat-icon {\n  margin-right: 1rem;\n}\nmat-divider {\n  margin: 1rem 0;\n}\n/*# sourceMappingURL=sidebar.css.map */\n"] }]
   }], () => [{ type: Auth }], { menuItemClicked: [{
     type: Output
   }] });
@@ -18310,7 +18320,7 @@ var ProGuard = class _ProGuard {
 var routes = [
   {
     path: "accept-admin-invite",
-    loadComponent: () => import("./chunk-T37KD4GA.js").then((m) => m.AcceptAdminInviteComponent)
+    loadComponent: () => import("./chunk-4AL4DLRA.js").then((m) => m.AcceptAdminInviteComponent)
   },
   {
     path: "",
@@ -18318,117 +18328,117 @@ var routes = [
     children: [
       {
         path: "",
-        loadChildren: () => import("./chunk-2AHRR5MB.js").then((m) => m.HomeModule)
+        loadChildren: () => import("./chunk-KLFH6KBD.js").then((m) => m.HomeModule)
       },
       {
         path: "auth",
-        loadChildren: () => import("./chunk-YWY7B3A7.js").then((m) => m.AuthModule)
+        loadChildren: () => import("./chunk-7OQQ2AAO.js").then((m) => m.AuthModule)
       },
       {
         path: "about",
-        loadChildren: () => import("./chunk-DJVAJXKM.js").then((m) => m.AboutModule)
+        loadChildren: () => import("./chunk-GQSEHPCQ.js").then((m) => m.AboutModule)
       },
       {
         path: "services",
-        loadChildren: () => import("./chunk-3VGRGBVS.js").then((m) => m.ServicesModule)
+        loadChildren: () => import("./chunk-4GT5LN2M.js").then((m) => m.ServicesModule)
       },
       {
         path: "contact",
-        loadChildren: () => import("./chunk-5XLKT4BA.js").then((m) => m.ContactModule)
+        loadChildren: () => import("./chunk-VVS76ZHQ.js").then((m) => m.ContactModule)
       },
       {
         path: "profile",
-        loadChildren: () => import("./chunk-POVEEXZX.js").then((m) => m.ProfileModule)
+        loadChildren: () => import("./chunk-SDPST2MD.js").then((m) => m.ProfileModule)
       },
       {
         path: "faq",
-        loadChildren: () => import("./chunk-L3XFIV74.js").then((m) => m.FAQModule)
+        loadChildren: () => import("./chunk-QIQD3YYL.js").then((m) => m.FAQModule)
       },
       {
         path: "terms",
-        loadComponent: () => import("./chunk-RIFTSUBQ.js").then((m) => m.TermsComponent)
+        loadComponent: () => import("./chunk-774I3PHS.js").then((m) => m.TermsComponent)
       },
       {
         path: "privacy",
-        loadComponent: () => import("./chunk-47SJPPPX.js").then((m) => m.PrivacyComponent)
+        loadComponent: () => import("./chunk-ON7W2BNV.js").then((m) => m.PrivacyComponent)
       },
       {
         path: "post-job",
-        loadChildren: () => import("./chunk-IGH6BJJK.js").then((m) => m.PostJobModule)
+        loadChildren: () => import("./chunk-MN3CMOWA.js").then((m) => m.PostJobModule)
       },
       {
         path: "pending-jobs",
-        loadChildren: () => import("./chunk-RIL7JGXX.js").then((m) => m.PendingJobsModule)
+        loadChildren: () => import("./chunk-MFMGMF2M.js").then((m) => m.PendingJobsModule)
       },
       {
         path: "my-pros",
-        loadComponent: () => import("./chunk-O3T43WO6.js").then((m) => m.MyProsComponent),
+        loadComponent: () => import("./chunk-UVKRL52H.js").then((m) => m.MyProsComponent),
         canActivate: [AuthGuard]
       },
       {
         path: "pending-jobs/:jobId",
-        loadComponent: () => import("./chunk-W3AF5ERD.js").then((m) => m.PendingJobDetailsComponent)
+        loadComponent: () => import("./chunk-UYOCNXX2.js").then((m) => m.PendingJobDetailsComponent)
       },
       {
         path: "my-services",
-        loadChildren: () => import("./chunk-XMVBW4VP.js").then((m) => m.MyServicesModule)
+        loadChildren: () => import("./chunk-EWGOHHML.js").then((m) => m.MyServicesModule)
       },
       {
         path: "add-service",
-        loadChildren: () => import("./chunk-6TDAI4QH.js").then((m) => m.AddServiceModule)
+        loadChildren: () => import("./chunk-FF3WAHAO.js").then((m) => m.AddServiceModule)
       },
       {
         path: "edit-service/:id",
-        loadChildren: () => import("./chunk-CKQAMUKF.js").then((m) => m.EditServiceModule)
+        loadChildren: () => import("./chunk-NBSBOLTL.js").then((m) => m.EditServiceModule)
       },
       {
         path: "edit-job/:id",
-        loadChildren: () => import("./chunk-CIKCBFRX.js").then((m) => m.EditJobModule)
+        loadChildren: () => import("./chunk-DO3EXITT.js").then((m) => m.EditJobModule)
       },
       {
         path: "available-jobs",
-        loadComponent: () => import("./chunk-AGF7KNQM.js").then((m) => m.AvailableJobsComponent)
+        loadComponent: () => import("./chunk-6DL7O34M.js").then((m) => m.AvailableJobsComponent)
       },
       {
         path: "my-jobs-pro",
-        loadComponent: () => import("./chunk-E4V5ZUE6.js").then((m) => m.MyJobsProComponent)
+        loadComponent: () => import("./chunk-FRJIHGFA.js").then((m) => m.MyJobsProComponent)
       },
       {
         path: "my-clients",
-        loadComponent: () => import("./chunk-LS2OJFB4.js").then((m) => m.MyClientsComponent),
+        loadComponent: () => import("./chunk-FDIEI2IH.js").then((m) => m.MyClientsComponent),
         canActivate: [ProGuard]
       },
       {
         path: "my-jobs-pro/:jobId",
-        loadComponent: () => import("./chunk-SZIADNZO.js").then((m) => m.MyJobProDetailsComponent)
+        loadComponent: () => import("./chunk-IHSYTOJI.js").then((m) => m.MyJobProDetailsComponent)
       },
       {
         path: "job-details",
-        loadComponent: () => import("./chunk-DUGGVQYD.js").then((m) => m.JobDetailsComponent)
+        loadComponent: () => import("./chunk-L36L3NXQ.js").then((m) => m.JobDetailsComponent)
       },
       {
         path: "admin-users",
-        loadComponent: () => import("./chunk-PG7CDLAM.js").then((m) => m.AdminUsersComponent),
+        loadComponent: () => import("./chunk-SXCHDS54.js").then((m) => m.AdminUsersComponent),
         canActivate: [AdminGuard]
       },
       {
         path: "admin-materials",
-        loadComponent: () => import("./chunk-QXKCAU6C.js").then((m) => m.AdminMaterialsComponent),
+        loadComponent: () => import("./chunk-WHWPMKXQ.js").then((m) => m.AdminMaterialsComponent),
         canActivate: [AdminGuard]
       },
       {
         path: "messages",
-        loadComponent: () => import("./chunk-IPROWAI6.js").then((m) => m.MessagesComponent),
+        loadComponent: () => import("./chunk-ROOBG6JY.js").then((m) => m.MessagesComponent),
         canActivate: [AuthGuard]
       },
       {
         path: "notifications",
-        loadComponent: () => import("./chunk-PXDL7KS6.js").then((m) => m.NotificationsComponent),
+        loadComponent: () => import("./chunk-TD64NJV5.js").then((m) => m.NotificationsComponent),
         canActivate: [AuthGuard]
       },
       {
         path: "find-a-pro",
-        loadComponent: () => import("./chunk-CFAKDADD.js").then((m) => m.FindAProComponent)
+        loadComponent: () => import("./chunk-U6ZGJ3QC.js").then((m) => m.FindAProComponent)
       },
       {
         path: "jobs",
