@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/core/services/settings.service.ts"],
+  "sourcesContent": ["import { Injectable } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\nimport { Observable } from 'rxjs';\nimport { map, catchError } from 'rxjs/operators';\nimport { of } from 'rxjs';\nimport { environment } from '../../../environments/environment';\n\n@Injectable({ providedIn: 'root' })\nexport class SettingsService {\n  private baseUrl = environment.apiUrl;\n\n  constructor(private http: HttpClient) {}\n\n  getSetting(key: string): Observable<string | null> {\n    return this.http.get<{ key: string; value: string }>(`${this.baseUrl}/settings/${key}`).pipe(\n      map(r => r.value),\n      catchError(() => of(null))\n    );\n  }\n\n  updateSetting(key: string, value: string): Observable<{ key: string; value: string }> {\n    return this.http.put<{ key: string; value: string }>(`${this.baseUrl}/settings/${key}`, { value });\n  }\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;;AAQM,IAAO,kBAAP,MAAO,iBAAe;EAGN;EAFZ,UAAU,YAAY;EAE9B,YAAoB,MAAgB;AAAhB,SAAA,OAAA;EAAmB;EAEvC,WAAW,KAAW;AACpB,WAAO,KAAK,KAAK,IAAoC,GAAG,KAAK,OAAO,aAAa,GAAG,EAAE,EAAE,KACtF,IAAI,OAAK,EAAE,KAAK,GAChB,WAAW,MAAM,GAAG,IAAI,CAAC,CAAC;EAE9B;EAEA,cAAc,KAAa,OAAa;AACtC,WAAO,KAAK,KAAK,IAAoC,GAAG,KAAK,OAAO,aAAa,GAAG,IAAI,EAAE,MAAK,CAAE;EACnG;;qCAdW,kBAAe,mBAAA,UAAA,CAAA;EAAA;4EAAf,kBAAe,SAAf,iBAAe,WAAA,YADF,OAAM,CAAA;;;sEACnB,iBAAe,CAAA;UAD3B;WAAW,EAAE,YAAY,OAAM,CAAE;;;",
+  "names": []
+}
