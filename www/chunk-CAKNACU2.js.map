@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/core/services/maintenance.service.ts"],
+  "sourcesContent": ["import { Injectable } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\nimport { Observable } from 'rxjs';\nimport { environment } from '../../../environments/environment';\n\nexport interface MaintenanceStatus {\n  enabled: boolean;\n  message: string;\n}\n\n@Injectable({ providedIn: 'root' })\nexport class MaintenanceService {\n  constructor(private http: HttpClient) {}\n\n  /** Always reachable, even while maintenance is on (the endpoint is allow-listed server-side). */\n  getStatus(): Observable<MaintenanceStatus> {\n    return this.http.get<MaintenanceStatus>(`${environment.apiUrl}/maintenance/status`);\n  }\n}\n"],
+  "mappings": ";;;;;;;;;;;;AAWM,IAAO,qBAAP,MAAO,oBAAkB;EACT;EAApB,YAAoB,MAAgB;AAAhB,SAAA,OAAA;EAAmB;;EAGvC,YAAS;AACP,WAAO,KAAK,KAAK,IAAuB,GAAG,YAAY,MAAM,qBAAqB;EACpF;;qCANW,qBAAkB,mBAAA,UAAA,CAAA;EAAA;4EAAlB,qBAAkB,SAAlB,oBAAkB,WAAA,YADL,OAAM,CAAA;;;sEACnB,oBAAkB,CAAA;UAD9B;WAAW,EAAE,YAAY,OAAM,CAAE;;;",
+  "names": []
+}

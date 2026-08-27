@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/home/announcement-banner.component.ts"],
+  "sourcesContent": ["\n    .ann-banner {\n      background: var(--color-primary-gradient);\n      color: #fff;\n      overflow: hidden;\n      white-space: nowrap;\n      padding: 0.55rem 0;\n      font-size: var(--text-small);\n      font-weight: 600;\n      letter-spacing: 0.02em;\n    }\n\n    /* Classic marquee: text starts just past the right edge and scrolls left. */\n    .ann-text {\n      display: inline-block;\n      padding-left: 100%;\n      will-change: transform;\n      animation: ann-marquee 20s linear infinite;\n    }\n\n    .ann-banner:hover .ann-text { animation-play-state: paused; }\n\n    @keyframes ann-marquee {\n      from { transform: translateX(0); }\n      to   { transform: translateX(-100%); }\n    }\n\n    @media (prefers-reduced-motion: reduce) {\n      .ann-text {\n        animation: none;\n        padding-left: 0;\n        display: block;\n        text-align: center;\n        white-space: normal;\n      }\n    }\n  "],
+  "mappings": ";AACI,CAAA;AACE,cAAA,IAAA;AACA,SAAA;AACA,YAAA;AACA,eAAA;AACA,WAAA,QAAA;AACA,aAAA,IAAA;AACA,eAAA;AACA,kBAAA;;AAIF,CAAA;AACE,WAAA;AACA,gBAAA;AACA,eAAA;AACA,aAAA,YAAA,IAAA,OAAA;;AAGF,CAnBA,UAmBA,OAAA,CAPA;AAO8B,wBAAA;;AAE9B,WALE;AAMA;AAAO,eAAA,WAAA;;AACP;AAAO,eAAA,WAAA;;;AAGT,OAAA,CAAA,sBAAA,EAAA;AACE,GAfF;AAgBI,eAAA;AACA,kBAAA;AACA,aAAA;AACA,gBAAA;AACA,iBAAA;;;",
+  "names": []
+}

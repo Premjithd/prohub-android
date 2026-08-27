@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/core/utils/http-error.ts"],
+  "sourcesContent": ["/**\n * Maps an HTTP error to a user-friendly message.\n *\n * When a request never reaches the server (status 0 — server down, no network,\n * CORS), Angular's fetch backend puts a raw browser TypeError in `error.error`\n * whose message is the literal \"Failed to fetch\" — never surface that to users.\n */\nexport function getHttpErrorMessage(error: any, fallback: string): string {\n  if (error?.status === 0) {\n    return 'Unable to reach the server. Please check your internet connection and try again.';\n  }\n  const body = error?.error;\n  if (body && typeof body === 'object' && !(body instanceof Error)) {\n    const message = body.message ?? body.error;\n    if (typeof message === 'string' && message) {\n      return message;\n    }\n  }\n  return fallback;\n}\n"],
+  "mappings": ";AAOM,SAAU,oBAAoB,OAAY,UAAgB;AAC9D,MAAI,OAAO,WAAW,GAAG;AACvB,WAAO;EACT;AACA,QAAM,OAAO,OAAO;AACpB,MAAI,QAAQ,OAAO,SAAS,YAAY,EAAE,gBAAgB,QAAQ;AAChE,UAAM,UAAU,KAAK,WAAW,KAAK;AACrC,QAAI,OAAO,YAAY,YAAY,SAAS;AAC1C,aAAO;IACT;EACF;AACA,SAAO;AACT;",
+  "names": []
+}

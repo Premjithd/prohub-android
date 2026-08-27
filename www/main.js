@@ -3,21 +3,21 @@ import {
   MatListItem,
   MatListModule,
   MatNavList
-} from "./chunk-HHBR6DHB.js";
+} from "./chunk-CDZ5NJNH.js";
 import {
   NotificationService,
   SignalRService
-} from "./chunk-Q7FKXJ3J.js";
-import "./chunk-CSQZZLOB.js";
+} from "./chunk-RI6S7W2S.js";
+import "./chunk-6ZUTXK2L.js";
 import {
   AuthGuard
-} from "./chunk-WMSYBUTB.js";
-import "./chunk-K6U3OKVW.js";
-import "./chunk-VYWCDBJK.js";
+} from "./chunk-URVT3GGN.js";
+import "./chunk-WUMTGNMQ.js";
+import "./chunk-CRUBWZHU.js";
 import {
   MatSnackBar,
   MatSnackBarModule
-} from "./chunk-AF7MVYJA.js";
+} from "./chunk-4PQFBWS5.js";
 import {
   CdkScrollable,
   CdkScrollableModule,
@@ -30,8 +30,11 @@ import {
   createFlexibleConnectedPositionStrategy,
   createOverlayRef,
   createRepositionScrollStrategy
-} from "./chunk-MNMOPJB6.js";
+} from "./chunk-VXJRTODK.js";
 import "./chunk-UVREA7F7.js";
+import {
+  MaintenanceService
+} from "./chunk-CAKNACU2.js";
 import {
   MatButton,
   MatButtonModule,
@@ -40,11 +43,14 @@ import {
   MatRippleModule,
   _StructuralStylesLoader,
   coerceBooleanProperty
-} from "./chunk-QKBPBGFS.js";
+} from "./chunk-OO5WGF54.js";
+import {
+  _animationsDisabled
+} from "./chunk-CCCBJG6P.js";
 import {
   MatIcon,
   MatIconModule
-} from "./chunk-B4QCWAPP.js";
+} from "./chunk-RUKCNJZP.js";
 import {
   DOWN_ARROW,
   Directionality,
@@ -62,28 +68,27 @@ import {
   UP_ARROW,
   _CdkPrivateStyleLoader,
   _IdGenerator,
-  _animationsDisabled,
   _getEventTarget,
   _getShadowRoot,
   coerceNumberProperty,
   hasModifierKey,
   isFakeMousedownFromScreenReader,
   isFakeTouchstartFromScreenReader
-} from "./chunk-SOWTMXOK.js";
+} from "./chunk-LW3HGLL7.js";
 import {
   FormsModule
-} from "./chunk-A6TK5TPK.js";
+} from "./chunk-WDC3QMAT.js";
 import {
   TranslateLoader,
   TranslateModule,
   TranslatePipe,
   TranslateService,
   provideTranslateService
-} from "./chunk-ZGXDPMMN.js";
+} from "./chunk-CESE7TJL.js";
 import {
   Auth,
   StorageService
-} from "./chunk-6CNFBV5T.js";
+} from "./chunk-SNFMA3C7.js";
 import {
   environment
 } from "./chunk-UGJKRHBV.js";
@@ -96,7 +101,7 @@ import {
   RouterOutlet,
   provideRouter,
   withInMemoryScrolling
-} from "./chunk-VRKQDNIA.js";
+} from "./chunk-BALEJLRX.js";
 import {
   ApplicationRef,
   BehaviorSubject,
@@ -154,6 +159,7 @@ import {
   mapTo,
   merge,
   of,
+  provideAppInitializer,
   provideBrowserGlobalErrorListeners,
   provideClientHydration,
   provideHttpClient,
@@ -220,7 +226,7 @@ import {
   ɵɵtextInterpolate,
   ɵɵtextInterpolate1,
   ɵɵviewQuery
-} from "./chunk-UQSUYH4V.js";
+} from "./chunk-O3FI6JPK.js";
 import {
   __export,
   __objRest,
@@ -17485,7 +17491,7 @@ function NavbarComponent_ng_container_11_Template(rf, ctx) {
 }
 function NavbarComponent_ng_container_12_span_7_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 16);
+    \u0275\u0275elementStart(0, "span", 17);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -17512,17 +17518,22 @@ function NavbarComponent_ng_container_12_Template(rf, ctx) {
     \u0275\u0275elementStart(8, "button", 15);
     \u0275\u0275pipe(9, "translate");
     \u0275\u0275elementStart(10, "mat-icon");
-    \u0275\u0275text(11, "person");
+    \u0275\u0275text(11, "settings");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(12, "button", 2);
+    \u0275\u0275elementStart(12, "button", 16);
     \u0275\u0275pipe(13, "translate");
-    \u0275\u0275listener("click", function NavbarComponent_ng_container_12_Template_button_click_12_listener() {
+    \u0275\u0275elementStart(14, "mat-icon");
+    \u0275\u0275text(15, "person");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(16, "button", 2);
+    \u0275\u0275pipe(17, "translate");
+    \u0275\u0275listener("click", function NavbarComponent_ng_container_12_Template_button_click_16_listener() {
       \u0275\u0275restoreView(_r2);
       const ctx_r2 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r2.onLogout());
     });
-    \u0275\u0275elementStart(14, "mat-icon");
-    \u0275\u0275text(15, "logout");
+    \u0275\u0275elementStart(18, "mat-icon");
+    \u0275\u0275text(19, "logout");
     \u0275\u0275elementEnd()();
     \u0275\u0275elementContainerEnd();
   }
@@ -17531,19 +17542,21 @@ function NavbarComponent_ng_container_12_Template(rf, ctx) {
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(ctx_r2.auth.getName());
     \u0275\u0275advance();
-    \u0275\u0275attribute("aria-label", \u0275\u0275pipeBind1(4, 5, "NAV.NOTIFICATIONS"));
+    \u0275\u0275attribute("aria-label", \u0275\u0275pipeBind1(4, 6, "NAV.NOTIFICATIONS"));
     \u0275\u0275advance(4);
     \u0275\u0275property("ngIf", ctx_r2.unreadCount > 0);
     \u0275\u0275advance();
-    \u0275\u0275attribute("aria-label", \u0275\u0275pipeBind1(9, 7, "NAV.PROFILE"));
+    \u0275\u0275attribute("aria-label", \u0275\u0275pipeBind1(9, 8, "NAV.SETTINGS"));
     \u0275\u0275advance(4);
-    \u0275\u0275attribute("aria-label", \u0275\u0275pipeBind1(13, 9, "NAV.SIGN_OUT"));
+    \u0275\u0275attribute("aria-label", \u0275\u0275pipeBind1(13, 10, "NAV.PROFILE"));
+    \u0275\u0275advance(4);
+    \u0275\u0275attribute("aria-label", \u0275\u0275pipeBind1(17, 12, "NAV.SIGN_OUT"));
   }
 }
 function NavbarComponent_button_21_Template(rf, ctx) {
   if (rf & 1) {
     const _r4 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 17);
+    \u0275\u0275elementStart(0, "button", 18);
     \u0275\u0275listener("click", function NavbarComponent_button_21_Template_button_click_0_listener() {
       const l_r5 = \u0275\u0275restoreView(_r4).$implicit;
       const ctx_r2 = \u0275\u0275nextContext();
@@ -17662,7 +17675,7 @@ var NavbarComponent = class _NavbarComponent {
   static \u0275fac = function NavbarComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _NavbarComponent)(\u0275\u0275directiveInject(Auth), \u0275\u0275directiveInject(LanguageService), \u0275\u0275directiveInject(Router), \u0275\u0275directiveInject(MatSnackBar), \u0275\u0275directiveInject(NotificationService), \u0275\u0275directiveInject(SignalRService), \u0275\u0275directiveInject(ChangeDetectorRef), \u0275\u0275directiveInject(NgZone), \u0275\u0275directiveInject(TranslateService));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _NavbarComponent, selectors: [["app-navbar"]], outputs: { toggleSidenav: "toggleSidenav" }, decls: 22, vars: 13, consts: [["langMenu", "matMenu"], ["color", "primary"], ["mat-icon-button", "", 3, "click"], ["routerLink", "/", 1, "brand"], ["src", "assets/logo/logo-mark-white.svg", "alt", "", 1, "brand-logo"], [1, "spacer"], [4, "ngIf"], ["mat-button", "", "aria-label", "Language", 1, "lang-btn", 3, "matMenuTriggerFor"], [1, "lang-code"], ["mat-menu-item", "", 3, "lang-active", "click", 4, "ngFor", "ngForOf"], ["mat-button", "", "routerLink", "/auth/login"], ["mat-raised-button", "", "color", "accent", "routerLink", "/auth/register", 1, "custom-btn"], [1, "welcome-text"], ["mat-icon-button", "", "routerLink", "/notifications", 1, "notif-bell"], ["class", "notif-badge", 4, "ngIf"], ["mat-icon-button", "", "routerLink", "/profile"], [1, "notif-badge"], ["mat-menu-item", "", 3, "click"]], template: function NavbarComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _NavbarComponent, selectors: [["app-navbar"]], outputs: { toggleSidenav: "toggleSidenav" }, decls: 22, vars: 13, consts: [["langMenu", "matMenu"], ["color", "primary"], ["mat-icon-button", "", 3, "click"], ["routerLink", "/", 1, "brand"], ["src", "assets/logo/logo-mark-white.svg", "alt", "", 1, "brand-logo"], [1, "spacer"], [4, "ngIf"], ["mat-button", "", "aria-label", "Language", 1, "lang-btn", 3, "matMenuTriggerFor"], [1, "lang-code"], ["mat-menu-item", "", 3, "lang-active", "click", 4, "ngFor", "ngForOf"], ["mat-button", "", "routerLink", "/auth/login", 1, "auth-link"], ["mat-button", "", "routerLink", "/auth/register", 1, "auth-link"], [1, "welcome-text"], ["mat-icon-button", "", "routerLink", "/notifications", 1, "notif-bell"], ["class", "notif-badge", 4, "ngIf"], ["mat-icon-button", "", "routerLink", "/settings"], ["mat-icon-button", "", "routerLink", "/profile"], [1, "notif-badge"], ["mat-menu-item", "", 3, "click"]], template: function NavbarComponent_Template(rf, ctx) {
     if (rf & 1) {
       const _r1 = \u0275\u0275getCurrentView();
       \u0275\u0275elementStart(0, "mat-toolbar", 1)(1, "button", 2);
@@ -17681,7 +17694,7 @@ var NavbarComponent = class _NavbarComponent {
       \u0275\u0275text(9, "yProHub");
       \u0275\u0275elementEnd()();
       \u0275\u0275element(10, "span", 5);
-      \u0275\u0275template(11, NavbarComponent_ng_container_11_Template, 7, 6, "ng-container", 6)(12, NavbarComponent_ng_container_12_Template, 16, 11, "ng-container", 6);
+      \u0275\u0275template(11, NavbarComponent_ng_container_11_Template, 7, 6, "ng-container", 6)(12, NavbarComponent_ng_container_12_Template, 20, 14, "ng-container", 6);
       \u0275\u0275elementStart(13, "button", 7)(14, "mat-icon");
       \u0275\u0275text(15, "language");
       \u0275\u0275elementEnd();
@@ -17731,7 +17744,7 @@ var NavbarComponent = class _NavbarComponent {
     TranslateModule,
     UpperCasePipe,
     TranslatePipe
-  ], styles: ["\n\n.brand[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  text-decoration: none;\n  color: white;\n  margin-left: 8px;\n  cursor: pointer;\n  font-size: 1.2rem;\n  font-weight: 600;\n  letter-spacing: -0.01em;\n}\n.brand-logo[_ngcontent-%COMP%] {\n  width: 28px;\n  height: 28px;\n  display: block;\n  flex-shrink: 0;\n}\n.spacer[_ngcontent-%COMP%] {\n  flex: 1 1 auto;\n}\n.welcome-text[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: rgba(255, 255, 255, 0.85);\n  margin-right: 4px;\n}\n@media (max-width: 768px) {\n  .welcome-text[_ngcontent-%COMP%] {\n    display: none;\n  }\n}\nbutton[_ngcontent-%COMP%] {\n  margin-left: 4px;\n}\n.notif-bell[_ngcontent-%COMP%] {\n  position: relative;\n  overflow: visible !important;\n}\n.notif-bell[_ngcontent-%COMP%]   .notif-badge[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 4px;\n  right: 4px;\n  min-width: 18px;\n  height: 18px;\n  border-radius: 9px;\n  background: #f44336;\n  color: #fff;\n  font-size: 10px;\n  font-weight: 700;\n  line-height: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0 4px;\n  pointer-events: none;\n  z-index: 10;\n}\nmat-icon[_ngcontent-%COMP%] {\n  margin-right: 2px;\n}\n.custom-btn[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea 0%,\n      #764ba2 100%) !important;\n  color: white !important;\n  font-weight: 600 !important;\n  border-radius: 20px !important;\n  padding: 6px 20px !important;\n  box-shadow: 0 3px 10px rgba(102, 126, 234, 0.4);\n  transition: box-shadow 0.2s ease, transform 0.2s ease !important;\n  position: relative;\n  overflow: hidden;\n}\n.custom-btn[_ngcontent-%COMP%]:hover {\n  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.55);\n  transform: translateY(-1px);\n}\n.custom-btn[_ngcontent-%COMP%]:active {\n  transform: translateY(0);\n  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);\n}\n.lang-btn[_ngcontent-%COMP%] {\n  color: rgba(255, 255, 255, 0.9);\n  display: flex;\n  align-items: center;\n  gap: 2px;\n  font-size: 13px;\n  font-weight: 600;\n  min-width: unset;\n  padding: 0 6px;\n}\n.lang-btn[_ngcontent-%COMP%]   .lang-code[_ngcontent-%COMP%] {\n  font-size: 12px;\n  letter-spacing: 0.05em;\n}\n.lang-btn[_ngcontent-%COMP%]   mat-icon[_ngcontent-%COMP%] {\n  font-size: 18px;\n  width: 18px;\n  height: 18px;\n}\n  .lang-active {\n  font-weight: 700 !important;\n  color: #764ba2 !important;\n}\n/*# sourceMappingURL=navbar.css.map */"] });
+  ], styles: ["\n\n.brand[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  text-decoration: none;\n  color: white;\n  margin-left: 8px;\n  cursor: pointer;\n  font-size: 1.2rem;\n  font-weight: 600;\n  letter-spacing: -0.01em;\n}\n.brand-logo[_ngcontent-%COMP%] {\n  width: 28px;\n  height: 28px;\n  display: block;\n  flex-shrink: 0;\n}\n.spacer[_ngcontent-%COMP%] {\n  flex: 1 1 auto;\n}\n.welcome-text[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: rgba(255, 255, 255, 0.85);\n  margin-right: 4px;\n}\n@media (max-width: 768px) {\n  .welcome-text[_ngcontent-%COMP%] {\n    display: none;\n  }\n}\nbutton[_ngcontent-%COMP%] {\n  margin-left: 4px;\n}\n.notif-bell[_ngcontent-%COMP%] {\n  position: relative;\n  overflow: visible !important;\n}\n.notif-bell[_ngcontent-%COMP%]   .notif-badge[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 4px;\n  right: 4px;\n  min-width: 18px;\n  height: 18px;\n  border-radius: 9px;\n  background: #f44336;\n  color: #fff;\n  font-size: 10px;\n  font-weight: 700;\n  line-height: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0 4px;\n  pointer-events: none;\n  z-index: 10;\n}\nmat-icon[_ngcontent-%COMP%] {\n  margin-right: 2px;\n}\n.auth-link[_ngcontent-%COMP%] {\n  color: white !important;\n  font-weight: 500 !important;\n  letter-spacing: 0.01em;\n}\n.auth-link[_ngcontent-%COMP%]:hover {\n  color: rgba(255, 255, 255, 0.85) !important;\n}\n.lang-btn[_ngcontent-%COMP%] {\n  color: rgba(255, 255, 255, 0.9);\n  display: flex;\n  align-items: center;\n  gap: 2px;\n  font-size: 13px;\n  font-weight: 600;\n  min-width: unset;\n  padding: 0 6px;\n}\n.lang-btn[_ngcontent-%COMP%]   .lang-code[_ngcontent-%COMP%] {\n  font-size: 12px;\n  letter-spacing: 0.05em;\n}\n.lang-btn[_ngcontent-%COMP%]   mat-icon[_ngcontent-%COMP%] {\n  font-size: 18px;\n  width: 18px;\n  height: 18px;\n}\n  .lang-active {\n  font-weight: 700 !important;\n  color: #764ba2 !important;\n}\n/*# sourceMappingURL=navbar.css.map */"] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NavbarComponent, [{
@@ -17757,8 +17770,8 @@ var NavbarComponent = class _NavbarComponent {
   <span class="spacer"></span>
 
   <ng-container *ngIf="!auth.isAuthenticated()">
-    <button mat-button routerLink="/auth/login">{{ 'NAV.LOGIN' | translate }}</button>
-    <button mat-raised-button color="accent" class="custom-btn" routerLink="/auth/register">{{ 'NAV.REGISTER' | translate }}</button>
+    <button mat-button class="auth-link" routerLink="/auth/login">{{ 'NAV.LOGIN' | translate }}</button>
+    <button mat-button class="auth-link" routerLink="/auth/register">{{ 'NAV.REGISTER' | translate }}</button>
   </ng-container>
 
   <ng-container *ngIf="auth.isAuthenticated()">
@@ -17766,6 +17779,9 @@ var NavbarComponent = class _NavbarComponent {
     <button mat-icon-button routerLink="/notifications" [attr.aria-label]="'NAV.NOTIFICATIONS' | translate" class="notif-bell">
       <mat-icon>notifications</mat-icon>
       <span class="notif-badge" *ngIf="unreadCount > 0">{{ unreadCount > 99 ? '99+' : unreadCount }}</span>
+    </button>
+    <button mat-icon-button routerLink="/settings" [attr.aria-label]="'NAV.SETTINGS' | translate">
+      <mat-icon>settings</mat-icon>
     </button>
     <button mat-icon-button routerLink="/profile" [attr.aria-label]="'NAV.PROFILE' | translate">
       <mat-icon>person</mat-icon>
@@ -17788,7 +17804,7 @@ var NavbarComponent = class _NavbarComponent {
   </mat-menu>
 
 </mat-toolbar>
-`, styles: ["/* src/app/layout/navbar/navbar.scss */\n.brand {\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  text-decoration: none;\n  color: white;\n  margin-left: 8px;\n  cursor: pointer;\n  font-size: 1.2rem;\n  font-weight: 600;\n  letter-spacing: -0.01em;\n}\n.brand-logo {\n  width: 28px;\n  height: 28px;\n  display: block;\n  flex-shrink: 0;\n}\n.spacer {\n  flex: 1 1 auto;\n}\n.welcome-text {\n  font-size: 14px;\n  color: rgba(255, 255, 255, 0.85);\n  margin-right: 4px;\n}\n@media (max-width: 768px) {\n  .welcome-text {\n    display: none;\n  }\n}\nbutton {\n  margin-left: 4px;\n}\n.notif-bell {\n  position: relative;\n  overflow: visible !important;\n}\n.notif-bell .notif-badge {\n  position: absolute;\n  top: 4px;\n  right: 4px;\n  min-width: 18px;\n  height: 18px;\n  border-radius: 9px;\n  background: #f44336;\n  color: #fff;\n  font-size: 10px;\n  font-weight: 700;\n  line-height: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0 4px;\n  pointer-events: none;\n  z-index: 10;\n}\nmat-icon {\n  margin-right: 2px;\n}\n.custom-btn {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea 0%,\n      #764ba2 100%) !important;\n  color: white !important;\n  font-weight: 600 !important;\n  border-radius: 20px !important;\n  padding: 6px 20px !important;\n  box-shadow: 0 3px 10px rgba(102, 126, 234, 0.4);\n  transition: box-shadow 0.2s ease, transform 0.2s ease !important;\n  position: relative;\n  overflow: hidden;\n}\n.custom-btn:hover {\n  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.55);\n  transform: translateY(-1px);\n}\n.custom-btn:active {\n  transform: translateY(0);\n  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);\n}\n.lang-btn {\n  color: rgba(255, 255, 255, 0.9);\n  display: flex;\n  align-items: center;\n  gap: 2px;\n  font-size: 13px;\n  font-weight: 600;\n  min-width: unset;\n  padding: 0 6px;\n}\n.lang-btn .lang-code {\n  font-size: 12px;\n  letter-spacing: 0.05em;\n}\n.lang-btn mat-icon {\n  font-size: 18px;\n  width: 18px;\n  height: 18px;\n}\n::ng-deep .lang-active {\n  font-weight: 700 !important;\n  color: #764ba2 !important;\n}\n/*# sourceMappingURL=navbar.css.map */\n"] }]
+`, styles: ["/* src/app/layout/navbar/navbar.scss */\n.brand {\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  text-decoration: none;\n  color: white;\n  margin-left: 8px;\n  cursor: pointer;\n  font-size: 1.2rem;\n  font-weight: 600;\n  letter-spacing: -0.01em;\n}\n.brand-logo {\n  width: 28px;\n  height: 28px;\n  display: block;\n  flex-shrink: 0;\n}\n.spacer {\n  flex: 1 1 auto;\n}\n.welcome-text {\n  font-size: 14px;\n  color: rgba(255, 255, 255, 0.85);\n  margin-right: 4px;\n}\n@media (max-width: 768px) {\n  .welcome-text {\n    display: none;\n  }\n}\nbutton {\n  margin-left: 4px;\n}\n.notif-bell {\n  position: relative;\n  overflow: visible !important;\n}\n.notif-bell .notif-badge {\n  position: absolute;\n  top: 4px;\n  right: 4px;\n  min-width: 18px;\n  height: 18px;\n  border-radius: 9px;\n  background: #f44336;\n  color: #fff;\n  font-size: 10px;\n  font-weight: 700;\n  line-height: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0 4px;\n  pointer-events: none;\n  z-index: 10;\n}\nmat-icon {\n  margin-right: 2px;\n}\n.auth-link {\n  color: white !important;\n  font-weight: 500 !important;\n  letter-spacing: 0.01em;\n}\n.auth-link:hover {\n  color: rgba(255, 255, 255, 0.85) !important;\n}\n.lang-btn {\n  color: rgba(255, 255, 255, 0.9);\n  display: flex;\n  align-items: center;\n  gap: 2px;\n  font-size: 13px;\n  font-weight: 600;\n  min-width: unset;\n  padding: 0 6px;\n}\n.lang-btn .lang-code {\n  font-size: 12px;\n  letter-spacing: 0.05em;\n}\n.lang-btn mat-icon {\n  font-size: 18px;\n  width: 18px;\n  height: 18px;\n}\n::ng-deep .lang-active {\n  font-weight: 700 !important;\n  color: #764ba2 !important;\n}\n/*# sourceMappingURL=navbar.css.map */\n"] }]
   }], () => [{ type: Auth }, { type: LanguageService }, { type: Router }, { type: MatSnackBar }, { type: NotificationService }, { type: SignalRService }, { type: ChangeDetectorRef }, { type: NgZone }, { type: TranslateService }], { toggleSidenav: [{
     type: Output
   }] });
@@ -18041,6 +18057,28 @@ function SidebarComponent_ng_container_28_a_9_Template(rf, ctx) {
     \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(5, 1, "NAV.POST_JOB"));
   }
 }
+function SidebarComponent_ng_container_28_a_16_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r13 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "a", 27);
+    \u0275\u0275listener("click", function SidebarComponent_ng_container_28_a_16_Template_a_click_0_listener() {
+      \u0275\u0275restoreView(_r13);
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
+    });
+    \u0275\u0275elementStart(1, "mat-icon");
+    \u0275\u0275text(2, "mail");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "span");
+    \u0275\u0275text(4);
+    \u0275\u0275pipe(5, "translate");
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    \u0275\u0275advance(4);
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(5, 1, "NAV.MESSAGES"));
+  }
+}
 function SidebarComponent_ng_container_28_Template(rf, ctx) {
   if (rf & 1) {
     const _r4 = \u0275\u0275getCurrentView();
@@ -18059,19 +18097,7 @@ function SidebarComponent_ng_container_28_Template(rf, ctx) {
     \u0275\u0275text(14);
     \u0275\u0275pipe(15, "translate");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(16, "a", 18);
-    \u0275\u0275listener("click", function SidebarComponent_ng_container_28_Template_a_click_16_listener() {
-      \u0275\u0275restoreView(_r4);
-      const ctx_r1 = \u0275\u0275nextContext();
-      return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
-    });
-    \u0275\u0275elementStart(17, "mat-icon");
-    \u0275\u0275text(18, "mail");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(19, "span");
-    \u0275\u0275text(20);
-    \u0275\u0275pipe(21, "translate");
-    \u0275\u0275elementEnd()();
+    \u0275\u0275template(16, SidebarComponent_ng_container_28_a_16_Template, 6, 3, "a", 18);
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
@@ -18096,8 +18122,8 @@ function SidebarComponent_ng_container_28_Template(rf, ctx) {
     \u0275\u0275property("ngIf", !ctx_r1.isProUser() && !ctx_r1.isAdmin());
     \u0275\u0275advance(5);
     \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(15, 11, "NAV.PROFILE"));
-    \u0275\u0275advance(6);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(21, 13, "NAV.MESSAGES"));
+    \u0275\u0275advance(2);
+    \u0275\u0275property("ngIf", !ctx_r1.isAdmin());
   }
 }
 var SidebarComponent = class _SidebarComponent {
@@ -18118,7 +18144,7 @@ var SidebarComponent = class _SidebarComponent {
   static \u0275fac = function SidebarComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _SidebarComponent)(\u0275\u0275directiveInject(Auth));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SidebarComponent, selectors: [["app-sidebar"]], outputs: { menuItemClicked: "menuItemClicked" }, decls: 29, vars: 17, consts: [["mat-list-item", "", "routerLink", "/", "routerLinkActive", "active", 3, "click", "routerLinkActiveOptions"], ["mat-list-item", "", "routerLink", "/services", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/find-a-pro", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/about", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/contact", "routerLinkActive", "active", 3, "click"], [4, "ngIf"], ["mat-list-item", "", "routerLink", "/find-a-pro", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/auth/login", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/auth/register", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/admin-users", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/admin-materials", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/pending-jobs", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/my-jobs-pro", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/available-jobs", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/my-services", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/add-service", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/post-job", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/profile", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/messages", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/admin-users", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/admin-materials", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/pending-jobs", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/my-jobs-pro", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/available-jobs", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/my-services", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/add-service", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/post-job", "routerLinkActive", "active", 3, "click"]], template: function SidebarComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SidebarComponent, selectors: [["app-sidebar"]], outputs: { menuItemClicked: "menuItemClicked" }, decls: 29, vars: 17, consts: [["mat-list-item", "", "routerLink", "/", "routerLinkActive", "active", 3, "click", "routerLinkActiveOptions"], ["mat-list-item", "", "routerLink", "/services", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/find-a-pro", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/about", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/contact", "routerLinkActive", "active", 3, "click"], [4, "ngIf"], ["mat-list-item", "", "routerLink", "/find-a-pro", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/auth/login", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/auth/register", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/admin-users", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/admin-materials", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/pending-jobs", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/my-jobs-pro", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/available-jobs", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/my-services", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/add-service", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/post-job", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/profile", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/messages", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/admin-users", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/admin-materials", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/pending-jobs", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/my-jobs-pro", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/available-jobs", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/my-services", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/add-service", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/post-job", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/messages", "routerLinkActive", "active", 3, "click"]], template: function SidebarComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "mat-nav-list")(1, "a", 0);
       \u0275\u0275listener("click", function SidebarComponent_Template_a_click_1_listener() {
@@ -18166,7 +18192,7 @@ var SidebarComponent = class _SidebarComponent {
       \u0275\u0275pipe(25, "translate");
       \u0275\u0275elementEnd()();
       \u0275\u0275element(26, "mat-divider");
-      \u0275\u0275template(27, SidebarComponent_ng_container_27_Template, 13, 6, "ng-container", 5)(28, SidebarComponent_ng_container_28_Template, 22, 15, "ng-container", 5);
+      \u0275\u0275template(27, SidebarComponent_ng_container_27_Template, 13, 6, "ng-container", 5)(28, SidebarComponent_ng_container_28_Template, 17, 13, "ng-container", 5);
       \u0275\u0275elementEnd();
     }
     if (rf & 2) {
@@ -18292,7 +18318,7 @@ var SidebarComponent = class _SidebarComponent {
       <span>{{ 'NAV.PROFILE' | translate }}</span>
     </a>
 
-    <a mat-list-item routerLink="/messages" routerLinkActive="active" (click)="onMenuItemClick()">
+    <a *ngIf="!isAdmin()" mat-list-item routerLink="/messages" routerLinkActive="active" (click)="onMenuItemClick()">
       <mat-icon>mail</mat-icon>
       <span>{{ 'NAV.MESSAGES' | translate }}</span>
     </a>
@@ -18561,7 +18587,7 @@ function BottomNavComponent_ng_container_3_Template(rf, ctx) {
     \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(26, 11, "NAV.PROFILE"));
   }
 }
-function BottomNavComponent_ng_container_4_span_17_Template(rf, ctx) {
+function BottomNavComponent_ng_container_4_span_23_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span", 13);
     \u0275\u0275text(1);
@@ -18590,36 +18616,45 @@ function BottomNavComponent_ng_container_4_Template(rf, ctx) {
     \u0275\u0275text(11);
     \u0275\u0275pipe(12, "translate");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(13, "a", 9)(14, "span", 10)(15, "mat-icon");
-    \u0275\u0275text(16, "notifications");
+    \u0275\u0275elementStart(13, "a", 16)(14, "mat-icon");
+    \u0275\u0275text(15, "business");
     \u0275\u0275elementEnd();
-    \u0275\u0275template(17, BottomNavComponent_ng_container_4_span_17_Template, 2, 1, "span", 11);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(18, "span");
-    \u0275\u0275text(19);
-    \u0275\u0275pipe(20, "translate");
+    \u0275\u0275elementStart(16, "span");
+    \u0275\u0275text(17);
+    \u0275\u0275pipe(18, "translate");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(21, "a", 12)(22, "mat-icon");
-    \u0275\u0275text(23, "person");
+    \u0275\u0275elementStart(19, "a", 9)(20, "span", 10)(21, "mat-icon");
+    \u0275\u0275text(22, "notifications");
+    \u0275\u0275elementEnd();
+    \u0275\u0275template(23, BottomNavComponent_ng_container_4_span_23_Template, 2, 1, "span", 11);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(24, "span");
     \u0275\u0275text(25);
     \u0275\u0275pipe(26, "translate");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(27, "a", 12)(28, "mat-icon");
+    \u0275\u0275text(29, "person");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(30, "span");
+    \u0275\u0275text(31);
+    \u0275\u0275pipe(32, "translate");
     \u0275\u0275elementEnd()();
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
     const ctx_r0 = \u0275\u0275nextContext();
     \u0275\u0275advance(5);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(6, 5, "NAV.FIND_JOBS"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(6, 6, "NAV.FIND_JOBS"));
     \u0275\u0275advance(6);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(12, 7, "NAV.MY_WORK"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(12, 8, "NAV.MY_WORK"));
+    \u0275\u0275advance(6);
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(18, 10, "NAV.MY_BUSINESSES"));
     \u0275\u0275advance(6);
     \u0275\u0275property("ngIf", ctx_r0.unreadCount > 0);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(20, 9, "NAV.ALERTS"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(26, 12, "NAV.ALERTS"));
     \u0275\u0275advance(6);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(26, 11, "NAV.PROFILE"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(32, 14, "NAV.PROFILE"));
   }
 }
 function BottomNavComponent_ng_container_5_Template(rf, ctx) {
@@ -18632,7 +18667,7 @@ function BottomNavComponent_ng_container_5_Template(rf, ctx) {
     \u0275\u0275text(5);
     \u0275\u0275pipe(6, "translate");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(7, "a", 16)(8, "mat-icon");
+    \u0275\u0275elementStart(7, "a", 17)(8, "mat-icon");
     \u0275\u0275text(9, "admin_panel_settings");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(10, "span");
@@ -18729,10 +18764,10 @@ var BottomNavComponent = class _BottomNavComponent {
   static \u0275fac = function BottomNavComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _BottomNavComponent)(\u0275\u0275directiveInject(Auth), \u0275\u0275directiveInject(Router), \u0275\u0275directiveInject(NotificationService), \u0275\u0275directiveInject(SignalRService), \u0275\u0275directiveInject(ChangeDetectorRef));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _BottomNavComponent, selectors: [["app-bottom-nav"]], decls: 6, vars: 5, consts: [[1, "bottom-nav"], ["class", "nav-item", "routerLink", "/", "routerLinkActive", "active", 3, "routerLinkActiveOptions", 4, "ngIf"], [4, "ngIf"], ["routerLink", "/", "routerLinkActive", "active", 1, "nav-item", 3, "routerLinkActiveOptions"], ["routerLink", "/services", "routerLinkActive", "active", 1, "nav-item"], ["routerLink", "/find-a-pro", "routerLinkActive", "active", 1, "nav-item"], ["routerLink", "/auth/login", "routerLinkActive", "active", 1, "nav-item"], ["routerLink", "/pending-jobs", "routerLinkActive", "active", 1, "nav-item"], ["routerLink", "/post-job", "routerLinkActive", "active", 1, "nav-item", "post-btn"], ["routerLink", "/notifications", "routerLinkActive", "active", 1, "nav-item"], [1, "notif-icon-wrap"], ["class", "notif-badge", 4, "ngIf"], ["routerLink", "/profile", "routerLinkActive", "active", 1, "nav-item"], [1, "notif-badge"], ["routerLink", "/available-jobs", "routerLinkActive", "active", 1, "nav-item"], ["routerLink", "/my-jobs-pro", "routerLinkActive", "active", 1, "nav-item"], ["routerLink", "/admin-users", "routerLinkActive", "active", 1, "nav-item"]], template: function BottomNavComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _BottomNavComponent, selectors: [["app-bottom-nav"]], decls: 6, vars: 5, consts: [[1, "bottom-nav"], ["class", "nav-item", "routerLink", "/", "routerLinkActive", "active", 3, "routerLinkActiveOptions", 4, "ngIf"], [4, "ngIf"], ["routerLink", "/", "routerLinkActive", "active", 1, "nav-item", 3, "routerLinkActiveOptions"], ["routerLink", "/services", "routerLinkActive", "active", 1, "nav-item"], ["routerLink", "/find-a-pro", "routerLinkActive", "active", 1, "nav-item"], ["routerLink", "/auth/login", "routerLinkActive", "active", 1, "nav-item"], ["routerLink", "/pending-jobs", "routerLinkActive", "active", 1, "nav-item"], ["routerLink", "/post-job", "routerLinkActive", "active", 1, "nav-item", "post-btn"], ["routerLink", "/notifications", "routerLinkActive", "active", 1, "nav-item"], [1, "notif-icon-wrap"], ["class", "notif-badge", 4, "ngIf"], ["routerLink", "/profile", "routerLinkActive", "active", 1, "nav-item"], [1, "notif-badge"], ["routerLink", "/available-jobs", "routerLinkActive", "active", 1, "nav-item"], ["routerLink", "/my-jobs-pro", "routerLinkActive", "active", 1, "nav-item"], ["routerLink", "/my-businesses", "routerLinkActive", "active", 1, "nav-item"], ["routerLink", "/admin-users", "routerLinkActive", "active", 1, "nav-item"]], template: function BottomNavComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "nav", 0);
-      \u0275\u0275template(1, BottomNavComponent_a_1_Template, 6, 5, "a", 1)(2, BottomNavComponent_ng_container_2_Template, 19, 9, "ng-container", 2)(3, BottomNavComponent_ng_container_3_Template, 27, 13, "ng-container", 2)(4, BottomNavComponent_ng_container_4_Template, 27, 13, "ng-container", 2)(5, BottomNavComponent_ng_container_5_Template, 25, 14, "ng-container", 2);
+      \u0275\u0275template(1, BottomNavComponent_a_1_Template, 6, 5, "a", 1)(2, BottomNavComponent_ng_container_2_Template, 19, 9, "ng-container", 2)(3, BottomNavComponent_ng_container_3_Template, 27, 13, "ng-container", 2)(4, BottomNavComponent_ng_container_4_Template, 33, 16, "ng-container", 2)(5, BottomNavComponent_ng_container_5_Template, 25, 14, "ng-container", 2);
       \u0275\u0275elementEnd();
     }
     if (rf & 2) {
@@ -18809,6 +18844,10 @@ var BottomNavComponent = class _BottomNavComponent {
       <mat-icon>task_alt</mat-icon>
       <span>{{ 'NAV.MY_WORK' | translate }}</span>
     </a>
+    <a class="nav-item" routerLink="/my-businesses" routerLinkActive="active">
+      <mat-icon>business</mat-icon>
+      <span>{{ 'NAV.MY_BUSINESSES' | translate }}</span>
+    </a>
     <a class="nav-item" routerLink="/notifications" routerLinkActive="active">
       <span class="notif-icon-wrap">
         <mat-icon>notifications</mat-icon>
@@ -18855,7 +18894,7 @@ var _c06 = ["sidenav"];
 function MainLayout_div_0_Template(rf, ctx) {
   if (rf & 1) {
     const _r2 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 7)(1, "mat-icon");
+    \u0275\u0275elementStart(0, "div", 6)(1, "mat-icon");
     \u0275\u0275text(2, "engineering");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(3, "span");
@@ -18865,7 +18904,7 @@ function MainLayout_div_0_Template(rf, ctx) {
     \u0275\u0275elementEnd();
     \u0275\u0275text(7);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(8, "button", 8);
+    \u0275\u0275elementStart(8, "button", 7);
     \u0275\u0275listener("click", function MainLayout_div_0_Template_button_click_8_listener() {
       \u0275\u0275restoreView(_r2);
       const ctx_r2 = \u0275\u0275nextContext();
@@ -18916,7 +18955,7 @@ var MainLayout = class _MainLayout {
       let _t;
       \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.sidenav = _t.first);
     }
-  }, decls: 12, vars: 1, consts: [["sidenav", ""], ["class", "impersonation-banner", 4, "ngIf"], ["mode", "over"], [3, "menuItemClicked"], [3, "toggleSidenav"], [1, "main-content"], [1, "container"], [1, "impersonation-banner"], [1, "exit-impersonation-btn", 3, "click"]], template: function MainLayout_Template(rf, ctx) {
+  }, decls: 11, vars: 1, consts: [["sidenav", ""], ["class", "impersonation-banner", 4, "ngIf"], ["mode", "over"], [3, "menuItemClicked"], [3, "toggleSidenav"], [1, "main-content"], [1, "impersonation-banner"], [1, "exit-impersonation-btn", 3, "click"]], template: function MainLayout_Template(rf, ctx) {
     if (rf & 1) {
       const _r1 = \u0275\u0275getCurrentView();
       \u0275\u0275template(0, MainLayout_div_0_Template, 12, 2, "div", 1);
@@ -18934,12 +18973,12 @@ var MainLayout = class _MainLayout {
         return \u0275\u0275resetView(sidenav_r4.toggle());
       });
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(7, "main", 5)(8, "div", 6);
-      \u0275\u0275element(9, "router-outlet");
+      \u0275\u0275elementStart(7, "main", 5);
+      \u0275\u0275element(8, "router-outlet");
+      \u0275\u0275elementEnd();
+      \u0275\u0275element(9, "app-footer");
       \u0275\u0275elementEnd()();
-      \u0275\u0275element(10, "app-footer");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275element(11, "app-bottom-nav");
+      \u0275\u0275element(10, "app-bottom-nav");
     }
     if (rf & 2) {
       \u0275\u0275property("ngIf", ctx.auth.isImpersonating());
@@ -18959,7 +18998,7 @@ var MainLayout = class _MainLayout {
     SidebarComponent,
     FooterComponent,
     BottomNavComponent
-  ], styles: ["\n\n[_nghost-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  min-height: 100vh;\n}\n.impersonation-banner[_ngcontent-%COMP%] {\n  position: sticky;\n  top: 0;\n  z-index: 1100;\n  display: flex;\n  align-items: center;\n  gap: 0.75rem;\n  padding: 0.6rem 1.5rem;\n  background: #f59e0b;\n  color: #1a1a1a;\n  font-size: 0.9rem;\n  font-weight: 500;\n}\n.impersonation-banner[_ngcontent-%COMP%]   mat-icon[_ngcontent-%COMP%] {\n  font-size: 1.2rem;\n  width: 1.2rem;\n  height: 1.2rem;\n}\n.impersonation-banner[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  flex: 1;\n}\n.impersonation-banner[_ngcontent-%COMP%]   .exit-impersonation-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.4rem;\n  padding: 0.3rem 0.9rem;\n  border: 2px solid #1a1a1a;\n  border-radius: 4px;\n  background: transparent;\n  color: #1a1a1a;\n  font-size: 0.85rem;\n  font-weight: 600;\n  cursor: pointer;\n  transition: background 0.15s;\n}\n.impersonation-banner[_ngcontent-%COMP%]   .exit-impersonation-btn[_ngcontent-%COMP%]:hover {\n  background: rgba(0, 0, 0, 0.1);\n}\n.impersonation-banner[_ngcontent-%COMP%]   .exit-impersonation-btn[_ngcontent-%COMP%]   mat-icon[_ngcontent-%COMP%] {\n  font-size: 1rem;\n  width: 1rem;\n  height: 1rem;\n}\nmat-sidenav-container[_ngcontent-%COMP%] {\n  flex: 1;\n}\n.main-content[_ngcontent-%COMP%] {\n  padding: 2rem 0;\n  min-height: calc(100vh - var(--nav-height) - 64px);\n}\n@media (max-width: 768px) {\n  .main-content[_ngcontent-%COMP%] {\n    padding: 1rem 0;\n    padding-bottom: calc(var(--bottom-nav-height) + 1rem);\n    min-height: calc(100vh - var(--nav-height) - var(--bottom-nav-height));\n  }\n}\n/*# sourceMappingURL=main-layout.css.map */"] });
+  ], styles: ["\n\n[_nghost-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  min-height: 100vh;\n}\n.impersonation-banner[_ngcontent-%COMP%] {\n  position: sticky;\n  top: 0;\n  z-index: 1100;\n  display: flex;\n  align-items: center;\n  gap: 0.75rem;\n  padding: 0.6rem 1.5rem;\n  background: #f59e0b;\n  color: #1a1a1a;\n  font-size: 0.9rem;\n  font-weight: 500;\n}\n.impersonation-banner[_ngcontent-%COMP%]   mat-icon[_ngcontent-%COMP%] {\n  font-size: 1.2rem;\n  width: 1.2rem;\n  height: 1.2rem;\n}\n.impersonation-banner[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  flex: 1;\n}\n.impersonation-banner[_ngcontent-%COMP%]   .exit-impersonation-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.4rem;\n  padding: 0.3rem 0.9rem;\n  border: 2px solid #1a1a1a;\n  border-radius: 4px;\n  background: transparent;\n  color: #1a1a1a;\n  font-size: 0.85rem;\n  font-weight: 600;\n  cursor: pointer;\n  transition: background 0.15s;\n}\n.impersonation-banner[_ngcontent-%COMP%]   .exit-impersonation-btn[_ngcontent-%COMP%]:hover {\n  background: rgba(0, 0, 0, 0.1);\n}\n.impersonation-banner[_ngcontent-%COMP%]   .exit-impersonation-btn[_ngcontent-%COMP%]   mat-icon[_ngcontent-%COMP%] {\n  font-size: 1rem;\n  width: 1rem;\n  height: 1rem;\n}\nmat-sidenav-container[_ngcontent-%COMP%] {\n  flex: 1;\n}\n.main-content[_ngcontent-%COMP%] {\n  padding: 0;\n  min-height: calc(100vh - var(--nav-height) - 64px);\n}\n@media (max-width: 768px) {\n  .main-content[_ngcontent-%COMP%] {\n    padding-bottom: var(--bottom-nav-height);\n    min-height: calc(100vh - var(--nav-height) - var(--bottom-nav-height));\n  }\n}\n/*# sourceMappingURL=main-layout.css.map */"] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MainLayout, [{
@@ -18973,7 +19012,7 @@ var MainLayout = class _MainLayout {
       SidebarComponent,
       FooterComponent,
       BottomNavComponent
-    ], template: '<div *ngIf="auth.isImpersonating()" class="impersonation-banner">\n  <mat-icon>engineering</mat-icon>\n  <span>Admin mode \u2014 browsing as <strong>{{ auth.getName() }}</strong> ({{ auth.getUserType() }})</span>\n  <button class="exit-impersonation-btn" (click)="exitImpersonation()">\n    <mat-icon>logout</mat-icon>\n    Exit Impersonation\n  </button>\n</div>\n\n<mat-sidenav-container>\n  <mat-sidenav #sidenav mode="over">\n    <app-sidebar (menuItemClicked)="sidenav.close()"></app-sidebar>\n  </mat-sidenav>\n\n  <mat-sidenav-content>\n    <app-navbar (toggleSidenav)="sidenav.toggle()"></app-navbar>\n\n    <main class="main-content">\n      <div class="container">\n        <router-outlet></router-outlet>\n      </div>\n    </main>\n\n    <app-footer></app-footer>\n  </mat-sidenav-content>\n</mat-sidenav-container>\n\n<!-- Fixed bottom navigation (visible on mobile only) -->\n<app-bottom-nav></app-bottom-nav>\n', styles: ["/* src/app/layout/main-layout/main-layout.scss */\n:host {\n  display: flex;\n  flex-direction: column;\n  min-height: 100vh;\n}\n.impersonation-banner {\n  position: sticky;\n  top: 0;\n  z-index: 1100;\n  display: flex;\n  align-items: center;\n  gap: 0.75rem;\n  padding: 0.6rem 1.5rem;\n  background: #f59e0b;\n  color: #1a1a1a;\n  font-size: 0.9rem;\n  font-weight: 500;\n}\n.impersonation-banner mat-icon {\n  font-size: 1.2rem;\n  width: 1.2rem;\n  height: 1.2rem;\n}\n.impersonation-banner span {\n  flex: 1;\n}\n.impersonation-banner .exit-impersonation-btn {\n  display: flex;\n  align-items: center;\n  gap: 0.4rem;\n  padding: 0.3rem 0.9rem;\n  border: 2px solid #1a1a1a;\n  border-radius: 4px;\n  background: transparent;\n  color: #1a1a1a;\n  font-size: 0.85rem;\n  font-weight: 600;\n  cursor: pointer;\n  transition: background 0.15s;\n}\n.impersonation-banner .exit-impersonation-btn:hover {\n  background: rgba(0, 0, 0, 0.1);\n}\n.impersonation-banner .exit-impersonation-btn mat-icon {\n  font-size: 1rem;\n  width: 1rem;\n  height: 1rem;\n}\nmat-sidenav-container {\n  flex: 1;\n}\n.main-content {\n  padding: 2rem 0;\n  min-height: calc(100vh - var(--nav-height) - 64px);\n}\n@media (max-width: 768px) {\n  .main-content {\n    padding: 1rem 0;\n    padding-bottom: calc(var(--bottom-nav-height) + 1rem);\n    min-height: calc(100vh - var(--nav-height) - var(--bottom-nav-height));\n  }\n}\n/*# sourceMappingURL=main-layout.css.map */\n"] }]
+    ], template: '<div *ngIf="auth.isImpersonating()" class="impersonation-banner">\n  <mat-icon>engineering</mat-icon>\n  <span>Admin mode \u2014 browsing as <strong>{{ auth.getName() }}</strong> ({{ auth.getUserType() }})</span>\n  <button class="exit-impersonation-btn" (click)="exitImpersonation()">\n    <mat-icon>logout</mat-icon>\n    Exit Impersonation\n  </button>\n</div>\n\n<mat-sidenav-container>\n  <mat-sidenav #sidenav mode="over">\n    <app-sidebar (menuItemClicked)="sidenav.close()"></app-sidebar>\n  </mat-sidenav>\n\n  <mat-sidenav-content>\n    <app-navbar (toggleSidenav)="sidenav.toggle()"></app-navbar>\n\n    <main class="main-content">\n      <router-outlet></router-outlet>\n    </main>\n\n    <app-footer></app-footer>\n  </mat-sidenav-content>\n</mat-sidenav-container>\n\n<!-- Fixed bottom navigation (visible on mobile only) -->\n<app-bottom-nav></app-bottom-nav>\n', styles: ["/* src/app/layout/main-layout/main-layout.scss */\n:host {\n  display: flex;\n  flex-direction: column;\n  min-height: 100vh;\n}\n.impersonation-banner {\n  position: sticky;\n  top: 0;\n  z-index: 1100;\n  display: flex;\n  align-items: center;\n  gap: 0.75rem;\n  padding: 0.6rem 1.5rem;\n  background: #f59e0b;\n  color: #1a1a1a;\n  font-size: 0.9rem;\n  font-weight: 500;\n}\n.impersonation-banner mat-icon {\n  font-size: 1.2rem;\n  width: 1.2rem;\n  height: 1.2rem;\n}\n.impersonation-banner span {\n  flex: 1;\n}\n.impersonation-banner .exit-impersonation-btn {\n  display: flex;\n  align-items: center;\n  gap: 0.4rem;\n  padding: 0.3rem 0.9rem;\n  border: 2px solid #1a1a1a;\n  border-radius: 4px;\n  background: transparent;\n  color: #1a1a1a;\n  font-size: 0.85rem;\n  font-weight: 600;\n  cursor: pointer;\n  transition: background 0.15s;\n}\n.impersonation-banner .exit-impersonation-btn:hover {\n  background: rgba(0, 0, 0, 0.1);\n}\n.impersonation-banner .exit-impersonation-btn mat-icon {\n  font-size: 1rem;\n  width: 1rem;\n  height: 1rem;\n}\nmat-sidenav-container {\n  flex: 1;\n}\n.main-content {\n  padding: 0;\n  min-height: calc(100vh - var(--nav-height) - 64px);\n}\n@media (max-width: 768px) {\n  .main-content {\n    padding-bottom: var(--bottom-nav-height);\n    min-height: calc(100vh - var(--nav-height) - var(--bottom-nav-height));\n  }\n}\n/*# sourceMappingURL=main-layout.css.map */\n"] }]
   }], () => [{ type: Auth }, { type: Router }], { sidenav: [{
     type: ViewChild,
     args: ["sidenav"]
@@ -19040,8 +19079,16 @@ var ProGuard = class _ProGuard {
 // src/app/app.routes.ts
 var routes = [
   {
+    path: "maintenance",
+    loadComponent: () => import("./chunk-IHS6ZTC4.js").then((m) => m.MaintenanceComponent)
+  },
+  {
     path: "accept-admin-invite",
-    loadComponent: () => import("./chunk-TC54PFGR.js").then((m) => m.AcceptAdminInviteComponent)
+    loadComponent: () => import("./chunk-ZZULEFZ4.js").then((m) => m.AcceptAdminInviteComponent)
+  },
+  {
+    path: "accept-pro-user-invite",
+    loadComponent: () => import("./chunk-4ADBOOCY.js").then((m) => m.AcceptProUserInviteComponent)
   },
   {
     path: "",
@@ -19049,117 +19096,132 @@ var routes = [
     children: [
       {
         path: "",
-        loadChildren: () => import("./chunk-4VKFX2ZB.js").then((m) => m.HomeModule)
+        loadChildren: () => import("./chunk-WUCHPFEM.js").then((m) => m.HomeModule)
       },
       {
         path: "auth",
-        loadChildren: () => import("./chunk-CYSKDPG4.js").then((m) => m.AuthModule)
+        loadChildren: () => import("./chunk-HGWLAGXE.js").then((m) => m.AuthModule)
       },
       {
         path: "about",
-        loadChildren: () => import("./chunk-QCEETGXP.js").then((m) => m.AboutModule)
+        loadChildren: () => import("./chunk-VBA2LYSP.js").then((m) => m.AboutModule)
       },
       {
         path: "services",
-        loadChildren: () => import("./chunk-PWUUMVZP.js").then((m) => m.ServicesModule)
+        loadChildren: () => import("./chunk-PVTHOZVO.js").then((m) => m.ServicesModule)
       },
       {
         path: "contact",
-        loadChildren: () => import("./chunk-5GOY5IGK.js").then((m) => m.ContactModule)
+        loadChildren: () => import("./chunk-B4SPCRP6.js").then((m) => m.ContactModule)
       },
       {
         path: "profile",
-        loadChildren: () => import("./chunk-MIXBHTBL.js").then((m) => m.ProfileModule)
+        loadChildren: () => import("./chunk-PBRJC6RF.js").then((m) => m.ProfileModule)
+      },
+      {
+        path: "settings",
+        loadComponent: () => import("./chunk-XTEHSS52.js").then((m) => m.SettingsComponent),
+        canActivate: [AuthGuard]
       },
       {
         path: "faq",
-        loadChildren: () => import("./chunk-B6KPY5EJ.js").then((m) => m.FAQModule)
+        loadChildren: () => import("./chunk-LQKYQ5Q6.js").then((m) => m.FAQModule)
       },
       {
         path: "terms",
-        loadComponent: () => import("./chunk-OIEFWV4I.js").then((m) => m.TermsComponent)
+        loadComponent: () => import("./chunk-4F2BOALM.js").then((m) => m.TermsComponent)
       },
       {
         path: "privacy",
-        loadComponent: () => import("./chunk-BPZVVZLG.js").then((m) => m.PrivacyComponent)
+        loadComponent: () => import("./chunk-MT5S6V3S.js").then((m) => m.PrivacyComponent)
       },
       {
         path: "post-job",
-        loadChildren: () => import("./chunk-2U5E4QST.js").then((m) => m.PostJobModule)
+        loadChildren: () => import("./chunk-NVVJTUYD.js").then((m) => m.PostJobModule)
       },
       {
         path: "pending-jobs",
-        loadChildren: () => import("./chunk-M25HPES4.js").then((m) => m.PendingJobsModule)
+        loadChildren: () => import("./chunk-4RJWU7FT.js").then((m) => m.PendingJobsModule)
       },
       {
         path: "my-pros",
-        loadComponent: () => import("./chunk-WN5JWI7X.js").then((m) => m.MyProsComponent),
+        loadComponent: () => import("./chunk-DZY6KDRX.js").then((m) => m.MyProsComponent),
         canActivate: [AuthGuard]
       },
       {
         path: "pending-jobs/:jobId",
-        loadComponent: () => import("./chunk-DYGJQVFK.js").then((m) => m.PendingJobDetailsComponent)
+        loadComponent: () => import("./chunk-AFHBHR7Y.js").then((m) => m.PendingJobDetailsComponent)
       },
       {
         path: "my-services",
-        loadChildren: () => import("./chunk-I35OBPYN.js").then((m) => m.MyServicesModule)
+        loadChildren: () => import("./chunk-EVMS2PXO.js").then((m) => m.MyServicesModule)
       },
       {
         path: "add-service",
-        loadChildren: () => import("./chunk-R2NDVZHR.js").then((m) => m.AddServiceModule)
+        loadChildren: () => import("./chunk-HKCERK7R.js").then((m) => m.AddServiceModule)
       },
       {
         path: "edit-service/:id",
-        loadChildren: () => import("./chunk-FBAFUBWF.js").then((m) => m.EditServiceModule)
+        loadChildren: () => import("./chunk-QK3IFTOG.js").then((m) => m.EditServiceModule)
       },
       {
         path: "edit-job/:id",
-        loadChildren: () => import("./chunk-EVUXEFQB.js").then((m) => m.EditJobModule)
+        loadChildren: () => import("./chunk-THBXEJLA.js").then((m) => m.EditJobModule)
       },
       {
         path: "available-jobs",
-        loadComponent: () => import("./chunk-HDBLLJ5B.js").then((m) => m.AvailableJobsComponent)
+        loadComponent: () => import("./chunk-3LIMU2L3.js").then((m) => m.AvailableJobsComponent)
       },
       {
         path: "my-jobs-pro",
-        loadComponent: () => import("./chunk-5XTJRVW2.js").then((m) => m.MyJobsProComponent)
+        loadComponent: () => import("./chunk-VK7QOJFM.js").then((m) => m.MyJobsProComponent)
       },
       {
         path: "my-clients",
-        loadComponent: () => import("./chunk-R7AGIEBE.js").then((m) => m.MyClientsComponent),
+        loadComponent: () => import("./chunk-FOZK65OX.js").then((m) => m.MyClientsComponent),
+        canActivate: [ProGuard]
+      },
+      {
+        path: "my-users",
+        loadComponent: () => import("./chunk-RCIR225I.js").then((m) => m.MyUsersComponent),
+        canActivate: [ProGuard]
+      },
+      {
+        path: "my-businesses",
+        loadComponent: () => import("./chunk-PQEWNQIO.js").then((m) => m.MyBusinessesComponent),
         canActivate: [ProGuard]
       },
       {
         path: "my-jobs-pro/:jobId",
-        loadComponent: () => import("./chunk-V2ZBD7TW.js").then((m) => m.MyJobProDetailsComponent)
+        loadComponent: () => import("./chunk-QXISZZKL.js").then((m) => m.MyJobProDetailsComponent)
       },
       {
         path: "job-details",
-        loadComponent: () => import("./chunk-4TWPLBKD.js").then((m) => m.JobDetailsComponent)
+        loadComponent: () => import("./chunk-GEFQDWW4.js").then((m) => m.JobDetailsComponent)
       },
       {
         path: "admin-users",
-        loadComponent: () => import("./chunk-XDOX7PEF.js").then((m) => m.AdminUsersComponent),
+        loadComponent: () => import("./chunk-7625T3MF.js").then((m) => m.AdminUsersComponent),
         canActivate: [AdminGuard]
       },
       {
         path: "admin-materials",
-        loadComponent: () => import("./chunk-TOQHIOTW.js").then((m) => m.AdminMaterialsComponent),
+        loadComponent: () => import("./chunk-KYKS3AVU.js").then((m) => m.AdminMaterialsComponent),
         canActivate: [AdminGuard]
       },
       {
         path: "messages",
-        loadComponent: () => import("./chunk-WEV3JS47.js").then((m) => m.MessagesComponent),
+        loadComponent: () => import("./chunk-SUKLMB4X.js").then((m) => m.MessagesComponent),
         canActivate: [AuthGuard]
       },
       {
         path: "notifications",
-        loadComponent: () => import("./chunk-4OMEFNKY.js").then((m) => m.NotificationsComponent),
+        loadComponent: () => import("./chunk-QBEIERLG.js").then((m) => m.NotificationsComponent),
         canActivate: [AuthGuard]
       },
       {
         path: "find-a-pro",
-        loadComponent: () => import("./chunk-7MVKJ65U.js").then((m) => m.FindAProComponent)
+        loadComponent: () => import("./chunk-4LN3334H.js").then((m) => m.FindAProComponent)
       },
       {
         path: "jobs",
@@ -19200,6 +19262,12 @@ var AuthInterceptor = class _AuthInterceptor {
       request = this.attachToken(request, token);
     }
     return next.handle(request).pipe(catchError((error) => {
+      if (error.status === 503 && error.error?.maintenance === true) {
+        if (!this.router.url.startsWith("/maintenance")) {
+          this.router.navigate(["/maintenance"]);
+        }
+        return throwError(() => error);
+      }
       if (error.status === 401 && !this.isAuthUrl(request.url)) {
         return this.handle401(request, next);
       }
@@ -19291,6 +19359,26 @@ var AuthInterceptor = class _AuthInterceptor {
   }], () => [{ type: StorageService }, { type: Router }, { type: HttpBackend }], null);
 })();
 
+// src/app/core/config/runtime-config.ts
+async function loadRuntimeConfig() {
+  try {
+    const response = await fetch("config.json", { cache: "no-cache" });
+    if (!response.ok) {
+      console.warn(`config.json returned HTTP ${response.status}; using built-in defaults`);
+      return;
+    }
+    const config = await response.json();
+    if (config?.apiUrl) {
+      environment.apiUrl = config.apiUrl;
+    }
+    if (config?.hubUrl) {
+      environment.hubUrl = config.hubUrl;
+    }
+  } catch (err) {
+    console.warn("Failed to load config.json; using built-in defaults", err);
+  }
+}
+
 // src/app/app.config.ts
 var msalConfig = {
   auth: {
@@ -19302,7 +19390,8 @@ var msalConfig = {
     postLogoutRedirectUri: `${window.location.origin}/`
   },
   cache: {
-    cacheLocation: BrowserCacheLocation.LocalStorage
+    // Session-scoped so closing the window signs the user out (matches StorageService)
+    cacheLocation: BrowserCacheLocation.SessionStorage
   }
 };
 var msalInstance = new PublicClientApplication(msalConfig);
@@ -19310,6 +19399,7 @@ var appConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
+    provideAppInitializer(() => loadRuntimeConfig()),
     provideRouter(routes, withInMemoryScrolling({ scrollPositionRestoration: "top" })),
     provideClientHydration(withEventReplay()),
     provideHttpClient(withInterceptorsFromDi(), withFetch(), withXsrfConfiguration({
@@ -19356,13 +19446,6 @@ var IdleTimeoutService = class _IdleTimeoutService {
     }
     this.isInitialized = true;
     this.ngZone.runOutsideAngular(() => {
-      window.addEventListener("beforeunload", () => {
-        if (this.auth.isAuthenticated()) {
-          this.logoutOnBrowserClose();
-        }
-      });
-    });
-    this.ngZone.runOutsideAngular(() => {
       document.addEventListener("mousemove", () => this.resetIdleTimer());
       document.addEventListener("keypress", () => this.resetIdleTimer());
       document.addEventListener("click", () => this.resetIdleTimer());
@@ -19388,18 +19471,6 @@ var IdleTimeoutService = class _IdleTimeoutService {
     const destination = this.router.url.startsWith("/profile") ? "/" : "/auth/login";
     this.auth.logout();
     this.router.navigate([destination]);
-  }
-  logoutOnBrowserClose() {
-    const token = this.auth.getToken();
-    const userType = this.auth.getUserType();
-    if (token && userType) {
-      const logoutEndpoint = `${environment.apiUrl}/auth/${userType.toLowerCase()}/logout`;
-      const headers = new Headers();
-      headers.append("Content-Type", "application/json");
-      headers.append("Authorization", `Bearer ${token}`);
-      navigator.sendBeacon(logoutEndpoint, JSON.stringify({ logout: true }));
-    }
-    this.auth.logout();
   }
   stopIdleTimer() {
     if (this.idleTimer) {
@@ -19428,17 +19499,42 @@ var IdleTimeoutService = class _IdleTimeoutService {
 var App = class _App {
   idleTimeoutService;
   languageService;
+  maintenance;
+  auth;
+  router;
+  platformId;
   title = signal("prohub-ui", ...ngDevMode ? [{ debugName: "title" }] : []);
-  constructor(idleTimeoutService, languageService) {
+  constructor(idleTimeoutService, languageService, maintenance, auth, router, platformId) {
     this.idleTimeoutService = idleTimeoutService;
     this.languageService = languageService;
+    this.maintenance = maintenance;
+    this.auth = auth;
+    this.router = router;
+    this.platformId = platformId;
   }
   ngOnInit() {
     this.idleTimeoutService.startIdleTimer();
     this.languageService.init();
+    this.checkMaintenance();
+  }
+  /** On load, send non-admins to the maintenance page if the API is in maintenance. */
+  checkMaintenance() {
+    if (!isPlatformBrowser(this.platformId))
+      return;
+    if (this.auth.getUserType() === "Admin")
+      return;
+    this.maintenance.getStatus().subscribe({
+      next: (status) => {
+        if (status.enabled && !this.router.url.startsWith("/maintenance")) {
+          this.router.navigate(["/maintenance"]);
+        }
+      },
+      error: () => {
+      }
+    });
   }
   static \u0275fac = function App_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _App)(\u0275\u0275directiveInject(IdleTimeoutService), \u0275\u0275directiveInject(LanguageService));
+    return new (__ngFactoryType__ || _App)(\u0275\u0275directiveInject(IdleTimeoutService), \u0275\u0275directiveInject(LanguageService), \u0275\u0275directiveInject(MaintenanceService), \u0275\u0275directiveInject(Auth), \u0275\u0275directiveInject(Router), \u0275\u0275directiveInject(PLATFORM_ID));
   };
   static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _App, selectors: [["app-root"]], decls: 1, vars: 0, template: function App_Template(rf, ctx) {
     if (rf & 1) {
@@ -19450,10 +19546,13 @@ var App = class _App {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(App, [{
     type: Component,
     args: [{ selector: "app-root", imports: [RouterOutlet, FormsModule], template: "\r\n<router-outlet />\r\n" }]
-  }], () => [{ type: IdleTimeoutService }, { type: LanguageService }], null);
+  }], () => [{ type: IdleTimeoutService }, { type: LanguageService }, { type: MaintenanceService }, { type: Auth }, { type: Router }, { type: void 0, decorators: [{
+    type: Inject,
+    args: [PLATFORM_ID]
+  }] }], null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(App, { className: "App", filePath: "src/app/app.ts", lineNumber: 19 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(App, { className: "App", filePath: "src/app/app.ts", lineNumber: 22 });
 })();
 
 // src/main.ts

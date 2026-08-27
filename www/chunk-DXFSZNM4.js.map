@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/core/services/banner.service.ts"],
+  "sourcesContent": ["import { Injectable } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\nimport { Observable } from 'rxjs';\nimport { environment } from '../../../environments/environment';\n\nexport interface BannerStatus {\n  enabled: boolean;\n  message: string;\n}\n\n@Injectable({ providedIn: 'root' })\nexport class BannerService {\n  constructor(private http: HttpClient) {}\n\n  /** Announcement banner state, controlled from appsettings (Banner:Enabled / Banner:Message). */\n  getBanner(): Observable<BannerStatus> {\n    return this.http.get<BannerStatus>(`${environment.apiUrl}/banner`);\n  }\n}\n"],
+  "mappings": ";;;;;;;;;;;;AAWM,IAAO,gBAAP,MAAO,eAAa;EACJ;EAApB,YAAoB,MAAgB;AAAhB,SAAA,OAAA;EAAmB;;EAGvC,YAAS;AACP,WAAO,KAAK,KAAK,IAAkB,GAAG,YAAY,MAAM,SAAS;EACnE;;qCANW,gBAAa,mBAAA,UAAA,CAAA;EAAA;4EAAb,gBAAa,SAAb,eAAa,WAAA,YADA,OAAM,CAAA;;;sEACnB,eAAa,CAAA;UADzB;WAAW,EAAE,YAAY,OAAM,CAAE;;;",
+  "names": []
+}
