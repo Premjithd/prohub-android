@@ -3,21 +3,21 @@ import {
   MatListItem,
   MatListModule,
   MatNavList
-} from "./chunk-CDZ5NJNH.js";
+} from "./chunk-P5UITUIN.js";
 import {
   NotificationService,
   SignalRService
-} from "./chunk-RI6S7W2S.js";
-import "./chunk-6ZUTXK2L.js";
+} from "./chunk-YNSI3JPL.js";
+import "./chunk-K4LX4SCG.js";
 import {
   AuthGuard
-} from "./chunk-URVT3GGN.js";
-import "./chunk-WUMTGNMQ.js";
-import "./chunk-CRUBWZHU.js";
+} from "./chunk-LOABASBS.js";
+import "./chunk-SRPAS33P.js";
+import "./chunk-2JNZEYLP.js";
 import {
   MatSnackBar,
   MatSnackBarModule
-} from "./chunk-4PQFBWS5.js";
+} from "./chunk-YVVMVIYW.js";
 import {
   CdkScrollable,
   CdkScrollableModule,
@@ -30,11 +30,11 @@ import {
   createFlexibleConnectedPositionStrategy,
   createOverlayRef,
   createRepositionScrollStrategy
-} from "./chunk-VXJRTODK.js";
+} from "./chunk-DJZZSSU7.js";
 import "./chunk-UVREA7F7.js";
 import {
   MaintenanceService
-} from "./chunk-CAKNACU2.js";
+} from "./chunk-MGCJ4OMW.js";
 import {
   MatButton,
   MatButtonModule,
@@ -43,14 +43,14 @@ import {
   MatRippleModule,
   _StructuralStylesLoader,
   coerceBooleanProperty
-} from "./chunk-OO5WGF54.js";
+} from "./chunk-JRMOFBWD.js";
 import {
   _animationsDisabled
-} from "./chunk-CCCBJG6P.js";
+} from "./chunk-PNKNM5OB.js";
 import {
   MatIcon,
   MatIconModule
-} from "./chunk-RUKCNJZP.js";
+} from "./chunk-GBPGCUBR.js";
 import {
   DOWN_ARROW,
   Directionality,
@@ -74,21 +74,21 @@ import {
   hasModifierKey,
   isFakeMousedownFromScreenReader,
   isFakeTouchstartFromScreenReader
-} from "./chunk-LW3HGLL7.js";
+} from "./chunk-NIIRLI7V.js";
 import {
   FormsModule
-} from "./chunk-WDC3QMAT.js";
+} from "./chunk-BUUU66NZ.js";
 import {
   TranslateLoader,
   TranslateModule,
   TranslatePipe,
   TranslateService,
   provideTranslateService
-} from "./chunk-CESE7TJL.js";
+} from "./chunk-KRKF3QD5.js";
 import {
   Auth,
   StorageService
-} from "./chunk-SNFMA3C7.js";
+} from "./chunk-YKIUM4NK.js";
 import {
   environment
 } from "./chunk-UGJKRHBV.js";
@@ -101,7 +101,7 @@ import {
   RouterOutlet,
   provideRouter,
   withInMemoryScrolling
-} from "./chunk-BALEJLRX.js";
+} from "./chunk-F22IK7JB.js";
 import {
   ApplicationRef,
   BehaviorSubject,
@@ -226,7 +226,7 @@ import {
   ɵɵtextInterpolate,
   ɵɵtextInterpolate1,
   ɵɵviewQuery
-} from "./chunk-O3FI6JPK.js";
+} from "./chunk-CTKGZTQY.js";
 import {
   __export,
   __objRest,
@@ -19080,15 +19080,15 @@ var ProGuard = class _ProGuard {
 var routes = [
   {
     path: "maintenance",
-    loadComponent: () => import("./chunk-IHS6ZTC4.js").then((m) => m.MaintenanceComponent)
+    loadComponent: () => import("./chunk-UKXYA23Y.js").then((m) => m.MaintenanceComponent)
   },
   {
     path: "accept-admin-invite",
-    loadComponent: () => import("./chunk-ZZULEFZ4.js").then((m) => m.AcceptAdminInviteComponent)
+    loadComponent: () => import("./chunk-AJ5YA24H.js").then((m) => m.AcceptAdminInviteComponent)
   },
   {
     path: "accept-pro-user-invite",
-    loadComponent: () => import("./chunk-4ADBOOCY.js").then((m) => m.AcceptProUserInviteComponent)
+    loadComponent: () => import("./chunk-CKIPVJVT.js").then((m) => m.AcceptProUserInviteComponent)
   },
   {
     path: "",
@@ -19096,132 +19096,132 @@ var routes = [
     children: [
       {
         path: "",
-        loadChildren: () => import("./chunk-WUCHPFEM.js").then((m) => m.HomeModule)
+        loadChildren: () => import("./chunk-VCYVW5ZP.js").then((m) => m.HomeModule)
       },
       {
         path: "auth",
-        loadChildren: () => import("./chunk-HGWLAGXE.js").then((m) => m.AuthModule)
+        loadChildren: () => import("./chunk-RT6J2GBP.js").then((m) => m.AuthModule)
       },
       {
         path: "about",
-        loadChildren: () => import("./chunk-VBA2LYSP.js").then((m) => m.AboutModule)
+        loadChildren: () => import("./chunk-4ZSO3GYX.js").then((m) => m.AboutModule)
       },
       {
         path: "services",
-        loadChildren: () => import("./chunk-PVTHOZVO.js").then((m) => m.ServicesModule)
+        loadChildren: () => import("./chunk-77TLNTD2.js").then((m) => m.ServicesModule)
       },
       {
         path: "contact",
-        loadChildren: () => import("./chunk-B4SPCRP6.js").then((m) => m.ContactModule)
+        loadChildren: () => import("./chunk-SZMCFLVZ.js").then((m) => m.ContactModule)
       },
       {
         path: "profile",
-        loadChildren: () => import("./chunk-PBRJC6RF.js").then((m) => m.ProfileModule)
+        loadChildren: () => import("./chunk-SQKYWR7U.js").then((m) => m.ProfileModule)
       },
       {
         path: "settings",
-        loadComponent: () => import("./chunk-XTEHSS52.js").then((m) => m.SettingsComponent),
+        loadComponent: () => import("./chunk-KLFYVUBQ.js").then((m) => m.SettingsComponent),
         canActivate: [AuthGuard]
       },
       {
         path: "faq",
-        loadChildren: () => import("./chunk-LQKYQ5Q6.js").then((m) => m.FAQModule)
+        loadChildren: () => import("./chunk-WWXR33XT.js").then((m) => m.FAQModule)
       },
       {
         path: "terms",
-        loadComponent: () => import("./chunk-4F2BOALM.js").then((m) => m.TermsComponent)
+        loadComponent: () => import("./chunk-AMSPA5LY.js").then((m) => m.TermsComponent)
       },
       {
         path: "privacy",
-        loadComponent: () => import("./chunk-MT5S6V3S.js").then((m) => m.PrivacyComponent)
+        loadComponent: () => import("./chunk-UBOMS7RK.js").then((m) => m.PrivacyComponent)
       },
       {
         path: "post-job",
-        loadChildren: () => import("./chunk-NVVJTUYD.js").then((m) => m.PostJobModule)
+        loadChildren: () => import("./chunk-Z2XUNCJN.js").then((m) => m.PostJobModule)
       },
       {
         path: "pending-jobs",
-        loadChildren: () => import("./chunk-4RJWU7FT.js").then((m) => m.PendingJobsModule)
+        loadChildren: () => import("./chunk-S7CBB446.js").then((m) => m.PendingJobsModule)
       },
       {
         path: "my-pros",
-        loadComponent: () => import("./chunk-DZY6KDRX.js").then((m) => m.MyProsComponent),
+        loadComponent: () => import("./chunk-24AC7CRB.js").then((m) => m.MyProsComponent),
         canActivate: [AuthGuard]
       },
       {
         path: "pending-jobs/:jobId",
-        loadComponent: () => import("./chunk-AFHBHR7Y.js").then((m) => m.PendingJobDetailsComponent)
+        loadComponent: () => import("./chunk-CWRF4L2I.js").then((m) => m.PendingJobDetailsComponent)
       },
       {
         path: "my-services",
-        loadChildren: () => import("./chunk-EVMS2PXO.js").then((m) => m.MyServicesModule)
+        loadChildren: () => import("./chunk-KHAFJUIK.js").then((m) => m.MyServicesModule)
       },
       {
         path: "add-service",
-        loadChildren: () => import("./chunk-HKCERK7R.js").then((m) => m.AddServiceModule)
+        loadChildren: () => import("./chunk-AWSM5BF4.js").then((m) => m.AddServiceModule)
       },
       {
         path: "edit-service/:id",
-        loadChildren: () => import("./chunk-QK3IFTOG.js").then((m) => m.EditServiceModule)
+        loadChildren: () => import("./chunk-LAGN3EKF.js").then((m) => m.EditServiceModule)
       },
       {
         path: "edit-job/:id",
-        loadChildren: () => import("./chunk-THBXEJLA.js").then((m) => m.EditJobModule)
+        loadChildren: () => import("./chunk-JM5FHNU3.js").then((m) => m.EditJobModule)
       },
       {
         path: "available-jobs",
-        loadComponent: () => import("./chunk-3LIMU2L3.js").then((m) => m.AvailableJobsComponent)
+        loadComponent: () => import("./chunk-P3XD4M6J.js").then((m) => m.AvailableJobsComponent)
       },
       {
         path: "my-jobs-pro",
-        loadComponent: () => import("./chunk-VK7QOJFM.js").then((m) => m.MyJobsProComponent)
+        loadComponent: () => import("./chunk-QK5CDCVF.js").then((m) => m.MyJobsProComponent)
       },
       {
         path: "my-clients",
-        loadComponent: () => import("./chunk-FOZK65OX.js").then((m) => m.MyClientsComponent),
+        loadComponent: () => import("./chunk-QGQ7ILGY.js").then((m) => m.MyClientsComponent),
         canActivate: [ProGuard]
       },
       {
         path: "my-users",
-        loadComponent: () => import("./chunk-RCIR225I.js").then((m) => m.MyUsersComponent),
+        loadComponent: () => import("./chunk-PYL6IN4W.js").then((m) => m.MyUsersComponent),
         canActivate: [ProGuard]
       },
       {
         path: "my-businesses",
-        loadComponent: () => import("./chunk-PQEWNQIO.js").then((m) => m.MyBusinessesComponent),
+        loadComponent: () => import("./chunk-AECS2GDH.js").then((m) => m.MyBusinessesComponent),
         canActivate: [ProGuard]
       },
       {
         path: "my-jobs-pro/:jobId",
-        loadComponent: () => import("./chunk-QXISZZKL.js").then((m) => m.MyJobProDetailsComponent)
+        loadComponent: () => import("./chunk-ZVXYY65V.js").then((m) => m.MyJobProDetailsComponent)
       },
       {
         path: "job-details",
-        loadComponent: () => import("./chunk-GEFQDWW4.js").then((m) => m.JobDetailsComponent)
+        loadComponent: () => import("./chunk-I3AW2REQ.js").then((m) => m.JobDetailsComponent)
       },
       {
         path: "admin-users",
-        loadComponent: () => import("./chunk-7625T3MF.js").then((m) => m.AdminUsersComponent),
+        loadComponent: () => import("./chunk-E53O4UEA.js").then((m) => m.AdminUsersComponent),
         canActivate: [AdminGuard]
       },
       {
         path: "admin-materials",
-        loadComponent: () => import("./chunk-KYKS3AVU.js").then((m) => m.AdminMaterialsComponent),
+        loadComponent: () => import("./chunk-X422XMED.js").then((m) => m.AdminMaterialsComponent),
         canActivate: [AdminGuard]
       },
       {
         path: "messages",
-        loadComponent: () => import("./chunk-SUKLMB4X.js").then((m) => m.MessagesComponent),
+        loadComponent: () => import("./chunk-BIFPVUIU.js").then((m) => m.MessagesComponent),
         canActivate: [AuthGuard]
       },
       {
         path: "notifications",
-        loadComponent: () => import("./chunk-QBEIERLG.js").then((m) => m.NotificationsComponent),
+        loadComponent: () => import("./chunk-LJYQK3KB.js").then((m) => m.NotificationsComponent),
         canActivate: [AuthGuard]
       },
       {
         path: "find-a-pro",
-        loadComponent: () => import("./chunk-4LN3334H.js").then((m) => m.FindAProComponent)
+        loadComponent: () => import("./chunk-NUKDQ3SE.js").then((m) => m.FindAProComponent)
       },
       {
         path: "jobs",

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/services/file-upload.service.ts"],
+  "sourcesContent": ["import { Injectable } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\nimport { Observable } from 'rxjs';\nimport { environment } from '../../environments/environment';\n\nexport interface UploadedFile {\n  fileId: string;\n  url: string;\n}\n\n@Injectable({ providedIn: 'root' })\nexport class FileUploadService {\n  private apiUrl = `${environment.apiUrl}/files`;\n\n  constructor(private http: HttpClient) {}\n\n  /** Upload a single file; returns its stored id and public URL. */\n  upload(file: File): Observable<UploadedFile> {\n    const form = new FormData();\n    form.append('file', file);\n    return this.http.post<UploadedFile>(`${this.apiUrl}/upload`, form);\n  }\n\n  /** Public URL for a previously-stored file id. */\n  fileUrl(fileId: string): string {\n    return `${this.apiUrl}/${fileId}`;\n  }\n}\n"],
+  "mappings": ";;;;;;;;;;;;AAWM,IAAO,oBAAP,MAAO,mBAAiB;EAGR;EAFZ,SAAS,GAAG,YAAY,MAAM;EAEtC,YAAoB,MAAgB;AAAhB,SAAA,OAAA;EAAmB;;EAGvC,OAAO,MAAU;AACf,UAAM,OAAO,IAAI,SAAQ;AACzB,SAAK,OAAO,QAAQ,IAAI;AACxB,WAAO,KAAK,KAAK,KAAmB,GAAG,KAAK,MAAM,WAAW,IAAI;EACnE;;EAGA,QAAQ,QAAc;AACpB,WAAO,GAAG,KAAK,MAAM,IAAI,MAAM;EACjC;;qCAfW,oBAAiB,mBAAA,UAAA,CAAA;EAAA;4EAAjB,oBAAiB,SAAjB,mBAAiB,WAAA,YADJ,OAAM,CAAA;;;sEACnB,mBAAiB,CAAA;UAD7B;WAAW,EAAE,YAAY,OAAM,CAAE;;;",
+  "names": []
+}
