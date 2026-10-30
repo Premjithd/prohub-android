@@ -17815,12 +17815,34 @@ var NavbarComponent = class _NavbarComponent {
 
 // src/app/layout/sidebar/sidebar.ts
 var _c04 = () => ({ exact: true });
-function SidebarComponent_a_13_Template(rf, ctx) {
+function SidebarComponent_a_7_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = \u0275\u0275getCurrentView();
     \u0275\u0275elementStart(0, "a", 6);
-    \u0275\u0275listener("click", function SidebarComponent_a_13_Template_a_click_0_listener() {
+    \u0275\u0275listener("click", function SidebarComponent_a_7_Template_a_click_0_listener() {
       \u0275\u0275restoreView(_r1);
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
+    });
+    \u0275\u0275elementStart(1, "mat-icon");
+    \u0275\u0275text(2, "work");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "span");
+    \u0275\u0275text(4);
+    \u0275\u0275pipe(5, "translate");
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    \u0275\u0275advance(4);
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(5, 1, "NAV.SERVICES"));
+  }
+}
+function SidebarComponent_a_8_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r3 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "a", 7);
+    \u0275\u0275listener("click", function SidebarComponent_a_8_Template_a_click_0_listener() {
+      \u0275\u0275restoreView(_r3);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
     });
@@ -17837,13 +17859,13 @@ function SidebarComponent_a_13_Template(rf, ctx) {
     \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(5, 1, "NAV.FIND_A_PRO"));
   }
 }
-function SidebarComponent_ng_container_27_Template(rf, ctx) {
+function SidebarComponent_ng_container_22_Template(rf, ctx) {
   if (rf & 1) {
-    const _r3 = \u0275\u0275getCurrentView();
+    const _r4 = \u0275\u0275getCurrentView();
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "a", 7);
-    \u0275\u0275listener("click", function SidebarComponent_ng_container_27_Template_a_click_1_listener() {
-      \u0275\u0275restoreView(_r3);
+    \u0275\u0275elementStart(1, "a", 8);
+    \u0275\u0275listener("click", function SidebarComponent_ng_container_22_Template_a_click_1_listener() {
+      \u0275\u0275restoreView(_r4);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
     });
@@ -17854,9 +17876,9 @@ function SidebarComponent_ng_container_27_Template(rf, ctx) {
     \u0275\u0275text(5);
     \u0275\u0275pipe(6, "translate");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(7, "a", 8);
-    \u0275\u0275listener("click", function SidebarComponent_ng_container_27_Template_a_click_7_listener() {
-      \u0275\u0275restoreView(_r3);
+    \u0275\u0275elementStart(7, "a", 9);
+    \u0275\u0275listener("click", function SidebarComponent_ng_container_22_Template_a_click_7_listener() {
+      \u0275\u0275restoreView(_r4);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
     });
@@ -17876,12 +17898,12 @@ function SidebarComponent_ng_container_27_Template(rf, ctx) {
     \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(12, 4, "NAV.REGISTER"));
   }
 }
-function SidebarComponent_ng_container_28_a_1_Template(rf, ctx) {
+function SidebarComponent_ng_container_23_a_1_Template(rf, ctx) {
   if (rf & 1) {
-    const _r5 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "a", 19);
-    \u0275\u0275listener("click", function SidebarComponent_ng_container_28_a_1_Template_a_click_0_listener() {
-      \u0275\u0275restoreView(_r5);
+    const _r6 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "a", 20);
+    \u0275\u0275listener("click", function SidebarComponent_ng_container_23_a_1_Template_a_click_0_listener() {
+      \u0275\u0275restoreView(_r6);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
     });
@@ -17898,12 +17920,12 @@ function SidebarComponent_ng_container_28_a_1_Template(rf, ctx) {
     \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(5, 1, "NAV.ADMIN_DASHBOARD"));
   }
 }
-function SidebarComponent_ng_container_28_a_2_Template(rf, ctx) {
+function SidebarComponent_ng_container_23_a_2_Template(rf, ctx) {
   if (rf & 1) {
-    const _r6 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "a", 20);
-    \u0275\u0275listener("click", function SidebarComponent_ng_container_28_a_2_Template_a_click_0_listener() {
-      \u0275\u0275restoreView(_r6);
+    const _r7 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "a", 21);
+    \u0275\u0275listener("click", function SidebarComponent_ng_container_23_a_2_Template_a_click_0_listener() {
+      \u0275\u0275restoreView(_r7);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
     });
@@ -17920,17 +17942,17 @@ function SidebarComponent_ng_container_28_a_2_Template(rf, ctx) {
     \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(5, 1, "NAV.MATERIALS"));
   }
 }
-function SidebarComponent_ng_container_28_mat_divider_3_Template(rf, ctx) {
+function SidebarComponent_ng_container_23_mat_divider_3_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275element(0, "mat-divider");
   }
 }
-function SidebarComponent_ng_container_28_a_4_Template(rf, ctx) {
+function SidebarComponent_ng_container_23_a_4_Template(rf, ctx) {
   if (rf & 1) {
-    const _r7 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "a", 21);
-    \u0275\u0275listener("click", function SidebarComponent_ng_container_28_a_4_Template_a_click_0_listener() {
-      \u0275\u0275restoreView(_r7);
+    const _r8 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "a", 22);
+    \u0275\u0275listener("click", function SidebarComponent_ng_container_23_a_4_Template_a_click_0_listener() {
+      \u0275\u0275restoreView(_r8);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
     });
@@ -17947,12 +17969,12 @@ function SidebarComponent_ng_container_28_a_4_Template(rf, ctx) {
     \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(5, 1, "NAV.MY_JOBS"));
   }
 }
-function SidebarComponent_ng_container_28_a_5_Template(rf, ctx) {
+function SidebarComponent_ng_container_23_a_5_Template(rf, ctx) {
   if (rf & 1) {
-    const _r8 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "a", 22);
-    \u0275\u0275listener("click", function SidebarComponent_ng_container_28_a_5_Template_a_click_0_listener() {
-      \u0275\u0275restoreView(_r8);
+    const _r9 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "a", 23);
+    \u0275\u0275listener("click", function SidebarComponent_ng_container_23_a_5_Template_a_click_0_listener() {
+      \u0275\u0275restoreView(_r9);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
     });
@@ -17969,12 +17991,12 @@ function SidebarComponent_ng_container_28_a_5_Template(rf, ctx) {
     \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(5, 1, "NAV.ASSIGNED_JOBS"));
   }
 }
-function SidebarComponent_ng_container_28_a_6_Template(rf, ctx) {
+function SidebarComponent_ng_container_23_a_6_Template(rf, ctx) {
   if (rf & 1) {
-    const _r9 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "a", 23);
-    \u0275\u0275listener("click", function SidebarComponent_ng_container_28_a_6_Template_a_click_0_listener() {
-      \u0275\u0275restoreView(_r9);
+    const _r10 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "a", 24);
+    \u0275\u0275listener("click", function SidebarComponent_ng_container_23_a_6_Template_a_click_0_listener() {
+      \u0275\u0275restoreView(_r10);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
     });
@@ -17991,12 +18013,12 @@ function SidebarComponent_ng_container_28_a_6_Template(rf, ctx) {
     \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(5, 1, "NAV.AVAILABLE_JOBS"));
   }
 }
-function SidebarComponent_ng_container_28_a_7_Template(rf, ctx) {
+function SidebarComponent_ng_container_23_a_7_Template(rf, ctx) {
   if (rf & 1) {
-    const _r10 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "a", 24);
-    \u0275\u0275listener("click", function SidebarComponent_ng_container_28_a_7_Template_a_click_0_listener() {
-      \u0275\u0275restoreView(_r10);
+    const _r11 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "a", 25);
+    \u0275\u0275listener("click", function SidebarComponent_ng_container_23_a_7_Template_a_click_0_listener() {
+      \u0275\u0275restoreView(_r11);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
     });
@@ -18013,12 +18035,12 @@ function SidebarComponent_ng_container_28_a_7_Template(rf, ctx) {
     \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(5, 1, "NAV.MY_SERVICES"));
   }
 }
-function SidebarComponent_ng_container_28_a_8_Template(rf, ctx) {
+function SidebarComponent_ng_container_23_a_8_Template(rf, ctx) {
   if (rf & 1) {
-    const _r11 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "a", 25);
-    \u0275\u0275listener("click", function SidebarComponent_ng_container_28_a_8_Template_a_click_0_listener() {
-      \u0275\u0275restoreView(_r11);
+    const _r12 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "a", 26);
+    \u0275\u0275listener("click", function SidebarComponent_ng_container_23_a_8_Template_a_click_0_listener() {
+      \u0275\u0275restoreView(_r12);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
     });
@@ -18035,12 +18057,12 @@ function SidebarComponent_ng_container_28_a_8_Template(rf, ctx) {
     \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(5, 1, "NAV.ADD_SERVICE"));
   }
 }
-function SidebarComponent_ng_container_28_a_9_Template(rf, ctx) {
+function SidebarComponent_ng_container_23_a_9_Template(rf, ctx) {
   if (rf & 1) {
-    const _r12 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "a", 26);
-    \u0275\u0275listener("click", function SidebarComponent_ng_container_28_a_9_Template_a_click_0_listener() {
-      \u0275\u0275restoreView(_r12);
+    const _r13 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "a", 27);
+    \u0275\u0275listener("click", function SidebarComponent_ng_container_23_a_9_Template_a_click_0_listener() {
+      \u0275\u0275restoreView(_r13);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
     });
@@ -18057,12 +18079,12 @@ function SidebarComponent_ng_container_28_a_9_Template(rf, ctx) {
     \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(5, 1, "NAV.POST_JOB"));
   }
 }
-function SidebarComponent_ng_container_28_a_16_Template(rf, ctx) {
+function SidebarComponent_ng_container_23_a_16_Template(rf, ctx) {
   if (rf & 1) {
-    const _r13 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "a", 27);
-    \u0275\u0275listener("click", function SidebarComponent_ng_container_28_a_16_Template_a_click_0_listener() {
-      \u0275\u0275restoreView(_r13);
+    const _r14 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "a", 28);
+    \u0275\u0275listener("click", function SidebarComponent_ng_container_23_a_16_Template_a_click_0_listener() {
+      \u0275\u0275restoreView(_r14);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
     });
@@ -18079,14 +18101,14 @@ function SidebarComponent_ng_container_28_a_16_Template(rf, ctx) {
     \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(5, 1, "NAV.MESSAGES"));
   }
 }
-function SidebarComponent_ng_container_28_Template(rf, ctx) {
+function SidebarComponent_ng_container_23_Template(rf, ctx) {
   if (rf & 1) {
-    const _r4 = \u0275\u0275getCurrentView();
+    const _r5 = \u0275\u0275getCurrentView();
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275template(1, SidebarComponent_ng_container_28_a_1_Template, 6, 3, "a", 9)(2, SidebarComponent_ng_container_28_a_2_Template, 6, 3, "a", 10)(3, SidebarComponent_ng_container_28_mat_divider_3_Template, 1, 0, "mat-divider", 5)(4, SidebarComponent_ng_container_28_a_4_Template, 6, 3, "a", 11)(5, SidebarComponent_ng_container_28_a_5_Template, 6, 3, "a", 12)(6, SidebarComponent_ng_container_28_a_6_Template, 6, 3, "a", 13)(7, SidebarComponent_ng_container_28_a_7_Template, 6, 3, "a", 14)(8, SidebarComponent_ng_container_28_a_8_Template, 6, 3, "a", 15)(9, SidebarComponent_ng_container_28_a_9_Template, 6, 3, "a", 16);
-    \u0275\u0275elementStart(10, "a", 17);
-    \u0275\u0275listener("click", function SidebarComponent_ng_container_28_Template_a_click_10_listener() {
-      \u0275\u0275restoreView(_r4);
+    \u0275\u0275template(1, SidebarComponent_ng_container_23_a_1_Template, 6, 3, "a", 10)(2, SidebarComponent_ng_container_23_a_2_Template, 6, 3, "a", 11)(3, SidebarComponent_ng_container_23_mat_divider_3_Template, 1, 0, "mat-divider", 5)(4, SidebarComponent_ng_container_23_a_4_Template, 6, 3, "a", 12)(5, SidebarComponent_ng_container_23_a_5_Template, 6, 3, "a", 13)(6, SidebarComponent_ng_container_23_a_6_Template, 6, 3, "a", 14)(7, SidebarComponent_ng_container_23_a_7_Template, 6, 3, "a", 15)(8, SidebarComponent_ng_container_23_a_8_Template, 6, 3, "a", 16)(9, SidebarComponent_ng_container_23_a_9_Template, 6, 3, "a", 17);
+    \u0275\u0275elementStart(10, "a", 18);
+    \u0275\u0275listener("click", function SidebarComponent_ng_container_23_Template_a_click_10_listener() {
+      \u0275\u0275restoreView(_r5);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.onMenuItemClick());
     });
@@ -18097,7 +18119,7 @@ function SidebarComponent_ng_container_28_Template(rf, ctx) {
     \u0275\u0275text(14);
     \u0275\u0275pipe(15, "translate");
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(16, SidebarComponent_ng_container_28_a_16_Template, 6, 3, "a", 18);
+    \u0275\u0275template(16, SidebarComponent_ng_container_23_a_16_Template, 6, 3, "a", 19);
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
@@ -18144,7 +18166,7 @@ var SidebarComponent = class _SidebarComponent {
   static \u0275fac = function SidebarComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _SidebarComponent)(\u0275\u0275directiveInject(Auth));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SidebarComponent, selectors: [["app-sidebar"]], outputs: { menuItemClicked: "menuItemClicked" }, decls: 29, vars: 17, consts: [["mat-list-item", "", "routerLink", "/", "routerLinkActive", "active", 3, "click", "routerLinkActiveOptions"], ["mat-list-item", "", "routerLink", "/services", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/find-a-pro", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/about", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/contact", "routerLinkActive", "active", 3, "click"], [4, "ngIf"], ["mat-list-item", "", "routerLink", "/find-a-pro", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/auth/login", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/auth/register", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/admin-users", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/admin-materials", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/pending-jobs", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/my-jobs-pro", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/available-jobs", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/my-services", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/add-service", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/post-job", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/profile", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/messages", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/admin-users", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/admin-materials", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/pending-jobs", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/my-jobs-pro", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/available-jobs", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/my-services", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/add-service", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/post-job", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/messages", "routerLinkActive", "active", 3, "click"]], template: function SidebarComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SidebarComponent, selectors: [["app-sidebar"]], outputs: { menuItemClicked: "menuItemClicked" }, decls: 24, vars: 15, consts: [["mat-list-item", "", "routerLink", "/", "routerLinkActive", "active", 3, "click", "routerLinkActiveOptions"], ["mat-list-item", "", "routerLink", "/services", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/find-a-pro", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/about", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/contact", "routerLinkActive", "active", 3, "click"], [4, "ngIf"], ["mat-list-item", "", "routerLink", "/services", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/find-a-pro", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/auth/login", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/auth/register", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/admin-users", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/admin-materials", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/pending-jobs", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/my-jobs-pro", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/available-jobs", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/my-services", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/add-service", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/post-job", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/profile", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/messages", "routerLinkActive", "active", 3, "click", 4, "ngIf"], ["mat-list-item", "", "routerLink", "/admin-users", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/admin-materials", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/pending-jobs", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/my-jobs-pro", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/available-jobs", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/my-services", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/add-service", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/post-job", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "/messages", "routerLinkActive", "active", 3, "click"]], template: function SidebarComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "mat-nav-list")(1, "a", 0);
       \u0275\u0275listener("click", function SidebarComponent_Template_a_click_1_listener() {
@@ -18157,57 +18179,46 @@ var SidebarComponent = class _SidebarComponent {
       \u0275\u0275text(5);
       \u0275\u0275pipe(6, "translate");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(7, "a", 1);
-      \u0275\u0275listener("click", function SidebarComponent_Template_a_click_7_listener() {
+      \u0275\u0275template(7, SidebarComponent_a_7_Template, 6, 3, "a", 1)(8, SidebarComponent_a_8_Template, 6, 3, "a", 2);
+      \u0275\u0275elementStart(9, "a", 3);
+      \u0275\u0275listener("click", function SidebarComponent_Template_a_click_9_listener() {
         return ctx.onMenuItemClick();
       });
-      \u0275\u0275elementStart(8, "mat-icon");
-      \u0275\u0275text(9, "work");
+      \u0275\u0275elementStart(10, "mat-icon");
+      \u0275\u0275text(11, "info");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(10, "span");
-      \u0275\u0275text(11);
-      \u0275\u0275pipe(12, "translate");
+      \u0275\u0275elementStart(12, "span");
+      \u0275\u0275text(13);
+      \u0275\u0275pipe(14, "translate");
       \u0275\u0275elementEnd()();
-      \u0275\u0275template(13, SidebarComponent_a_13_Template, 6, 3, "a", 2);
-      \u0275\u0275elementStart(14, "a", 3);
-      \u0275\u0275listener("click", function SidebarComponent_Template_a_click_14_listener() {
+      \u0275\u0275elementStart(15, "a", 4);
+      \u0275\u0275listener("click", function SidebarComponent_Template_a_click_15_listener() {
         return ctx.onMenuItemClick();
       });
-      \u0275\u0275elementStart(15, "mat-icon");
-      \u0275\u0275text(16, "info");
+      \u0275\u0275elementStart(16, "mat-icon");
+      \u0275\u0275text(17, "contact_support");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(17, "span");
-      \u0275\u0275text(18);
-      \u0275\u0275pipe(19, "translate");
+      \u0275\u0275elementStart(18, "span");
+      \u0275\u0275text(19);
+      \u0275\u0275pipe(20, "translate");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(20, "a", 4);
-      \u0275\u0275listener("click", function SidebarComponent_Template_a_click_20_listener() {
-        return ctx.onMenuItemClick();
-      });
-      \u0275\u0275elementStart(21, "mat-icon");
-      \u0275\u0275text(22, "contact_support");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(23, "span");
-      \u0275\u0275text(24);
-      \u0275\u0275pipe(25, "translate");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275element(26, "mat-divider");
-      \u0275\u0275template(27, SidebarComponent_ng_container_27_Template, 13, 6, "ng-container", 5)(28, SidebarComponent_ng_container_28_Template, 17, 13, "ng-container", 5);
+      \u0275\u0275element(21, "mat-divider");
+      \u0275\u0275template(22, SidebarComponent_ng_container_22_Template, 13, 6, "ng-container", 5)(23, SidebarComponent_ng_container_23_Template, 17, 13, "ng-container", 5);
       \u0275\u0275elementEnd();
     }
     if (rf & 2) {
       \u0275\u0275advance();
-      \u0275\u0275property("routerLinkActiveOptions", \u0275\u0275pureFunction0(16, _c04));
+      \u0275\u0275property("routerLinkActiveOptions", \u0275\u0275pureFunction0(14, _c04));
       \u0275\u0275advance(4);
       \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(6, 8, "NAV.HOME"));
-      \u0275\u0275advance(6);
-      \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(12, 10, "NAV.SERVICES"));
       \u0275\u0275advance(2);
+      \u0275\u0275property("ngIf", !ctx.isProUser());
+      \u0275\u0275advance();
       \u0275\u0275property("ngIf", !ctx.isProUser() && !ctx.isAdmin());
       \u0275\u0275advance(5);
-      \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(19, 12, "NAV.ABOUT"));
+      \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(14, 10, "NAV.ABOUT"));
       \u0275\u0275advance(6);
-      \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(25, 14, "NAV.CONTACT"));
+      \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(20, 12, "NAV.CONTACT"));
       \u0275\u0275advance(3);
       \u0275\u0275property("ngIf", !ctx.auth.isAuthenticated());
       \u0275\u0275advance();
@@ -18224,106 +18235,106 @@ var SidebarComponent = class _SidebarComponent {
       MatListModule,
       MatIconModule,
       TranslateModule
-    ], template: `<mat-nav-list>
-  <a mat-list-item routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="onMenuItemClick()">
-    <mat-icon>home</mat-icon>
-    <span>{{ 'NAV.HOME' | translate }}</span>
-  </a>
-
-  <a mat-list-item routerLink="/services" routerLinkActive="active" (click)="onMenuItemClick()">
-    <mat-icon>work</mat-icon>
-    <span>{{ 'NAV.SERVICES' | translate }}</span>
-  </a>
-
-  <a *ngIf="!isProUser() && !isAdmin()" mat-list-item routerLink="/find-a-pro" routerLinkActive="active" (click)="onMenuItemClick()">
-    <mat-icon>engineering</mat-icon>
-    <span>{{ 'NAV.FIND_A_PRO' | translate }}</span>
-  </a>
-
-  <a mat-list-item routerLink="/about" routerLinkActive="active" (click)="onMenuItemClick()">
-    <mat-icon>info</mat-icon>
-    <span>{{ 'NAV.ABOUT' | translate }}</span>
-  </a>
-
-  <a mat-list-item routerLink="/contact" routerLinkActive="active" (click)="onMenuItemClick()">
-    <mat-icon>contact_support</mat-icon>
-    <span>{{ 'NAV.CONTACT' | translate }}</span>
-  </a>
-
-  <mat-divider></mat-divider>
-
-  <ng-container *ngIf="!auth.isAuthenticated()">
-    <a mat-list-item routerLink="/auth/login" routerLinkActive="active" (click)="onMenuItemClick()">
-      <mat-icon>login</mat-icon>
-      <span>{{ 'NAV.LOGIN' | translate }}</span>
-    </a>
-
-    <a mat-list-item routerLink="/auth/register" routerLinkActive="active" (click)="onMenuItemClick()">
-      <mat-icon>person_add</mat-icon>
-      <span>{{ 'NAV.REGISTER' | translate }}</span>
-    </a>
-  </ng-container>
-
-  <ng-container *ngIf="auth.isAuthenticated()">
-    <!-- Admin links -->
-    <a *ngIf="isAdmin()" mat-list-item routerLink="/admin-users" routerLinkActive="active" (click)="onMenuItemClick()">
-      <mat-icon>admin_panel_settings</mat-icon>
-      <span>{{ 'NAV.ADMIN_DASHBOARD' | translate }}</span>
-    </a>
-    <a *ngIf="isAdmin()" mat-list-item routerLink="/admin-materials" routerLinkActive="active" (click)="onMenuItemClick()">
-      <mat-icon>inventory_2</mat-icon>
-      <span>{{ 'NAV.MATERIALS' | translate }}</span>
-    </a>
-
-    <mat-divider *ngIf="isAdmin()"></mat-divider>
-
-    <!-- Show "My Jobs" for regular users -->
-    <a *ngIf="!isProUser() && !isAdmin()" mat-list-item routerLink="/pending-jobs" routerLinkActive="active" (click)="onMenuItemClick()">
-      <mat-icon>assignment</mat-icon>
-      <span>{{ 'NAV.MY_JOBS' | translate }}</span>
-    </a>
-
-    <!-- Show "My Jobs" link for Pro users (assigned jobs) -->
-    <a *ngIf="isProUser()" mat-list-item routerLink="/my-jobs-pro" routerLinkActive="active" (click)="onMenuItemClick()">
-      <mat-icon>task_alt</mat-icon>
-      <span>{{ 'NAV.ASSIGNED_JOBS' | translate }}</span>
-    </a>
-
-    <!-- Show "Available Jobs" link for Pro users -->
-    <a *ngIf="isProUser()" mat-list-item routerLink="/available-jobs" routerLinkActive="active" (click)="onMenuItemClick()">
-      <mat-icon>assignment</mat-icon>
-      <span>{{ 'NAV.AVAILABLE_JOBS' | translate }}</span>
-    </a>
-
-    <!-- Show "My Services" for Pro users -->
-    <a *ngIf="isProUser()" mat-list-item routerLink="/my-services" routerLinkActive="active" (click)="onMenuItemClick()">
-      <mat-icon>build</mat-icon>
-      <span>{{ 'NAV.MY_SERVICES' | translate }}</span>
-    </a>
-
-    <!-- Show "Add Service" link for Pro users -->
-    <a *ngIf="isProUser()" mat-list-item routerLink="/add-service" routerLinkActive="active" (click)="onMenuItemClick()">
-      <mat-icon>add_circle</mat-icon>
-      <span>{{ 'NAV.ADD_SERVICE' | translate }}</span>
-    </a>
-
-    <!-- Show "Post Job" link for regular users only -->
-    <a *ngIf="!isProUser() && !isAdmin()" mat-list-item routerLink="/post-job" routerLinkActive="active" (click)="onMenuItemClick()">
-      <mat-icon>add_circle</mat-icon>
-      <span>{{ 'NAV.POST_JOB' | translate }}</span>
-    </a>
-
-    <a mat-list-item routerLink="/profile" routerLinkActive="active" (click)="onMenuItemClick()">
-      <mat-icon>person</mat-icon>
-      <span>{{ 'NAV.PROFILE' | translate }}</span>
-    </a>
-
-    <a *ngIf="!isAdmin()" mat-list-item routerLink="/messages" routerLinkActive="active" (click)="onMenuItemClick()">
-      <mat-icon>mail</mat-icon>
-      <span>{{ 'NAV.MESSAGES' | translate }}</span>
-    </a>
-  </ng-container>
-</mat-nav-list>
+    ], template: `<mat-nav-list>\r
+  <a mat-list-item routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="onMenuItemClick()">\r
+    <mat-icon>home</mat-icon>\r
+    <span>{{ 'NAV.HOME' | translate }}</span>\r
+  </a>\r
+\r
+  <a *ngIf="!isProUser()" mat-list-item routerLink="/services" routerLinkActive="active" (click)="onMenuItemClick()">\r
+    <mat-icon>work</mat-icon>\r
+    <span>{{ 'NAV.SERVICES' | translate }}</span>\r
+  </a>\r
+\r
+  <a *ngIf="!isProUser() && !isAdmin()" mat-list-item routerLink="/find-a-pro" routerLinkActive="active" (click)="onMenuItemClick()">\r
+    <mat-icon>engineering</mat-icon>\r
+    <span>{{ 'NAV.FIND_A_PRO' | translate }}</span>\r
+  </a>\r
+\r
+  <a mat-list-item routerLink="/about" routerLinkActive="active" (click)="onMenuItemClick()">\r
+    <mat-icon>info</mat-icon>\r
+    <span>{{ 'NAV.ABOUT' | translate }}</span>\r
+  </a>\r
+\r
+  <a mat-list-item routerLink="/contact" routerLinkActive="active" (click)="onMenuItemClick()">\r
+    <mat-icon>contact_support</mat-icon>\r
+    <span>{{ 'NAV.CONTACT' | translate }}</span>\r
+  </a>\r
+\r
+  <mat-divider></mat-divider>\r
+\r
+  <ng-container *ngIf="!auth.isAuthenticated()">\r
+    <a mat-list-item routerLink="/auth/login" routerLinkActive="active" (click)="onMenuItemClick()">\r
+      <mat-icon>login</mat-icon>\r
+      <span>{{ 'NAV.LOGIN' | translate }}</span>\r
+    </a>\r
+\r
+    <a mat-list-item routerLink="/auth/register" routerLinkActive="active" (click)="onMenuItemClick()">\r
+      <mat-icon>person_add</mat-icon>\r
+      <span>{{ 'NAV.REGISTER' | translate }}</span>\r
+    </a>\r
+  </ng-container>\r
+\r
+  <ng-container *ngIf="auth.isAuthenticated()">\r
+    <!-- Admin links -->\r
+    <a *ngIf="isAdmin()" mat-list-item routerLink="/admin-users" routerLinkActive="active" (click)="onMenuItemClick()">\r
+      <mat-icon>admin_panel_settings</mat-icon>\r
+      <span>{{ 'NAV.ADMIN_DASHBOARD' | translate }}</span>\r
+    </a>\r
+    <a *ngIf="isAdmin()" mat-list-item routerLink="/admin-materials" routerLinkActive="active" (click)="onMenuItemClick()">\r
+      <mat-icon>inventory_2</mat-icon>\r
+      <span>{{ 'NAV.MATERIALS' | translate }}</span>\r
+    </a>\r
+\r
+    <mat-divider *ngIf="isAdmin()"></mat-divider>\r
+\r
+    <!-- Show "My Jobs" for regular users -->\r
+    <a *ngIf="!isProUser() && !isAdmin()" mat-list-item routerLink="/pending-jobs" routerLinkActive="active" (click)="onMenuItemClick()">\r
+      <mat-icon>assignment</mat-icon>\r
+      <span>{{ 'NAV.MY_JOBS' | translate }}</span>\r
+    </a>\r
+\r
+    <!-- Show "My Jobs" link for Pro users (assigned jobs) -->\r
+    <a *ngIf="isProUser()" mat-list-item routerLink="/my-jobs-pro" routerLinkActive="active" (click)="onMenuItemClick()">\r
+      <mat-icon>task_alt</mat-icon>\r
+      <span>{{ 'NAV.ASSIGNED_JOBS' | translate }}</span>\r
+    </a>\r
+\r
+    <!-- Show "Available Jobs" link for Pro users -->\r
+    <a *ngIf="isProUser()" mat-list-item routerLink="/available-jobs" routerLinkActive="active" (click)="onMenuItemClick()">\r
+      <mat-icon>assignment</mat-icon>\r
+      <span>{{ 'NAV.AVAILABLE_JOBS' | translate }}</span>\r
+    </a>\r
+\r
+    <!-- Show "My Services" for Pro users -->\r
+    <a *ngIf="isProUser()" mat-list-item routerLink="/my-services" routerLinkActive="active" (click)="onMenuItemClick()">\r
+      <mat-icon>build</mat-icon>\r
+      <span>{{ 'NAV.MY_SERVICES' | translate }}</span>\r
+    </a>\r
+\r
+    <!-- Show "Add Service" link for Pro users -->\r
+    <a *ngIf="isProUser()" mat-list-item routerLink="/add-service" routerLinkActive="active" (click)="onMenuItemClick()">\r
+      <mat-icon>add_circle</mat-icon>\r
+      <span>{{ 'NAV.ADD_SERVICE' | translate }}</span>\r
+    </a>\r
+\r
+    <!-- Show "Post Job" link for regular users only -->\r
+    <a *ngIf="!isProUser() && !isAdmin()" mat-list-item routerLink="/post-job" routerLinkActive="active" (click)="onMenuItemClick()">\r
+      <mat-icon>add_circle</mat-icon>\r
+      <span>{{ 'NAV.POST_JOB' | translate }}</span>\r
+    </a>\r
+\r
+    <a mat-list-item routerLink="/profile" routerLinkActive="active" (click)="onMenuItemClick()">\r
+      <mat-icon>person</mat-icon>\r
+      <span>{{ 'NAV.PROFILE' | translate }}</span>\r
+    </a>\r
+\r
+    <a *ngIf="!isAdmin()" mat-list-item routerLink="/messages" routerLinkActive="active" (click)="onMenuItemClick()">\r
+      <mat-icon>mail</mat-icon>\r
+      <span>{{ 'NAV.MESSAGES' | translate }}</span>\r
+    </a>\r
+  </ng-container>\r
+</mat-nav-list>\r
 `, styles: ["/* src/app/layout/sidebar/sidebar.scss */\nmat-nav-list {\n  width: 250px;\n  padding-top: 1rem;\n  background:\n    linear-gradient(\n      180deg,\n      #f5f7fa 0%,\n      #eef2f8 100%);\n  min-height: 100vh;\n  box-shadow: inset -2px 0 10px rgba(102, 126, 234, 0.08);\n}\n.mat-list-item.active {\n  background:\n    linear-gradient(\n      90deg,\n      rgba(102, 126, 234, 0.15) 0%,\n      rgba(102, 126, 234, 0.05) 100%);\n  color: #667eea;\n  font-weight: 500;\n  border-left: 4px solid #667eea;\n  padding-left: calc(1rem - 4px) !important;\n}\n.mat-list-item:hover:not(.active) {\n  background-color: rgba(102, 126, 234, 0.08);\n  transition: all 0.3s ease;\n}\n.mat-list-item.sub-item {\n  font-size: 0.9rem;\n  padding-left: 1rem;\n  background-color: rgba(0, 0, 0, 0.02);\n}\n.mat-list-item.sub-item:hover {\n  background-color: rgba(102, 126, 234, 0.08);\n}\n.mat-list-item.sub-item.active {\n  background-color: rgba(102, 126, 234, 0.15);\n  color: #667eea;\n  border-left: 4px solid #667eea;\n  padding-left: calc(1rem - 4px) !important;\n}\nmat-icon {\n  margin-right: 1rem;\n}\nmat-divider {\n  margin: 1rem 0;\n}\n/*# sourceMappingURL=sidebar.css.map */\n"] }]
   }], () => [{ type: Auth }], { menuItemClicked: [{
     type: Output
@@ -19096,11 +19107,11 @@ var routes = [
     children: [
       {
         path: "",
-        loadChildren: () => import("./chunk-VCYVW5ZP.js").then((m) => m.HomeModule)
+        loadChildren: () => import("./chunk-VNZW5TR6.js").then((m) => m.HomeModule)
       },
       {
         path: "auth",
-        loadChildren: () => import("./chunk-RT6J2GBP.js").then((m) => m.AuthModule)
+        loadChildren: () => import("./chunk-QOJNFYTW.js").then((m) => m.AuthModule)
       },
       {
         path: "about",
@@ -19108,7 +19119,7 @@ var routes = [
       },
       {
         path: "services",
-        loadChildren: () => import("./chunk-77TLNTD2.js").then((m) => m.ServicesModule)
+        loadChildren: () => import("./chunk-SXPQL5JF.js").then((m) => m.ServicesModule)
       },
       {
         path: "contact",
@@ -19116,11 +19127,11 @@ var routes = [
       },
       {
         path: "profile",
-        loadChildren: () => import("./chunk-SQKYWR7U.js").then((m) => m.ProfileModule)
+        loadChildren: () => import("./chunk-3ZHY7RRB.js").then((m) => m.ProfileModule)
       },
       {
         path: "settings",
-        loadComponent: () => import("./chunk-KLFYVUBQ.js").then((m) => m.SettingsComponent),
+        loadComponent: () => import("./chunk-JD63C6CY.js").then((m) => m.SettingsComponent),
         canActivate: [AuthGuard]
       },
       {
@@ -19137,11 +19148,11 @@ var routes = [
       },
       {
         path: "post-job",
-        loadChildren: () => import("./chunk-Z2XUNCJN.js").then((m) => m.PostJobModule)
+        loadChildren: () => import("./chunk-MNPS7DBU.js").then((m) => m.PostJobModule)
       },
       {
         path: "pending-jobs",
-        loadChildren: () => import("./chunk-S7CBB446.js").then((m) => m.PendingJobsModule)
+        loadChildren: () => import("./chunk-IHIBUPIB.js").then((m) => m.PendingJobsModule)
       },
       {
         path: "my-pros",
@@ -19150,7 +19161,7 @@ var routes = [
       },
       {
         path: "pending-jobs/:jobId",
-        loadComponent: () => import("./chunk-CWRF4L2I.js").then((m) => m.PendingJobDetailsComponent)
+        loadComponent: () => import("./chunk-ZB77WUBV.js").then((m) => m.PendingJobDetailsComponent)
       },
       {
         path: "my-services",
@@ -19166,15 +19177,15 @@ var routes = [
       },
       {
         path: "edit-job/:id",
-        loadChildren: () => import("./chunk-JM5FHNU3.js").then((m) => m.EditJobModule)
+        loadChildren: () => import("./chunk-XVTZAL6H.js").then((m) => m.EditJobModule)
       },
       {
         path: "available-jobs",
-        loadComponent: () => import("./chunk-P3XD4M6J.js").then((m) => m.AvailableJobsComponent)
+        loadComponent: () => import("./chunk-QOH4XLCY.js").then((m) => m.AvailableJobsComponent)
       },
       {
         path: "my-jobs-pro",
-        loadComponent: () => import("./chunk-QK5CDCVF.js").then((m) => m.MyJobsProComponent)
+        loadComponent: () => import("./chunk-6B6Z2OKK.js").then((m) => m.MyJobsProComponent)
       },
       {
         path: "my-clients",
@@ -19188,20 +19199,20 @@ var routes = [
       },
       {
         path: "my-businesses",
-        loadComponent: () => import("./chunk-AECS2GDH.js").then((m) => m.MyBusinessesComponent),
+        loadComponent: () => import("./chunk-ORASNLYM.js").then((m) => m.MyBusinessesComponent),
         canActivate: [ProGuard]
       },
       {
         path: "my-jobs-pro/:jobId",
-        loadComponent: () => import("./chunk-ZVXYY65V.js").then((m) => m.MyJobProDetailsComponent)
+        loadComponent: () => import("./chunk-IKKCDGQD.js").then((m) => m.MyJobProDetailsComponent)
       },
       {
         path: "job-details",
-        loadComponent: () => import("./chunk-I3AW2REQ.js").then((m) => m.JobDetailsComponent)
+        loadComponent: () => import("./chunk-QQZQXDRD.js").then((m) => m.JobDetailsComponent)
       },
       {
         path: "admin-users",
-        loadComponent: () => import("./chunk-E53O4UEA.js").then((m) => m.AdminUsersComponent),
+        loadComponent: () => import("./chunk-NKUY3T7M.js").then((m) => m.AdminUsersComponent),
         canActivate: [AdminGuard]
       },
       {
@@ -19211,12 +19222,12 @@ var routes = [
       },
       {
         path: "messages",
-        loadComponent: () => import("./chunk-BIFPVUIU.js").then((m) => m.MessagesComponent),
+        loadComponent: () => import("./chunk-OFADSTG7.js").then((m) => m.MessagesComponent),
         canActivate: [AuthGuard]
       },
       {
         path: "notifications",
-        loadComponent: () => import("./chunk-LJYQK3KB.js").then((m) => m.NotificationsComponent),
+        loadComponent: () => import("./chunk-IQFYUTK7.js").then((m) => m.NotificationsComponent),
         canActivate: [AuthGuard]
       },
       {
