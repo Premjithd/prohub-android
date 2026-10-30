@@ -98,7 +98,10 @@ import {
   ɵɵtextInterpolate1,
   ɵɵviewQuery
 } from "./chunk-CTKGZTQY.js";
-import "./chunk-7WUTQBRG.js";
+import {
+  __spreadProps,
+  __spreadValues
+} from "./chunk-7WUTQBRG.js";
 
 // src/app/features/post-job/post-job.ts
 var _c0 = ["addressSearchInput"];
@@ -431,7 +434,7 @@ function PostJobComponent_div_37_ng_container_30_Template(rf, ctx) {
     \u0275\u0275template(4, PostJobComponent_div_37_ng_container_30_div_4_Template, 3, 3, "div", 59)(5, PostJobComponent_div_37_ng_container_30_div_5_Template, 2, 1, "div", 60);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(6, "small", 61);
-    \u0275\u0275text(7, "Type at least 3 characters to search \u2014 select from the list to pin on the map");
+    \u0275\u0275text(7, "Type a city name or PIN code, then select from the list");
     \u0275\u0275elementEnd();
     \u0275\u0275template(8, PostJobComponent_div_37_ng_container_30_small_8_Template, 2, 0, "small", 31);
     \u0275\u0275elementContainerEnd();
@@ -503,7 +506,7 @@ function PostJobComponent_div_37_Template(rf, ctx) {
     \u0275\u0275template(26, PostJobComponent_div_37_small_26_Template, 3, 2, "small", 31);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(27, "div", 28)(28, "label");
-    \u0275\u0275text(29, "Service Location *");
+    \u0275\u0275text(29, "Service Location \u2014 City or PIN code *");
     \u0275\u0275elementEnd();
     \u0275\u0275template(30, PostJobComponent_div_37_ng_container_30_Template, 9, 5, "ng-container", 39)(31, PostJobComponent_div_37_ng_container_31_Template, 8, 1, "ng-container", 39);
     \u0275\u0275elementEnd();
@@ -924,7 +927,7 @@ var PostJobComponent = class _PostJobComponent {
       this.cdr.markForCheck();
       return this.addressService.getAddressPredictions(input).pipe(catchError(() => of([])));
     }), takeUntil(this.destroy$)).subscribe((predictions) => {
-      this.addressPredictions = predictions;
+      this.addressPredictions = this.toCityPinPredictions(predictions);
       this.showAddressList = this.addressPredictions.length > 0;
       this.addressLoading = false;
       this.cdr.markForCheck();
@@ -1033,6 +1036,32 @@ var PostJobComponent = class _PostJobComponent {
   // ── Address autofill ──────────────────────────────────────────────────────
   onAddressInput(event) {
     this.addressSearch$.next(event.target.value ?? "");
+  }
+  /**
+   * Collapse Nominatim predictions to unique "City + PIN" entries for the service-location
+   * picker. Users are asked to type only a city or PIN code (full addresses make Nominatim
+   * return poor matches), so we drop the street-level noise, show just the city and PIN, and
+   * de-duplicate repeated city/PIN pairs.
+   */
+  toCityPinPredictions(predictions) {
+    const seen = /* @__PURE__ */ new Set();
+    const result = [];
+    for (const p of predictions) {
+      const city = p.details?.city?.trim();
+      if (!city)
+        continue;
+      const pin = p.details?.zipPostalCode?.trim() ?? "";
+      const key = `${city.toLowerCase()}|${pin}`;
+      if (seen.has(key))
+        continue;
+      seen.add(key);
+      const state = p.details?.state?.trim() ?? "";
+      result.push(__spreadProps(__spreadValues({}, p), {
+        mainText: city,
+        secondaryText: [state, pin].filter(Boolean).join(" ") || "PIN not listed"
+      }));
+    }
+    return result;
   }
   onAddressSelected(prediction) {
     this.showAddressList = false;
@@ -1232,7 +1261,7 @@ var PostJobComponent = class _PostJobComponent {
       let _t;
       \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.addressSearchInput = _t.first);
     }
-  }, decls: 73, vars: 36, consts: [["addressSearchInput", ""], [1, "post-job-wrapper"], [1, "post-job-hero"], [1, "hero-content"], [1, "post-job-section"], [1, "section-container"], [1, "form-wrapper"], ["class", "alert alert-success", 4, "ngIf"], ["class", "alert alert-error", 4, "ngIf"], [1, "steps-indicator"], [1, "step"], [1, "step-num"], [1, "step-label"], [1, "step-line"], ["class", "requested-pro-banner", 4, "ngIf"], [3, "ngSubmit", "formGroup"], ["class", "form-step", 4, "ngIf"], [1, "tips-section"], [1, "tips-grid"], [1, "tip-card"], [1, "tip-icon"], [1, "alert", "alert-success"], [1, "dismiss-btn", 3, "click"], [1, "alert", "alert-error"], [1, "requested-pro-banner"], [1, "rpb-icon"], [1, "rpb-text"], [1, "form-step"], [1, "form-group"], ["for", "title"], ["type", "text", "id", "title", "formControlName", "title", 1, "form-control", 3, "placeholder"], ["class", "error-text", 4, "ngIf"], ["class", "category-grid cat-skel-grid", 4, "ngIf"], ["class", "cat-load-error", 4, "ngIf"], ["class", "cat-empty", 4, "ngIf"], ["class", "category-grid", 4, "ngIf"], ["class", "cat-hint", 4, "ngIf"], ["for", "description"], ["id", "description", "formControlName", "description", "rows", "6", 1, "form-control", "textarea", 3, "placeholder"], [4, "ngIf"], [1, "form-actions"], ["type", "button", "disabled", "", 1, "btn", "btn-secondary"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "error-text"], [1, "category-grid", "cat-skel-grid"], ["class", "cat-skeleton", 4, "ngFor", "ngForOf"], [1, "cat-skeleton"], [1, "cat-load-error"], [1, "material-icons"], ["type", "button", 3, "click"], [1, "cat-empty"], [1, "category-grid"], ["type", "button", "class", "category-btn", 3, "selected", "click", 4, "ngFor", "ngForOf"], ["type", "button", 1, "category-btn", 3, "click"], [1, "category-icon"], [1, "category-name"], [1, "cat-hint"], [1, "autocomplete-container"], ["type", "text", "placeholder", "Start typing your address or city...", "autocomplete", "off", 1, "form-control", 3, "input", "blur"], ["class", "address-loading", 4, "ngIf"], ["class", "address-dropdown", 4, "ngIf"], [1, "text-hint"], [1, "address-loading"], [1, "address-dropdown"], ["class", "address-item", 3, "mousedown", 4, "ngFor", "ngForOf"], [1, "address-item", 3, "mousedown"], [1, "address-main"], [1, "address-secondary"], [1, "selected-address-box"], [1, "material-icons", "address-pin-icon"], [1, "selected-address-text"], ["type", "button", 1, "btn-clear-address", 3, "click"], [1, "budget-options"], ["type", "button", "class", "budget-btn", 3, "selected", "click", 4, "ngFor", "ngForOf"], [1, "timeline-options"], ["type", "button", "class", "timeline-btn", 3, "selected", "click", 4, "ngFor", "ngForOf"], ["type", "button", 1, "btn", "btn-secondary", 3, "click"], ["type", "button", 1, "budget-btn", 3, "click"], ["type", "button", 1, "timeline-btn", 3, "click"], [1, "review-section"], [1, "review-item"], ["class", "review-item", 4, "ngIf"], [1, "form-group", "checkbox-group"], [1, "terms-label"], ["type", "checkbox", "formControlName", "agreeToTerms"], [1, "checkbox-text"], ["routerLink", "/terms", "target", "_blank"], ["type", "submit", 1, "btn", "btn-success", 3, "disabled"]], template: function PostJobComponent_Template(rf, ctx) {
+  }, decls: 73, vars: 36, consts: [["addressSearchInput", ""], [1, "post-job-wrapper"], [1, "post-job-hero"], [1, "hero-content"], [1, "post-job-section"], [1, "section-container"], [1, "form-wrapper"], ["class", "alert alert-success", 4, "ngIf"], ["class", "alert alert-error", 4, "ngIf"], [1, "steps-indicator"], [1, "step"], [1, "step-num"], [1, "step-label"], [1, "step-line"], ["class", "requested-pro-banner", 4, "ngIf"], [3, "ngSubmit", "formGroup"], ["class", "form-step", 4, "ngIf"], [1, "tips-section"], [1, "tips-grid"], [1, "tip-card"], [1, "tip-icon"], [1, "alert", "alert-success"], [1, "dismiss-btn", 3, "click"], [1, "alert", "alert-error"], [1, "requested-pro-banner"], [1, "rpb-icon"], [1, "rpb-text"], [1, "form-step"], [1, "form-group"], ["for", "title"], ["type", "text", "id", "title", "formControlName", "title", 1, "form-control", 3, "placeholder"], ["class", "error-text", 4, "ngIf"], ["class", "category-grid cat-skel-grid", 4, "ngIf"], ["class", "cat-load-error", 4, "ngIf"], ["class", "cat-empty", 4, "ngIf"], ["class", "category-grid", 4, "ngIf"], ["class", "cat-hint", 4, "ngIf"], ["for", "description"], ["id", "description", "formControlName", "description", "rows", "6", 1, "form-control", "textarea", 3, "placeholder"], [4, "ngIf"], [1, "form-actions"], ["type", "button", "disabled", "", 1, "btn", "btn-secondary"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "error-text"], [1, "category-grid", "cat-skel-grid"], ["class", "cat-skeleton", 4, "ngFor", "ngForOf"], [1, "cat-skeleton"], [1, "cat-load-error"], [1, "material-icons"], ["type", "button", 3, "click"], [1, "cat-empty"], [1, "category-grid"], ["type", "button", "class", "category-btn", 3, "selected", "click", 4, "ngFor", "ngForOf"], ["type", "button", 1, "category-btn", 3, "click"], [1, "category-icon"], [1, "category-name"], [1, "cat-hint"], [1, "autocomplete-container"], ["type", "text", "placeholder", "Enter your city or PIN code", "autocomplete", "off", 1, "form-control", 3, "input", "blur"], ["class", "address-loading", 4, "ngIf"], ["class", "address-dropdown", 4, "ngIf"], [1, "text-hint"], [1, "address-loading"], [1, "address-dropdown"], ["class", "address-item", 3, "mousedown", 4, "ngFor", "ngForOf"], [1, "address-item", 3, "mousedown"], [1, "address-main"], [1, "address-secondary"], [1, "selected-address-box"], [1, "material-icons", "address-pin-icon"], [1, "selected-address-text"], ["type", "button", 1, "btn-clear-address", 3, "click"], [1, "budget-options"], ["type", "button", "class", "budget-btn", 3, "selected", "click", 4, "ngFor", "ngForOf"], [1, "timeline-options"], ["type", "button", "class", "timeline-btn", 3, "selected", "click", 4, "ngFor", "ngForOf"], ["type", "button", 1, "btn", "btn-secondary", 3, "click"], ["type", "button", 1, "budget-btn", 3, "click"], ["type", "button", 1, "timeline-btn", 3, "click"], [1, "review-section"], [1, "review-item"], ["class", "review-item", 4, "ngIf"], [1, "form-group", "checkbox-group"], [1, "terms-label"], ["type", "checkbox", "formControlName", "agreeToTerms"], [1, "checkbox-text"], ["routerLink", "/terms", "target", "_blank"], ["type", "submit", 1, "btn", "btn-success", 3, "disabled"]], template: function PostJobComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 1)(1, "section", 2)(2, "div", 3)(3, "h1");
       \u0275\u0275text(4);
@@ -1481,9 +1510,9 @@ var PostJobComponent = class _PostJobComponent {
               </small>\r
             </div>\r
 \r
-            <!-- Service Location (address autofill) -->\r
+            <!-- Service Location (city / PIN autofill) -->\r
             <div class="form-group">\r
-              <label>Service Location *</label>\r
+              <label>Service Location \u2014 City or PIN code *</label>\r
 \r
               <!-- Address not yet selected -->\r
               <ng-container *ngIf="!f['serviceAddressCity'].value">\r
@@ -1493,7 +1522,7 @@ var PostJobComponent = class _PostJobComponent {
                     type="text"\r
                     class="form-control"\r
                     [class.is-invalid]="(submitted || f['serviceAddressCity'].touched) && f['serviceAddressCity'].errors"\r
-                    placeholder="Start typing your address or city..."\r
+                    placeholder="Enter your city or PIN code"\r
                     (input)="onAddressInput($event)"\r
                     (blur)="hideAddressList()"\r
                     autocomplete="off"\r
@@ -1510,7 +1539,7 @@ var PostJobComponent = class _PostJobComponent {
                     </div>\r
                   </div>\r
                 </div>\r
-                <small class="text-hint">Type at least 3 characters to search \u2014 select from the list to pin on the map</small>\r
+                <small class="text-hint">Type a city name or PIN code, then select from the list</small>\r
                 <small *ngIf="(submitted || f['serviceAddressCity'].touched) && f['serviceAddressCity'].errors" class="error-text">\r
                   Please select a location from the suggestions\r
                 </small>\r
@@ -1729,7 +1758,7 @@ var ServiceAreaNoticeComponent = class _ServiceAreaNoticeComponent {
   }], () => [{ type: MatSnackBarRef }], null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ServiceAreaNoticeComponent, { className: "ServiceAreaNoticeComponent", filePath: "src/app/features/post-job/post-job.ts", lineNumber: 537 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ServiceAreaNoticeComponent, { className: "ServiceAreaNoticeComponent", filePath: "src/app/features/post-job/post-job.ts", lineNumber: 563 });
 })();
 
 // src/app/features/post-job/post-job-routing-module.ts
@@ -1779,5 +1808,5 @@ var PostJobModule = class _PostJobModule {
 export {
   PostJobModule
 };
-//# sourceMappingURL=chunk-MNPS7DBU.js.map
+//# sourceMappingURL=chunk-Y3BZHY5M.js.map
 

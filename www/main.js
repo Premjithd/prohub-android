@@ -19148,7 +19148,7 @@ var routes = [
       },
       {
         path: "post-job",
-        loadChildren: () => import("./chunk-MNPS7DBU.js").then((m) => m.PostJobModule)
+        loadChildren: () => import("./chunk-Y3BZHY5M.js").then((m) => m.PostJobModule)
       },
       {
         path: "pending-jobs",
