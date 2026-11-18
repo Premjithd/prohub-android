@@ -75,11 +75,14 @@ import {
   NgZone,
   SlicePipe,
   Subject,
+  catchError,
   debounceTime,
   distinctUntilChanged,
   firstValueFrom,
   map,
+  of,
   setClassMetadata,
+  switchMap,
   takeUntil,
   ɵsetClassDebugInfo,
   ɵɵadvance,
@@ -143,6 +146,12 @@ var ProBrowseService = class _ProBrowseService {
       p = p.set("district", params.district);
     if (params?.pinCode)
       p = p.set("pinCode", params.pinCode);
+    if (params?.lat != null)
+      p = p.set("lat", params.lat.toString());
+    if (params?.lng != null)
+      p = p.set("lng", params.lng.toString());
+    if (params?.radiusKm != null)
+      p = p.set("radiusKm", params.radiusKm.toString());
     if (params?.page)
       p = p.set("page", params.page.toString());
     if (params?.pageSize)
@@ -555,9 +564,21 @@ function FindAProComponent_div_21_Template(rf, ctx) {
     \u0275\u0275textInterpolate2(" ", ctx_r1.totalCount, " ", \u0275\u0275pipeBind1(2, 2, "FIND_PRO.PROS_FOUND"), " ");
   }
 }
-function FindAProComponent_div_23_div_12_Template(rf, ctx) {
+function FindAProComponent_div_23_span_12_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 62);
+    \u0275\u0275elementStart(0, "span", 63);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const pro_r13 = \u0275\u0275nextContext().$implicit;
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1("\xB7 ", pro_r13.distanceKm, " km away");
+  }
+}
+function FindAProComponent_div_23_div_13_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 64);
     \u0275\u0275text(1);
     \u0275\u0275pipe(2, "translate");
     \u0275\u0275elementEnd();
@@ -568,9 +589,9 @@ function FindAProComponent_div_23_div_12_Template(rf, ctx) {
     \u0275\u0275textInterpolate2(" ", \u0275\u0275pipeBind1(2, 2, "FIND_PRO.SERVICE_RADIUS"), " ", pro_r13.serviceRadiusKm, " km ");
   }
 }
-function FindAProComponent_div_23_div_13_span_1_Template(rf, ctx) {
+function FindAProComponent_div_23_div_14_span_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 66);
+    \u0275\u0275elementStart(0, "span", 68);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -580,9 +601,9 @@ function FindAProComponent_div_23_div_13_span_1_Template(rf, ctx) {
     \u0275\u0275textInterpolate(s_r14.name);
   }
 }
-function FindAProComponent_div_23_div_13_span_3_Template(rf, ctx) {
+function FindAProComponent_div_23_div_14_span_3_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 67);
+    \u0275\u0275elementStart(0, "span", 69);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -592,12 +613,12 @@ function FindAProComponent_div_23_div_13_span_3_Template(rf, ctx) {
     \u0275\u0275textInterpolate1("+", pro_r13.services.length - 3, " more");
   }
 }
-function FindAProComponent_div_23_div_13_Template(rf, ctx) {
+function FindAProComponent_div_23_div_14_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 63);
-    \u0275\u0275template(1, FindAProComponent_div_23_div_13_span_1_Template, 2, 1, "span", 64);
+    \u0275\u0275elementStart(0, "div", 65);
+    \u0275\u0275template(1, FindAProComponent_div_23_div_14_span_1_Template, 2, 1, "span", 66);
     \u0275\u0275pipe(2, "slice");
-    \u0275\u0275template(3, FindAProComponent_div_23_div_13_span_3_Template, 2, 1, "span", 65);
+    \u0275\u0275template(3, FindAProComponent_div_23_div_14_span_3_Template, 2, 1, "span", 67);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -608,16 +629,16 @@ function FindAProComponent_div_23_div_13_Template(rf, ctx) {
     \u0275\u0275property("ngIf", pro_r13.services.length > 3);
   }
 }
-function FindAProComponent_div_23_span_15_Template(rf, ctx) {
+function FindAProComponent_div_23_span_16_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 68);
+    \u0275\u0275elementStart(0, "span", 70);
     \u0275\u0275text(1, "verified");
     \u0275\u0275elementEnd();
   }
 }
-function FindAProComponent_div_23_span_16_Template(rf, ctx) {
+function FindAProComponent_div_23_span_17_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 69);
+    \u0275\u0275elementStart(0, "span", 71);
     \u0275\u0275text(1, "location_off");
     \u0275\u0275elementEnd();
   }
@@ -652,13 +673,14 @@ function FindAProComponent_div_23_Template(rf, ctx) {
     \u0275\u0275text(10, "place");
     \u0275\u0275elementEnd();
     \u0275\u0275text(11);
+    \u0275\u0275template(12, FindAProComponent_div_23_span_12_Template, 2, 1, "span", 56);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(12, FindAProComponent_div_23_div_12_Template, 3, 4, "div", 56)(13, FindAProComponent_div_23_div_13_Template, 4, 6, "div", 57);
+    \u0275\u0275template(13, FindAProComponent_div_23_div_13_Template, 3, 4, "div", 57)(14, FindAProComponent_div_23_div_14_Template, 4, 6, "div", 58);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(14, "div", 58);
-    \u0275\u0275template(15, FindAProComponent_div_23_span_15_Template, 2, 0, "span", 59)(16, FindAProComponent_div_23_span_16_Template, 2, 0, "span", 60);
-    \u0275\u0275elementStart(17, "span", 61);
-    \u0275\u0275text(18, "chevron_right");
+    \u0275\u0275elementStart(15, "div", 59);
+    \u0275\u0275template(16, FindAProComponent_div_23_span_16_Template, 2, 0, "span", 60)(17, FindAProComponent_div_23_span_17_Template, 2, 0, "span", 61);
+    \u0275\u0275elementStart(18, "span", 62);
+    \u0275\u0275text(19, "chevron_right");
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
@@ -675,6 +697,8 @@ function FindAProComponent_div_23_Template(rf, ctx) {
     \u0275\u0275advance(4);
     \u0275\u0275textInterpolate1(" ", ctx_r1.getLocation(pro_r13), " ");
     \u0275\u0275advance();
+    \u0275\u0275property("ngIf", pro_r13.distanceKm != null);
+    \u0275\u0275advance();
     \u0275\u0275property("ngIf", pro_r13.serviceRadiusKm);
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", pro_r13.services && pro_r13.services.length > 0);
@@ -686,7 +710,7 @@ function FindAProComponent_div_23_Template(rf, ctx) {
 }
 function FindAProComponent_div_24_ng_container_4_span_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 75);
+    \u0275\u0275elementStart(0, "span", 77);
     \u0275\u0275text(1, "\u2026");
     \u0275\u0275elementEnd();
   }
@@ -695,8 +719,8 @@ function FindAProComponent_div_24_ng_container_4_Template(rf, ctx) {
   if (rf & 1) {
     const _r16 = \u0275\u0275getCurrentView();
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275template(1, FindAProComponent_div_24_ng_container_4_span_1_Template, 2, 0, "span", 73);
-    \u0275\u0275elementStart(2, "button", 74);
+    \u0275\u0275template(1, FindAProComponent_div_24_ng_container_4_span_1_Template, 2, 0, "span", 75);
+    \u0275\u0275elementStart(2, "button", 76);
     \u0275\u0275listener("click", function FindAProComponent_div_24_ng_container_4_Template_button_click_2_listener() {
       const n_r17 = \u0275\u0275restoreView(_r16).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
@@ -721,7 +745,7 @@ function FindAProComponent_div_24_ng_container_4_Template(rf, ctx) {
 function FindAProComponent_div_24_Template(rf, ctx) {
   if (rf & 1) {
     const _r15 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 70)(1, "button", 71);
+    \u0275\u0275elementStart(0, "div", 72)(1, "button", 73);
     \u0275\u0275listener("click", function FindAProComponent_div_24_Template_button_click_1_listener() {
       \u0275\u0275restoreView(_r15);
       const ctx_r1 = \u0275\u0275nextContext();
@@ -730,8 +754,8 @@ function FindAProComponent_div_24_Template(rf, ctx) {
     \u0275\u0275elementStart(2, "span", 3);
     \u0275\u0275text(3, "chevron_left");
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(4, FindAProComponent_div_24_ng_container_4_Template, 4, 4, "ng-container", 72);
-    \u0275\u0275elementStart(5, "button", 71);
+    \u0275\u0275template(4, FindAProComponent_div_24_ng_container_4_Template, 4, 4, "ng-container", 74);
+    \u0275\u0275elementStart(5, "button", 73);
     \u0275\u0275listener("click", function FindAProComponent_div_24_Template_button_click_5_listener() {
       \u0275\u0275restoreView(_r15);
       const ctx_r1 = \u0275\u0275nextContext();
@@ -753,8 +777,8 @@ function FindAProComponent_div_24_Template(rf, ctx) {
 }
 function FindAProComponent_div_25_div_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 79);
-    \u0275\u0275element(1, "mat-spinner", 80);
+    \u0275\u0275elementStart(0, "div", 81);
+    \u0275\u0275element(1, "mat-spinner", 82);
     \u0275\u0275elementStart(2, "span");
     \u0275\u0275text(3, "Locating professionals\u2026");
     \u0275\u0275elementEnd()();
@@ -762,9 +786,9 @@ function FindAProComponent_div_25_div_2_Template(rf, ctx) {
 }
 function FindAProComponent_div_25_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 76);
-    \u0275\u0275element(1, "div", 77);
-    \u0275\u0275template(2, FindAProComponent_div_25_div_2_Template, 4, 0, "div", 78);
+    \u0275\u0275elementStart(0, "div", 78);
+    \u0275\u0275element(1, "div", 79);
+    \u0275\u0275template(2, FindAProComponent_div_25_div_2_Template, 4, 0, "div", 80);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -775,7 +799,7 @@ function FindAProComponent_div_25_Template(rf, ctx) {
 }
 function FindAProComponent_div_26_span_8_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 98);
+    \u0275\u0275elementStart(0, "span", 100);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -787,14 +811,14 @@ function FindAProComponent_div_26_span_8_Template(rf, ctx) {
 }
 function FindAProComponent_div_26_span_9_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 99);
+    \u0275\u0275elementStart(0, "span", 101);
     \u0275\u0275text(1, "verified");
     \u0275\u0275elementEnd();
   }
 }
 function FindAProComponent_div_26_div_15_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 89)(1, "span", 3);
+    \u0275\u0275elementStart(0, "div", 91)(1, "span", 3);
     \u0275\u0275text(2, "radio_button_checked");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -809,7 +833,7 @@ function FindAProComponent_div_26_div_15_Template(rf, ctx) {
 }
 function FindAProComponent_div_26_div_16_span_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 104);
+    \u0275\u0275elementStart(0, "span", 106);
     \u0275\u0275text(1, "\u2605");
     \u0275\u0275elementEnd();
   }
@@ -821,13 +845,13 @@ function FindAProComponent_div_26_div_16_span_2_Template(rf, ctx) {
 }
 function FindAProComponent_div_26_div_16_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 89)(1, "div", 100);
-    \u0275\u0275template(2, FindAProComponent_div_26_div_16_span_2_Template, 2, 2, "span", 101);
-    \u0275\u0275elementStart(3, "span", 102);
+    \u0275\u0275elementStart(0, "div", 91)(1, "div", 102);
+    \u0275\u0275template(2, FindAProComponent_div_26_div_16_span_2_Template, 2, 2, "span", 103);
+    \u0275\u0275elementStart(3, "span", 104);
     \u0275\u0275text(4);
     \u0275\u0275pipe(5, "number");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "span", 103);
+    \u0275\u0275elementStart(6, "span", 105);
     \u0275\u0275text(7);
     \u0275\u0275elementEnd()()();
   }
@@ -843,14 +867,14 @@ function FindAProComponent_div_26_div_16_Template(rf, ctx) {
 }
 function FindAProComponent_div_26_div_21_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 105);
-    \u0275\u0275element(1, "mat-spinner", 106);
+    \u0275\u0275elementStart(0, "div", 107);
+    \u0275\u0275element(1, "mat-spinner", 108);
     \u0275\u0275elementEnd();
   }
 }
 function FindAProComponent_div_26_div_22_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 107)(1, "span", 3);
+    \u0275\u0275elementStart(0, "div", 109)(1, "span", 3);
     \u0275\u0275text(2, "info");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -864,7 +888,7 @@ function FindAProComponent_div_26_div_22_Template(rf, ctx) {
 }
 function FindAProComponent_div_26_div_23_div_4_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 116);
+    \u0275\u0275elementStart(0, "div", 118);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -876,7 +900,7 @@ function FindAProComponent_div_26_div_23_div_4_Template(rf, ctx) {
 }
 function FindAProComponent_div_26_div_23_div_5_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 117);
+    \u0275\u0275elementStart(0, "div", 119);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -889,7 +913,7 @@ function FindAProComponent_div_26_div_23_div_5_Template(rf, ctx) {
 function FindAProComponent_div_26_div_23_button_10_Template(rf, ctx) {
   if (rf & 1) {
     const _r22 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 118);
+    \u0275\u0275elementStart(0, "button", 120);
     \u0275\u0275listener("click", function FindAProComponent_div_26_div_23_button_10_Template_button_click_0_listener() {
       \u0275\u0275restoreView(_r22);
       const service_r21 = \u0275\u0275nextContext().$implicit;
@@ -907,16 +931,16 @@ function FindAProComponent_div_26_div_23_button_10_Template(rf, ctx) {
 }
 function FindAProComponent_div_26_div_23_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 108)(1, "div", 109)(2, "div", 110);
+    \u0275\u0275elementStart(0, "div", 110)(1, "div", 111)(2, "div", 112);
     \u0275\u0275text(3);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(4, FindAProComponent_div_26_div_23_div_4_Template, 2, 1, "div", 111)(5, FindAProComponent_div_26_div_23_div_5_Template, 2, 1, "div", 112);
+    \u0275\u0275template(4, FindAProComponent_div_26_div_23_div_4_Template, 2, 1, "div", 113)(5, FindAProComponent_div_26_div_23_div_5_Template, 2, 1, "div", 114);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "div", 113)(7, "div", 114);
+    \u0275\u0275elementStart(6, "div", 115)(7, "div", 116);
     \u0275\u0275text(8);
     \u0275\u0275pipe(9, "number");
     \u0275\u0275elementEnd();
-    \u0275\u0275template(10, FindAProComponent_div_26_div_23_button_10_Template, 3, 3, "button", 115);
+    \u0275\u0275template(10, FindAProComponent_div_26_div_23_button_10_Template, 3, 3, "button", 117);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -936,7 +960,7 @@ function FindAProComponent_div_26_div_23_Template(rf, ctx) {
 }
 function FindAProComponent_div_26_div_24_div_4_span_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 127);
+    \u0275\u0275elementStart(0, "span", 129);
     \u0275\u0275text(1, "\u2605");
     \u0275\u0275elementEnd();
   }
@@ -949,7 +973,7 @@ function FindAProComponent_div_26_div_24_div_4_span_2_Template(rf, ctx) {
 }
 function FindAProComponent_div_26_div_24_div_4_p_8_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "p", 128);
+    \u0275\u0275elementStart(0, "p", 130);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -961,16 +985,16 @@ function FindAProComponent_div_26_div_24_div_4_p_8_Template(rf, ctx) {
 }
 function FindAProComponent_div_26_div_24_div_4_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 121)(1, "div", 122);
-    \u0275\u0275template(2, FindAProComponent_div_26_div_24_div_4_span_2_Template, 2, 2, "span", 123);
-    \u0275\u0275elementStart(3, "span", 124);
+    \u0275\u0275elementStart(0, "div", 123)(1, "div", 124);
+    \u0275\u0275template(2, FindAProComponent_div_26_div_24_div_4_span_2_Template, 2, 2, "span", 125);
+    \u0275\u0275elementStart(3, "span", 126);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "span", 125);
+    \u0275\u0275elementStart(5, "span", 127);
     \u0275\u0275text(6);
     \u0275\u0275pipe(7, "date");
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(8, FindAProComponent_div_26_div_24_div_4_p_8_Template, 2, 1, "p", 126);
+    \u0275\u0275template(8, FindAProComponent_div_26_div_24_div_4_p_8_Template, 2, 1, "p", 128);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -988,11 +1012,11 @@ function FindAProComponent_div_26_div_24_div_4_Template(rf, ctx) {
 }
 function FindAProComponent_div_26_div_24_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 119)(1, "h3", 92);
+    \u0275\u0275elementStart(0, "div", 121)(1, "h3", 94);
     \u0275\u0275text(2);
     \u0275\u0275pipe(3, "translate");
     \u0275\u0275elementEnd();
-    \u0275\u0275template(4, FindAProComponent_div_26_div_24_div_4_Template, 9, 7, "div", 120);
+    \u0275\u0275template(4, FindAProComponent_div_26_div_24_div_4_Template, 9, 7, "div", 122);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -1006,11 +1030,11 @@ function FindAProComponent_div_26_div_24_Template(rf, ctx) {
 function FindAProComponent_div_26_div_25_Template(rf, ctx) {
   if (rf & 1) {
     const _r25 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 129)(1, "p");
+    \u0275\u0275elementStart(0, "div", 131)(1, "p");
     \u0275\u0275text(2);
     \u0275\u0275pipe(3, "translate");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "button", 130);
+    \u0275\u0275elementStart(4, "button", 132);
     \u0275\u0275listener("click", function FindAProComponent_div_26_div_25_Template_button_click_4_listener() {
       \u0275\u0275restoreView(_r25);
       const ctx_r1 = \u0275\u0275nextContext(2);
@@ -1030,7 +1054,7 @@ function FindAProComponent_div_26_div_25_Template(rf, ctx) {
 function FindAProComponent_div_26_Template(rf, ctx) {
   if (rf & 1) {
     const _r19 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 81)(1, "div", 82)(2, "button", 83);
+    \u0275\u0275elementStart(0, "div", 83)(1, "div", 84)(2, "button", 85);
     \u0275\u0275listener("click", function FindAProComponent_div_26_Template_button_click_2_listener() {
       \u0275\u0275restoreView(_r19);
       const ctx_r1 = \u0275\u0275nextContext();
@@ -1039,27 +1063,27 @@ function FindAProComponent_div_26_Template(rf, ctx) {
     \u0275\u0275elementStart(3, "span", 3);
     \u0275\u0275text(4, "arrow_back");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(5, "div", 84)(6, "span", 85);
+    \u0275\u0275elementStart(5, "div", 86)(6, "span", 87);
     \u0275\u0275text(7);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(8, FindAProComponent_div_26_span_8_Template, 2, 1, "span", 86);
+    \u0275\u0275template(8, FindAProComponent_div_26_span_8_Template, 2, 1, "span", 88);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(9, FindAProComponent_div_26_span_9_Template, 2, 0, "span", 87);
+    \u0275\u0275template(9, FindAProComponent_div_26_span_9_Template, 2, 0, "span", 89);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(10, "div", 88)(11, "div", 89)(12, "span", 3);
+    \u0275\u0275elementStart(10, "div", 90)(11, "div", 91)(12, "span", 3);
     \u0275\u0275text(13, "place");
     \u0275\u0275elementEnd();
     \u0275\u0275text(14);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(15, FindAProComponent_div_26_div_15_Template, 5, 6, "div", 90)(16, FindAProComponent_div_26_div_16_Template, 8, 7, "div", 90);
+    \u0275\u0275template(15, FindAProComponent_div_26_div_15_Template, 5, 6, "div", 92)(16, FindAProComponent_div_26_div_16_Template, 8, 7, "div", 92);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(17, "div", 91)(18, "h3", 92);
+    \u0275\u0275elementStart(17, "div", 93)(18, "h3", 94);
     \u0275\u0275text(19);
     \u0275\u0275pipe(20, "translate");
     \u0275\u0275elementEnd();
-    \u0275\u0275template(21, FindAProComponent_div_26_div_21_Template, 2, 0, "div", 93)(22, FindAProComponent_div_26_div_22_Template, 5, 3, "div", 94)(23, FindAProComponent_div_26_div_23_Template, 11, 8, "div", 95);
+    \u0275\u0275template(21, FindAProComponent_div_26_div_21_Template, 2, 0, "div", 95)(22, FindAProComponent_div_26_div_22_Template, 5, 3, "div", 96)(23, FindAProComponent_div_26_div_23_Template, 11, 8, "div", 97);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(24, FindAProComponent_div_26_div_24_Template, 5, 4, "div", 96)(25, FindAProComponent_div_26_div_25_Template, 7, 6, "div", 97);
+    \u0275\u0275template(24, FindAProComponent_div_26_div_24_Template, 5, 4, "div", 98)(25, FindAProComponent_div_26_div_25_Template, 7, 6, "div", 99);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -1314,20 +1338,39 @@ var FindAProComponent = class _FindAProComponent {
     this.load();
   }
   // ── Core load ────────────────────────────────────────────
+  // Geocoded PIN → centroid cache, so repeated loads on the same area don't re-geocode.
+  originCache = /* @__PURE__ */ new Map();
+  /** Resolve the searcher's origin coordinates from the active PIN filter (geocoded via the
+   *  address proxy). Empty object when no PIN / geocoding fails — the backend then falls back
+   *  to its non-proximity behaviour. */
+  resolveOrigin(pin) {
+    if (!pin)
+      return of({});
+    const cached = this.originCache.get(pin);
+    if (cached)
+      return of(cached);
+    return this.addressService.lookupByPostcode(pin, "in").pipe(map((d) => {
+      const origin = d?.latitude != null && d?.longitude != null ? { lat: d.latitude, lng: d.longitude } : {};
+      this.originCache.set(pin, origin);
+      return origin;
+    }), catchError(() => of({})));
+  }
   load() {
     this.loading = true;
     this.errorMessage = "";
     this.cdr.markForCheck();
-    this.proBrowseService.browse({
+    this.resolveOrigin(this.filterPin).pipe(switchMap((origin) => this.proBrowseService.browse({
       search: this.searchText.trim() || void 0,
       categoryId: this.selectedCategoryId,
       country: this.filterCountry || void 0,
       state: this.filterState || void 0,
       district: this.filterDistrict || void 0,
       pinCode: this.filterPin || void 0,
+      lat: origin.lat,
+      lng: origin.lng,
       page: this.page,
       pageSize: this.pageSize
-    }).pipe(takeUntil(this.destroy$)).subscribe({
+    })), takeUntil(this.destroy$)).subscribe({
       next: (result) => {
         this.pros = result.items;
         this.totalCount = result.total;
@@ -1696,7 +1739,7 @@ var FindAProComponent = class _FindAProComponent {
   static \u0275fac = function FindAProComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _FindAProComponent)(\u0275\u0275directiveInject(ProBrowseService), \u0275\u0275directiveInject(ServiceCategoryService), \u0275\u0275directiveInject(ServiceAreaService), \u0275\u0275directiveInject(ChangeDetectorRef), \u0275\u0275directiveInject(Auth), \u0275\u0275directiveInject(AddressService), \u0275\u0275directiveInject(MyServicesService), \u0275\u0275directiveInject(Router), \u0275\u0275directiveInject(ReviewService), \u0275\u0275directiveInject(HttpClient), \u0275\u0275directiveInject(NgZone));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _FindAProComponent, selectors: [["app-find-a-pro"]], decls: 27, vars: 22, consts: [[1, "find-pro-page"], [1, "page-header"], [1, "header-inner"], [1, "material-icons"], [1, "subtitle"], ["class", "map-toggle-btn", 3, "click", 4, "ngIf"], ["class", "filter-bar", 4, "ngIf"], ["class", "location-filter-bar", 4, "ngIf"], ["class", "preview-banner", 4, "ngIf"], ["class", "alert-error", 4, "ngIf"], [1, "body-split"], [1, "list-panel"], ["class", "loading-wrap", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "results-meta", 4, "ngIf"], [1, "pro-list"], ["class", "pro-card", 3, "id", "highlighted", "selected", "no-location", "preview-card", "mouseenter", "mouseleave", "click", 4, "ngFor", "ngForOf"], ["class", "pagination", 4, "ngIf"], ["class", "map-panel", 4, "ngIf"], ["class", "pro-detail-panel", 4, "ngIf"], [1, "map-toggle-btn", 3, "click"], [1, "filter-bar"], [1, "search-wrap"], [1, "material-icons", "search-icon"], ["type", "text", 1, "search-input", 3, "ngModelChange", "placeholder", "ngModel"], ["class", "clear-btn", 3, "click", 4, "ngIf"], [1, "cat-select", 3, "ngModelChange", "change", "ngModel"], [3, "ngValue"], [3, "ngValue", 4, "ngFor", "ngForOf"], [1, "clear-btn", 3, "click"], [1, "location-filter-bar"], [1, "loc-select", 3, "ngModelChange", "change", "ngModel", "disabled"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], ["class", "loc-clear-btn", 3, "click", 4, "ngIf"], [3, "value"], [1, "loc-clear-btn", 3, "click"], [1, "preview-banner"], [1, "preview-banner-inner"], [1, "material-icons", "preview-icon"], [1, "preview-text"], [1, "preview-actions"], ["routerLink", "/auth/login", 1, "banner-btn", "primary"], ["routerLink", "/auth/register", 1, "banner-btn", "secondary"], [1, "alert-error"], [1, "loading-wrap"], ["diameter", "40"], [1, "empty-state"], [1, "results-meta"], [1, "pro-card", 3, "mouseenter", "mouseleave", "click", "id"], [1, "pro-avatar"], [1, "pro-info"], [1, "pro-name"], [1, "pro-business"], [1, "pro-location"], [1, "material-icons", "loc-icon"], ["class", "pro-radius", 4, "ngIf"], ["class", "pro-services", 4, "ngIf"], [1, "pro-right-col"], ["class", "material-icons verified-icon", "title", "Verified", 4, "ngIf"], ["class", "material-icons no-loc-icon", "title", "No location set", 4, "ngIf"], [1, "material-icons", "chevron-icon"], [1, "pro-radius"], [1, "pro-services"], ["class", "service-chip", 4, "ngFor", "ngForOf"], ["class", "service-chip more", 4, "ngIf"], [1, "service-chip"], [1, "service-chip", "more"], ["title", "Verified", 1, "material-icons", "verified-icon"], ["title", "No location set", 1, "material-icons", "no-loc-icon"], [1, "pagination"], [1, "pg-btn", 3, "click", "disabled"], [4, "ngFor", "ngForOf"], ["class", "pg-gap", 4, "ngIf"], [1, "pg-btn", 3, "click"], [1, "pg-gap"], [1, "map-panel"], ["id", "pro-map", 1, "pro-map-el"], ["class", "map-geocoding-indicator", 4, "ngIf"], [1, "map-geocoding-indicator"], ["diameter", "18"], [1, "pro-detail-panel"], [1, "pd-header"], ["aria-label", "Back to list", 1, "pd-back-btn", 3, "click"], [1, "pd-title"], [1, "pd-name"], ["class", "pd-business", 4, "ngIf"], ["class", "material-icons pd-verified", "title", "Verified professional", 4, "ngIf"], [1, "pd-meta"], [1, "pd-meta-row"], ["class", "pd-meta-row", 4, "ngIf"], [1, "pd-services-section"], [1, "pd-section-title"], ["class", "pd-loading", 4, "ngIf"], ["class", "pd-empty", 4, "ngIf"], ["class", "pd-service-card", 4, "ngFor", "ngForOf"], ["class", "pd-reviews-section", 4, "ngIf"], ["class", "pd-cta", 4, "ngIf"], [1, "pd-business"], ["title", "Verified professional", 1, "material-icons", "pd-verified"], [1, "pd-rating-inline"], ["class", "pd-star", 3, "filled", 4, "ngFor", "ngForOf"], [1, "pd-rating-num"], [1, "pd-rating-count"], [1, "pd-star"], [1, "pd-loading"], ["diameter", "32"], [1, "pd-empty"], [1, "pd-service-card"], [1, "pd-service-info"], [1, "pd-service-name"], ["class", "pd-service-cat", 4, "ngIf"], ["class", "pd-service-desc", 4, "ngIf"], [1, "pd-service-right"], [1, "pd-service-price"], ["class", "pd-post-btn", 3, "click", 4, "ngIf"], [1, "pd-service-cat"], [1, "pd-service-desc"], [1, "pd-post-btn", 3, "click"], [1, "pd-reviews-section"], ["class", "pd-review-card", 4, "ngFor", "ngForOf"], [1, "pd-review-card"], [1, "pd-review-header"], ["class", "pd-star sm", 3, "filled", 4, "ngFor", "ngForOf"], [1, "pd-review-author"], [1, "pd-review-date"], ["class", "pd-review-comment", 4, "ngIf"], [1, "pd-star", "sm"], [1, "pd-review-comment"], [1, "pd-cta"], [1, "pd-post-general-btn", 3, "click"]], template: function FindAProComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _FindAProComponent, selectors: [["app-find-a-pro"]], decls: 27, vars: 22, consts: [[1, "find-pro-page"], [1, "page-header"], [1, "header-inner"], [1, "material-icons"], [1, "subtitle"], ["class", "map-toggle-btn", 3, "click", 4, "ngIf"], ["class", "filter-bar", 4, "ngIf"], ["class", "location-filter-bar", 4, "ngIf"], ["class", "preview-banner", 4, "ngIf"], ["class", "alert-error", 4, "ngIf"], [1, "body-split"], [1, "list-panel"], ["class", "loading-wrap", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], ["class", "results-meta", 4, "ngIf"], [1, "pro-list"], ["class", "pro-card", 3, "id", "highlighted", "selected", "no-location", "preview-card", "mouseenter", "mouseleave", "click", 4, "ngFor", "ngForOf"], ["class", "pagination", 4, "ngIf"], ["class", "map-panel", 4, "ngIf"], ["class", "pro-detail-panel", 4, "ngIf"], [1, "map-toggle-btn", 3, "click"], [1, "filter-bar"], [1, "search-wrap"], [1, "material-icons", "search-icon"], ["type", "text", 1, "search-input", 3, "ngModelChange", "placeholder", "ngModel"], ["class", "clear-btn", 3, "click", 4, "ngIf"], [1, "cat-select", 3, "ngModelChange", "change", "ngModel"], [3, "ngValue"], [3, "ngValue", 4, "ngFor", "ngForOf"], [1, "clear-btn", 3, "click"], [1, "location-filter-bar"], [1, "loc-select", 3, "ngModelChange", "change", "ngModel", "disabled"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], ["class", "loc-clear-btn", 3, "click", 4, "ngIf"], [3, "value"], [1, "loc-clear-btn", 3, "click"], [1, "preview-banner"], [1, "preview-banner-inner"], [1, "material-icons", "preview-icon"], [1, "preview-text"], [1, "preview-actions"], ["routerLink", "/auth/login", 1, "banner-btn", "primary"], ["routerLink", "/auth/register", 1, "banner-btn", "secondary"], [1, "alert-error"], [1, "loading-wrap"], ["diameter", "40"], [1, "empty-state"], [1, "results-meta"], [1, "pro-card", 3, "mouseenter", "mouseleave", "click", "id"], [1, "pro-avatar"], [1, "pro-info"], [1, "pro-name"], [1, "pro-business"], [1, "pro-location"], [1, "material-icons", "loc-icon"], ["class", "pro-distance", 4, "ngIf"], ["class", "pro-radius", 4, "ngIf"], ["class", "pro-services", 4, "ngIf"], [1, "pro-right-col"], ["class", "material-icons verified-icon", "title", "Verified", 4, "ngIf"], ["class", "material-icons no-loc-icon", "title", "No location set", 4, "ngIf"], [1, "material-icons", "chevron-icon"], [1, "pro-distance"], [1, "pro-radius"], [1, "pro-services"], ["class", "service-chip", 4, "ngFor", "ngForOf"], ["class", "service-chip more", 4, "ngIf"], [1, "service-chip"], [1, "service-chip", "more"], ["title", "Verified", 1, "material-icons", "verified-icon"], ["title", "No location set", 1, "material-icons", "no-loc-icon"], [1, "pagination"], [1, "pg-btn", 3, "click", "disabled"], [4, "ngFor", "ngForOf"], ["class", "pg-gap", 4, "ngIf"], [1, "pg-btn", 3, "click"], [1, "pg-gap"], [1, "map-panel"], ["id", "pro-map", 1, "pro-map-el"], ["class", "map-geocoding-indicator", 4, "ngIf"], [1, "map-geocoding-indicator"], ["diameter", "18"], [1, "pro-detail-panel"], [1, "pd-header"], ["aria-label", "Back to list", 1, "pd-back-btn", 3, "click"], [1, "pd-title"], [1, "pd-name"], ["class", "pd-business", 4, "ngIf"], ["class", "material-icons pd-verified", "title", "Verified professional", 4, "ngIf"], [1, "pd-meta"], [1, "pd-meta-row"], ["class", "pd-meta-row", 4, "ngIf"], [1, "pd-services-section"], [1, "pd-section-title"], ["class", "pd-loading", 4, "ngIf"], ["class", "pd-empty", 4, "ngIf"], ["class", "pd-service-card", 4, "ngFor", "ngForOf"], ["class", "pd-reviews-section", 4, "ngIf"], ["class", "pd-cta", 4, "ngIf"], [1, "pd-business"], ["title", "Verified professional", 1, "material-icons", "pd-verified"], [1, "pd-rating-inline"], ["class", "pd-star", 3, "filled", 4, "ngFor", "ngForOf"], [1, "pd-rating-num"], [1, "pd-rating-count"], [1, "pd-star"], [1, "pd-loading"], ["diameter", "32"], [1, "pd-empty"], [1, "pd-service-card"], [1, "pd-service-info"], [1, "pd-service-name"], ["class", "pd-service-cat", 4, "ngIf"], ["class", "pd-service-desc", 4, "ngIf"], [1, "pd-service-right"], [1, "pd-service-price"], ["class", "pd-post-btn", 3, "click", 4, "ngIf"], [1, "pd-service-cat"], [1, "pd-service-desc"], [1, "pd-post-btn", 3, "click"], [1, "pd-reviews-section"], ["class", "pd-review-card", 4, "ngFor", "ngForOf"], [1, "pd-review-card"], [1, "pd-review-header"], ["class", "pd-star sm", 3, "filled", 4, "ngFor", "ngForOf"], [1, "pd-review-author"], [1, "pd-review-date"], ["class", "pd-review-comment", 4, "ngIf"], [1, "pd-star", "sm"], [1, "pd-review-comment"], [1, "pd-cta"], [1, "pd-post-general-btn", 3, "click"]], template: function FindAProComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "div")(4, "h1")(5, "span", 3);
       \u0275\u0275text(6, "engineering");
@@ -1716,7 +1759,7 @@ var FindAProComponent = class _FindAProComponent {
       \u0275\u0275elementStart(17, "div", 10)(18, "div", 11);
       \u0275\u0275template(19, FindAProComponent_div_19_Template, 5, 3, "div", 12)(20, FindAProComponent_div_20_Template, 6, 3, "div", 13)(21, FindAProComponent_div_21_Template, 3, 4, "div", 14);
       \u0275\u0275elementStart(22, "div", 15);
-      \u0275\u0275template(23, FindAProComponent_div_23_Template, 19, 18, "div", 16);
+      \u0275\u0275template(23, FindAProComponent_div_23_Template, 20, 19, "div", 16);
       \u0275\u0275elementEnd();
       \u0275\u0275template(24, FindAProComponent_div_24_Template, 8, 3, "div", 17);
       \u0275\u0275elementEnd();
@@ -1782,7 +1825,7 @@ var FindAProComponent = class _FindAProComponent {
     DecimalPipe,
     DatePipe,
     TranslatePipe
-  ], styles: ['@charset "UTF-8";\n\n\n\n.find-pro-page[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  min-height: 100vh;\n  background: #f5f6fa;\n}\n.page-header[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea 0%,\n      #764ba2 100%);\n  color: white;\n  padding: 1.5rem 2rem 1rem;\n}\n.page-header[_ngcontent-%COMP%]   .header-inner[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 1rem;\n  margin-bottom: 1rem;\n}\n.page-header[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  margin: 0 0 0.25rem;\n  font-size: 1.6rem;\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n}\n.page-header[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]   .material-icons[_ngcontent-%COMP%] {\n  font-size: 1.8rem;\n}\n.page-header[_ngcontent-%COMP%]   .subtitle[_ngcontent-%COMP%] {\n  margin: 0;\n  opacity: 0.85;\n  font-size: 0.95rem;\n}\n.map-toggle-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.4rem;\n  background: rgba(255, 255, 255, 0.18);\n  color: white;\n  border: 1.5px solid rgba(255, 255, 255, 0.4);\n  border-radius: 6px;\n  padding: 0.5rem 1rem;\n  font-size: 0.9rem;\n  font-weight: 600;\n  cursor: pointer;\n  transition: background 0.2s;\n}\n.map-toggle-btn[_ngcontent-%COMP%]:hover {\n  background: rgba(255, 255, 255, 0.28);\n}\n.map-toggle-btn[_ngcontent-%COMP%]   .material-icons[_ngcontent-%COMP%] {\n  font-size: 1.1rem;\n}\n.filter-bar[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 0.75rem;\n  flex-wrap: wrap;\n}\n.search-wrap[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 200px;\n  position: relative;\n  display: flex;\n  align-items: center;\n  background: rgba(255, 255, 255, 0.15);\n  border: 1.5px solid rgba(255, 255, 255, 0.35);\n  border-radius: 6px;\n  padding: 0 0.5rem;\n}\n.search-wrap[_ngcontent-%COMP%]   .search-icon[_ngcontent-%COMP%] {\n  color: rgba(255, 255, 255, 0.7);\n  font-size: 1.2rem;\n}\n.search-wrap[_ngcontent-%COMP%]   .search-input[_ngcontent-%COMP%] {\n  flex: 1;\n  background: none;\n  border: none;\n  outline: none;\n  color: white;\n  font-size: 0.95rem;\n  padding: 0.5rem 0.5rem;\n}\n.search-wrap[_ngcontent-%COMP%]   .search-input[_ngcontent-%COMP%]::placeholder {\n  color: rgba(255, 255, 255, 0.6);\n}\n.search-wrap[_ngcontent-%COMP%]   .clear-btn[_ngcontent-%COMP%] {\n  background: none;\n  border: none;\n  cursor: pointer;\n  padding: 0;\n  color: rgba(255, 255, 255, 0.7);\n  display: flex;\n  align-items: center;\n}\n.search-wrap[_ngcontent-%COMP%]   .clear-btn[_ngcontent-%COMP%]   .material-icons[_ngcontent-%COMP%] {\n  font-size: 1.1rem;\n}\n.cat-select[_ngcontent-%COMP%] {\n  background: rgba(255, 255, 255, 0.15);\n  border: 1.5px solid rgba(255, 255, 255, 0.35);\n  border-radius: 6px;\n  color: white;\n  padding: 0.5rem 0.75rem;\n  font-size: 0.9rem;\n  cursor: pointer;\n  outline: none;\n  min-width: 160px;\n}\n.cat-select[_ngcontent-%COMP%]   option[_ngcontent-%COMP%] {\n  color: #333;\n  background: white;\n}\n.location-filter-bar[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 0.5rem;\n  flex-wrap: wrap;\n  margin-top: 0.5rem;\n  align-items: center;\n}\n.loc-select[_ngcontent-%COMP%] {\n  background: rgba(255, 255, 255, 0.15);\n  border: 1.5px solid rgba(255, 255, 255, 0.35);\n  border-radius: 6px;\n  color: white;\n  padding: 0.4rem 0.65rem;\n  font-size: 0.85rem;\n  cursor: pointer;\n  outline: none;\n  min-width: 130px;\n}\n.loc-select[_ngcontent-%COMP%]   option[_ngcontent-%COMP%] {\n  color: #333;\n  background: white;\n}\n.loc-select[_ngcontent-%COMP%]:disabled {\n  opacity: 0.45;\n  cursor: default;\n}\n.loc-clear-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.25rem;\n  background: rgba(255, 255, 255, 0.18);\n  color: white;\n  border: 1.5px solid rgba(255, 255, 255, 0.4);\n  border-radius: 6px;\n  padding: 0.4rem 0.75rem;\n  font-size: 0.82rem;\n  font-weight: 600;\n  cursor: pointer;\n  transition: background 0.2s;\n  white-space: nowrap;\n}\n.loc-clear-btn[_ngcontent-%COMP%]:hover {\n  background: rgba(255, 255, 255, 0.28);\n}\n.loc-clear-btn[_ngcontent-%COMP%]   .material-icons[_ngcontent-%COMP%] {\n  font-size: 0.95rem;\n}\n.alert-error[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  background: #ffebee;\n  color: #c62828;\n  padding: 0.75rem 1.5rem;\n  font-size: 0.9rem;\n}\n.body-split[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 380px 1fr;\n  height: calc(100vh - 160px);\n  overflow: hidden;\n  min-height: 0;\n}\n.body-split.map-hidden[_ngcontent-%COMP%] {\n  grid-template-columns: 1fr;\n  height: auto;\n}\n@media (max-width: 768px) {\n  .body-split[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n    grid-template-rows: 320px 320px;\n    height: auto;\n  }\n  .body-split.map-hidden[_ngcontent-%COMP%] {\n    grid-template-rows: auto;\n  }\n}\n.list-panel[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  background: white;\n  border-right: 1px solid #e0e0e0;\n  height: 100%;\n}\n.loading-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 1rem;\n  padding: 3rem;\n  color: #666;\n}\n.empty-state[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0.5rem;\n  padding: 3rem;\n  color: #999;\n  text-align: center;\n}\n.empty-state[_ngcontent-%COMP%]   .material-icons[_ngcontent-%COMP%] {\n  font-size: 3rem;\n}\n.results-meta[_ngcontent-%COMP%] {\n  padding: 0.75rem 1rem;\n  font-size: 0.85rem;\n  color: #666;\n  border-bottom: 1px solid #f0f0f0;\n  background: #fafafa;\n}\n.results-meta[_ngcontent-%COMP%]   .no-loc-note[_ngcontent-%COMP%] {\n  color: #f57c00;\n  margin-left: 0.25rem;\n}\n.pro-list[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n}\n.pro-card[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 0.75rem;\n  align-items: flex-start;\n  padding: 0.9rem 1rem;\n  border-bottom: 1px solid #f0f0f0;\n  cursor: pointer;\n  transition: background 0.15s;\n  position: relative;\n}\n.pro-card[_ngcontent-%COMP%]:hover {\n  background: #f5f5f5;\n}\n.pro-card.highlighted[_ngcontent-%COMP%] {\n  background: #ede7f6;\n  border-left: 3px solid #667eea;\n}\n.pro-card.no-location[_ngcontent-%COMP%] {\n  opacity: 0.75;\n}\n.pro-avatar[_ngcontent-%COMP%] {\n  width: 44px;\n  height: 44px;\n  min-width: 44px;\n  border-radius: 50%;\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n  color: white;\n  font-size: 1.3rem;\n  font-weight: 700;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.pro-info[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 0;\n}\n.pro-info[_ngcontent-%COMP%]   .pro-name[_ngcontent-%COMP%] {\n  font-weight: 600;\n  font-size: 0.95rem;\n  color: #212121;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.pro-info[_ngcontent-%COMP%]   .pro-business[_ngcontent-%COMP%] {\n  font-size: 0.85rem;\n  color: #555;\n  margin-bottom: 0.2rem;\n}\n.pro-info[_ngcontent-%COMP%]   .pro-location[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.2rem;\n  font-size: 0.78rem;\n  color: #888;\n  margin-bottom: 0.25rem;\n}\n.pro-info[_ngcontent-%COMP%]   .pro-location[_ngcontent-%COMP%]   .loc-icon[_ngcontent-%COMP%] {\n  font-size: 0.95rem;\n  color: #e91e63;\n}\n.pro-info[_ngcontent-%COMP%]   .pro-radius[_ngcontent-%COMP%] {\n  font-size: 0.75rem;\n  color: #667eea;\n  margin-bottom: 0.25rem;\n}\n.pro-services[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 0.25rem;\n  margin-top: 0.25rem;\n}\n.service-chip[_ngcontent-%COMP%] {\n  background: #ede7f6;\n  color: #5e35b1;\n  font-size: 0.7rem;\n  padding: 0.15rem 0.45rem;\n  border-radius: 10px;\n  white-space: nowrap;\n}\n.service-chip.more[_ngcontent-%COMP%] {\n  background: #e0e0e0;\n  color: #555;\n}\n.pro-right-col[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0.25rem;\n  flex-shrink: 0;\n  padding-top: 0.15rem;\n}\n.verified-icon[_ngcontent-%COMP%] {\n  font-size: 1.1rem;\n  color: #43a047;\n}\n.no-loc-icon[_ngcontent-%COMP%] {\n  font-size: 1rem;\n  color: #bbb;\n}\n.chevron-icon[_ngcontent-%COMP%] {\n  font-size: 1.1rem;\n  color: #ccc;\n  margin-top: auto;\n}\n.pro-card.selected[_ngcontent-%COMP%] {\n  background: #ede7f6;\n  border-left: 3px solid #667eea;\n}\n.map-panel[_ngcontent-%COMP%] {\n  position: relative;\n  overflow: hidden;\n  height: 100%;\n}\n.pro-map-el[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  min-height: 400px;\n}\n.map-geocoding-indicator[_ngcontent-%COMP%] {\n  position: absolute;\n  bottom: 1rem;\n  left: 50%;\n  transform: translateX(-50%);\n  background: rgba(255, 255, 255, 0.92);\n  border-radius: 20px;\n  padding: 0.4rem 1rem 0.4rem 0.65rem;\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  font-size: 0.8rem;\n  color: #555;\n  z-index: 1000;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);\n  white-space: nowrap;\n  pointer-events: none;\n}\n.preview-banner[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      rgba(102, 126, 234, 0.08),\n      rgba(118, 75, 162, 0.08));\n  border-bottom: 1px solid rgba(102, 126, 234, 0.2);\n  padding: 1rem 1.5rem;\n}\n.preview-banner-inner[_ngcontent-%COMP%] {\n  max-width: 900px;\n  margin: 0 auto;\n  display: flex;\n  align-items: center;\n  gap: 1rem;\n  flex-wrap: wrap;\n}\n.preview-icon[_ngcontent-%COMP%] {\n  font-size: 2rem;\n  color: #667eea;\n  flex-shrink: 0;\n}\n.preview-text[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 200px;\n}\n.preview-text[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  display: block;\n  font-size: 0.95rem;\n  color: #1f2937;\n  margin-bottom: 0.2rem;\n}\n.preview-text[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 0.85rem;\n  color: #6b7280;\n  line-height: 1.5;\n}\n.preview-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 0.75rem;\n  flex-shrink: 0;\n}\n.banner-btn[_ngcontent-%COMP%] {\n  padding: 0.5rem 1.25rem;\n  border-radius: 7px;\n  font-size: 0.9rem;\n  font-weight: 600;\n  text-decoration: none;\n  transition: transform 0.15s, box-shadow 0.15s;\n}\n.banner-btn.primary[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n  color: white;\n}\n.banner-btn.primary[_ngcontent-%COMP%]:hover {\n  transform: translateY(-1px);\n  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.35);\n}\n.banner-btn.secondary[_ngcontent-%COMP%] {\n  background: white;\n  color: #667eea;\n  border: 1.5px solid #667eea;\n}\n.banner-btn.secondary[_ngcontent-%COMP%]:hover {\n  background: rgba(102, 126, 234, 0.05);\n}\n.preview-blur[_ngcontent-%COMP%] {\n  pointer-events: none;\n  -webkit-user-select: none;\n  user-select: none;\n}\n.preview-card[_ngcontent-%COMP%] {\n  cursor: default;\n  opacity: 0.85;\n}\n.pro-detail-panel[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  background: white;\n  height: 100%;\n  overflow-y: auto;\n}\n@media (max-width: 768px) {\n  .pro-detail-panel[_ngcontent-%COMP%] {\n    position: fixed;\n    inset: 0;\n    z-index: 200;\n    height: 100dvh;\n  }\n}\n.pd-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.75rem;\n  padding: 1rem 1.25rem;\n  background:\n    linear-gradient(\n      135deg,\n      #667eea 0%,\n      #764ba2 100%);\n  color: white;\n  position: sticky;\n  top: 0;\n  z-index: 1;\n  flex-shrink: 0;\n}\n.pd-back-btn[_ngcontent-%COMP%] {\n  background: rgba(255, 255, 255, 0.2);\n  border: none;\n  border-radius: 50%;\n  width: 36px;\n  height: 36px;\n  min-width: 36px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: white;\n  cursor: pointer;\n  transition: background 0.15s;\n}\n.pd-back-btn[_ngcontent-%COMP%]:hover {\n  background: rgba(255, 255, 255, 0.32);\n}\n.pd-back-btn[_ngcontent-%COMP%]   .material-icons[_ngcontent-%COMP%] {\n  font-size: 1.2rem;\n}\n.pd-title[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 0;\n}\n.pd-name[_ngcontent-%COMP%] {\n  display: block;\n  font-weight: 700;\n  font-size: 1rem;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.pd-business[_ngcontent-%COMP%] {\n  display: block;\n  font-size: 0.82rem;\n  opacity: 0.85;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.pd-verified[_ngcontent-%COMP%] {\n  font-size: 1.25rem;\n  color: #a5f3c4;\n  flex-shrink: 0;\n}\n.pd-meta[_ngcontent-%COMP%] {\n  padding: 0.85rem 1.25rem;\n  background: #fafafa;\n  border-bottom: 1px solid #f0f0f0;\n  display: flex;\n  flex-direction: column;\n  gap: 0.4rem;\n  flex-shrink: 0;\n}\n.pd-meta-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.4rem;\n  font-size: 0.85rem;\n  color: #555;\n}\n.pd-meta-row[_ngcontent-%COMP%]   .material-icons[_ngcontent-%COMP%] {\n  font-size: 1rem;\n  color: #667eea;\n}\n.pd-services-section[_ngcontent-%COMP%] {\n  flex: 1;\n  padding: 1rem 1.25rem;\n}\n.pd-section-title[_ngcontent-%COMP%] {\n  font-size: 0.75rem;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  color: #999;\n  margin: 0 0 0.85rem;\n}\n.pd-loading[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: center;\n  padding: 2rem 0;\n}\n.pd-empty[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  color: #aaa;\n  font-size: 0.9rem;\n  padding: 0.5rem 0;\n}\n.pd-empty[_ngcontent-%COMP%]   .material-icons[_ngcontent-%COMP%] {\n  font-size: 1.1rem;\n}\n.pd-service-card[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 1rem;\n  align-items: flex-start;\n  padding: 0.9rem 1rem;\n  border: 1px solid #e8e8e8;\n  border-radius: 10px;\n  margin-bottom: 0.65rem;\n  transition: box-shadow 0.15s;\n}\n.pd-service-card[_ngcontent-%COMP%]:hover {\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);\n}\n.pd-service-info[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 0;\n}\n.pd-service-name[_ngcontent-%COMP%] {\n  font-weight: 600;\n  font-size: 0.95rem;\n  color: #212121;\n  margin-bottom: 0.15rem;\n}\n.pd-service-cat[_ngcontent-%COMP%] {\n  font-size: 0.75rem;\n  color: #667eea;\n  margin-bottom: 0.2rem;\n}\n.pd-service-desc[_ngcontent-%COMP%] {\n  font-size: 0.82rem;\n  color: #666;\n  line-height: 1.45;\n  display: -webkit-box;\n  -webkit-line-clamp: 2;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n}\n.pd-service-right[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-end;\n  gap: 0.5rem;\n  flex-shrink: 0;\n}\n.pd-service-price[_ngcontent-%COMP%] {\n  font-weight: 700;\n  font-size: 1rem;\n  color: #2e7d32;\n  white-space: nowrap;\n}\n.pd-post-btn[_ngcontent-%COMP%] {\n  background: var(--color-primary, #667eea);\n  color: white;\n  border: none;\n  border-radius: 7px;\n  padding: 0.4rem 0.85rem;\n  font-size: 0.82rem;\n  font-weight: 600;\n  cursor: pointer;\n  white-space: nowrap;\n  font-family: inherit;\n  transition: opacity 0.15s;\n}\n.pd-post-btn[_ngcontent-%COMP%]:hover {\n  opacity: 0.88;\n}\n.pd-cta[_ngcontent-%COMP%] {\n  padding: 1rem 1.25rem 1.5rem;\n  border-top: 1px solid #f0f0f0;\n  text-align: center;\n  flex-shrink: 0;\n}\n.pd-cta[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 0.85rem;\n  color: #888;\n  margin: 0 0 0.75rem;\n}\n.pd-rating-inline[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 2px;\n}\n.pd-star[_ngcontent-%COMP%] {\n  color: #d1d5db;\n  font-size: 15px;\n  line-height: 1;\n}\n.pd-star.filled[_ngcontent-%COMP%] {\n  color: #f59e0b;\n}\n.pd-star.sm[_ngcontent-%COMP%] {\n  font-size: 13px;\n}\n.pd-rating-num[_ngcontent-%COMP%] {\n  font-size: 0.88rem;\n  font-weight: 700;\n  color: #1f2937;\n  margin-left: 3px;\n}\n.pd-rating-count[_ngcontent-%COMP%] {\n  font-size: 0.78rem;\n  color: #6b7280;\n}\n.pd-reviews-section[_ngcontent-%COMP%] {\n  padding: 0 1.25rem 1rem;\n  border-top: 1px solid #f0f0f0;\n  margin-top: 0.25rem;\n  padding-top: 1rem;\n}\n.pd-review-card[_ngcontent-%COMP%] {\n  padding: 0.65rem 0;\n  border-bottom: 1px solid #f3f4f6;\n}\n.pd-review-card[_ngcontent-%COMP%]:last-child {\n  border-bottom: none;\n}\n.pd-review-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 5px;\n  flex-wrap: wrap;\n  margin-bottom: 3px;\n}\n.pd-review-author[_ngcontent-%COMP%] {\n  font-size: 0.8rem;\n  font-weight: 600;\n  color: #374151;\n}\n.pd-review-date[_ngcontent-%COMP%] {\n  font-size: 0.75rem;\n  color: #9ca3af;\n  margin-left: auto;\n}\n.pd-review-comment[_ngcontent-%COMP%] {\n  font-size: 0.82rem;\n  color: #4b5563;\n  margin: 0;\n  line-height: 1.45;\n}\n.pd-post-general-btn[_ngcontent-%COMP%] {\n  background: white;\n  color: var(--color-primary, #667eea);\n  border: 2px solid var(--color-primary, #667eea);\n  border-radius: 8px;\n  padding: 0.6rem 1.5rem;\n  font-size: 0.9rem;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  width: 100%;\n  transition: background 0.15s;\n}\n.pd-post-general-btn[_ngcontent-%COMP%]:hover {\n  background: rgba(102, 126, 234, 0.06);\n}\n.pagination[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0.3rem;\n  padding: 0.75rem 1rem;\n  border-top: 1px solid #f0f0f0;\n  background: #fafafa;\n  flex-shrink: 0;\n  flex-wrap: wrap;\n}\n.pg-btn[_ngcontent-%COMP%] {\n  min-width: 32px;\n  height: 32px;\n  border: 1.5px solid #e0e0e0;\n  border-radius: 6px;\n  background: white;\n  color: #444;\n  font-size: 0.85rem;\n  font-weight: 500;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition:\n    background 0.15s,\n    border-color 0.15s,\n    color 0.15s;\n  padding: 0 0.4rem;\n  font-family: inherit;\n}\n.pg-btn[_ngcontent-%COMP%]   .material-icons[_ngcontent-%COMP%] {\n  font-size: 1.1rem;\n}\n.pg-btn[_ngcontent-%COMP%]:hover:not(:disabled):not(.active) {\n  background: #f0f0f0;\n  border-color: #bbb;\n}\n.pg-btn.active[_ngcontent-%COMP%] {\n  background: #667eea;\n  border-color: #667eea;\n  color: white;\n  font-weight: 700;\n}\n.pg-btn[_ngcontent-%COMP%]:disabled {\n  opacity: 0.35;\n  cursor: default;\n}\n.pg-gap[_ngcontent-%COMP%] {\n  color: #aaa;\n  font-size: 0.9rem;\n  padding: 0 0.15rem;\n}\n@media (max-width: 768px) {\n  .body-split[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n    grid-template-rows: auto 320px;\n  }\n  .body-split.map-hidden[_ngcontent-%COMP%] {\n    grid-template-rows: 1fr;\n  }\n  .list-panel[_ngcontent-%COMP%] {\n    overflow-y: auto;\n    max-height: 50vh;\n    border-right: none;\n    border-bottom: 1px solid #e0e0e0;\n  }\n  .map-panel[_ngcontent-%COMP%] {\n    min-height: 320px;\n  }\n}\n/*# sourceMappingURL=find-a-pro.css.map */'] });
+  ], styles: ['@charset "UTF-8";\n\n\n\n.find-pro-page[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  min-height: 100vh;\n  background: #f5f6fa;\n}\n.page-header[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea 0%,\n      #764ba2 100%);\n  color: white;\n  padding: 1.5rem 2rem 1rem;\n}\n.page-header[_ngcontent-%COMP%]   .header-inner[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 1rem;\n  margin-bottom: 1rem;\n}\n.page-header[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  margin: 0 0 0.25rem;\n  font-size: 1.6rem;\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n}\n.page-header[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]   .material-icons[_ngcontent-%COMP%] {\n  font-size: 1.8rem;\n}\n.page-header[_ngcontent-%COMP%]   .subtitle[_ngcontent-%COMP%] {\n  margin: 0;\n  opacity: 0.85;\n  font-size: 0.95rem;\n}\n.map-toggle-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.4rem;\n  background: rgba(255, 255, 255, 0.18);\n  color: white;\n  border: 1.5px solid rgba(255, 255, 255, 0.4);\n  border-radius: 6px;\n  padding: 0.5rem 1rem;\n  font-size: 0.9rem;\n  font-weight: 600;\n  cursor: pointer;\n  transition: background 0.2s;\n}\n.map-toggle-btn[_ngcontent-%COMP%]:hover {\n  background: rgba(255, 255, 255, 0.28);\n}\n.map-toggle-btn[_ngcontent-%COMP%]   .material-icons[_ngcontent-%COMP%] {\n  font-size: 1.1rem;\n}\n.filter-bar[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 0.75rem;\n  flex-wrap: wrap;\n}\n.search-wrap[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 200px;\n  position: relative;\n  display: flex;\n  align-items: center;\n  background: rgba(255, 255, 255, 0.15);\n  border: 1.5px solid rgba(255, 255, 255, 0.35);\n  border-radius: 6px;\n  padding: 0 0.5rem;\n}\n.search-wrap[_ngcontent-%COMP%]   .search-icon[_ngcontent-%COMP%] {\n  color: rgba(255, 255, 255, 0.7);\n  font-size: 1.2rem;\n}\n.search-wrap[_ngcontent-%COMP%]   .search-input[_ngcontent-%COMP%] {\n  flex: 1;\n  background: none;\n  border: none;\n  outline: none;\n  color: white;\n  font-size: 0.95rem;\n  padding: 0.5rem 0.5rem;\n}\n.search-wrap[_ngcontent-%COMP%]   .search-input[_ngcontent-%COMP%]::placeholder {\n  color: rgba(255, 255, 255, 0.6);\n}\n.search-wrap[_ngcontent-%COMP%]   .clear-btn[_ngcontent-%COMP%] {\n  background: none;\n  border: none;\n  cursor: pointer;\n  padding: 0;\n  color: rgba(255, 255, 255, 0.7);\n  display: flex;\n  align-items: center;\n}\n.search-wrap[_ngcontent-%COMP%]   .clear-btn[_ngcontent-%COMP%]   .material-icons[_ngcontent-%COMP%] {\n  font-size: 1.1rem;\n}\n.cat-select[_ngcontent-%COMP%] {\n  background: rgba(255, 255, 255, 0.15);\n  border: 1.5px solid rgba(255, 255, 255, 0.35);\n  border-radius: 6px;\n  color: white;\n  padding: 0.5rem 0.75rem;\n  font-size: 0.9rem;\n  cursor: pointer;\n  outline: none;\n  min-width: 160px;\n}\n.cat-select[_ngcontent-%COMP%]   option[_ngcontent-%COMP%] {\n  color: #333;\n  background: white;\n}\n.location-filter-bar[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 0.5rem;\n  flex-wrap: wrap;\n  margin-top: 0.5rem;\n  align-items: center;\n}\n.loc-select[_ngcontent-%COMP%] {\n  background: rgba(255, 255, 255, 0.15);\n  border: 1.5px solid rgba(255, 255, 255, 0.35);\n  border-radius: 6px;\n  color: white;\n  padding: 0.4rem 0.65rem;\n  font-size: 0.85rem;\n  cursor: pointer;\n  outline: none;\n  min-width: 130px;\n}\n.loc-select[_ngcontent-%COMP%]   option[_ngcontent-%COMP%] {\n  color: #333;\n  background: white;\n}\n.loc-select[_ngcontent-%COMP%]:disabled {\n  opacity: 0.45;\n  cursor: default;\n}\n.loc-clear-btn[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.25rem;\n  background: rgba(255, 255, 255, 0.18);\n  color: white;\n  border: 1.5px solid rgba(255, 255, 255, 0.4);\n  border-radius: 6px;\n  padding: 0.4rem 0.75rem;\n  font-size: 0.82rem;\n  font-weight: 600;\n  cursor: pointer;\n  transition: background 0.2s;\n  white-space: nowrap;\n}\n.loc-clear-btn[_ngcontent-%COMP%]:hover {\n  background: rgba(255, 255, 255, 0.28);\n}\n.loc-clear-btn[_ngcontent-%COMP%]   .material-icons[_ngcontent-%COMP%] {\n  font-size: 0.95rem;\n}\n.alert-error[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  background: #ffebee;\n  color: #c62828;\n  padding: 0.75rem 1.5rem;\n  font-size: 0.9rem;\n}\n.body-split[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 380px 1fr;\n  height: calc(100vh - 160px);\n  overflow: hidden;\n  min-height: 0;\n}\n.body-split.map-hidden[_ngcontent-%COMP%] {\n  grid-template-columns: 1fr;\n  height: auto;\n}\n@media (max-width: 768px) {\n  .body-split[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n    grid-template-rows: 320px 320px;\n    height: auto;\n  }\n  .body-split.map-hidden[_ngcontent-%COMP%] {\n    grid-template-rows: auto;\n  }\n}\n.list-panel[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  background: white;\n  border-right: 1px solid #e0e0e0;\n  height: 100%;\n}\n.loading-wrap[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 1rem;\n  padding: 3rem;\n  color: #666;\n}\n.empty-state[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0.5rem;\n  padding: 3rem;\n  color: #999;\n  text-align: center;\n}\n.empty-state[_ngcontent-%COMP%]   .material-icons[_ngcontent-%COMP%] {\n  font-size: 3rem;\n}\n.results-meta[_ngcontent-%COMP%] {\n  padding: 0.75rem 1rem;\n  font-size: 0.85rem;\n  color: #666;\n  border-bottom: 1px solid #f0f0f0;\n  background: #fafafa;\n}\n.results-meta[_ngcontent-%COMP%]   .no-loc-note[_ngcontent-%COMP%] {\n  color: #f57c00;\n  margin-left: 0.25rem;\n}\n.pro-list[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n}\n.pro-card[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 0.75rem;\n  align-items: flex-start;\n  padding: 0.9rem 1rem;\n  border-bottom: 1px solid #f0f0f0;\n  cursor: pointer;\n  transition: background 0.15s;\n  position: relative;\n}\n.pro-card[_ngcontent-%COMP%]:hover {\n  background: #f5f5f5;\n}\n.pro-card.highlighted[_ngcontent-%COMP%] {\n  background: #ede7f6;\n  border-left: 3px solid #667eea;\n}\n.pro-card.no-location[_ngcontent-%COMP%] {\n  opacity: 0.75;\n}\n.pro-avatar[_ngcontent-%COMP%] {\n  width: 44px;\n  height: 44px;\n  min-width: 44px;\n  border-radius: 50%;\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n  color: white;\n  font-size: 1.3rem;\n  font-weight: 700;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.pro-info[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 0;\n}\n.pro-info[_ngcontent-%COMP%]   .pro-name[_ngcontent-%COMP%] {\n  font-weight: 600;\n  font-size: 0.95rem;\n  color: #212121;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.pro-info[_ngcontent-%COMP%]   .pro-business[_ngcontent-%COMP%] {\n  font-size: 0.85rem;\n  color: #555;\n  margin-bottom: 0.2rem;\n}\n.pro-info[_ngcontent-%COMP%]   .pro-location[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.2rem;\n  font-size: 0.78rem;\n  color: #888;\n  margin-bottom: 0.25rem;\n}\n.pro-info[_ngcontent-%COMP%]   .pro-location[_ngcontent-%COMP%]   .loc-icon[_ngcontent-%COMP%] {\n  font-size: 0.95rem;\n  color: #e91e63;\n}\n.pro-info[_ngcontent-%COMP%]   .pro-location[_ngcontent-%COMP%]   .pro-distance[_ngcontent-%COMP%] {\n  color: #667eea;\n  font-weight: 600;\n}\n.pro-info[_ngcontent-%COMP%]   .pro-radius[_ngcontent-%COMP%] {\n  font-size: 0.75rem;\n  color: #667eea;\n  margin-bottom: 0.25rem;\n}\n.pro-services[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 0.25rem;\n  margin-top: 0.25rem;\n}\n.service-chip[_ngcontent-%COMP%] {\n  background: #ede7f6;\n  color: #5e35b1;\n  font-size: 0.7rem;\n  padding: 0.15rem 0.45rem;\n  border-radius: 10px;\n  white-space: nowrap;\n}\n.service-chip.more[_ngcontent-%COMP%] {\n  background: #e0e0e0;\n  color: #555;\n}\n.pro-right-col[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0.25rem;\n  flex-shrink: 0;\n  padding-top: 0.15rem;\n}\n.verified-icon[_ngcontent-%COMP%] {\n  font-size: 1.1rem;\n  color: #43a047;\n}\n.no-loc-icon[_ngcontent-%COMP%] {\n  font-size: 1rem;\n  color: #bbb;\n}\n.chevron-icon[_ngcontent-%COMP%] {\n  font-size: 1.1rem;\n  color: #ccc;\n  margin-top: auto;\n}\n.pro-card.selected[_ngcontent-%COMP%] {\n  background: #ede7f6;\n  border-left: 3px solid #667eea;\n}\n.map-panel[_ngcontent-%COMP%] {\n  position: relative;\n  overflow: hidden;\n  height: 100%;\n}\n.pro-map-el[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  min-height: 400px;\n}\n.map-geocoding-indicator[_ngcontent-%COMP%] {\n  position: absolute;\n  bottom: 1rem;\n  left: 50%;\n  transform: translateX(-50%);\n  background: rgba(255, 255, 255, 0.92);\n  border-radius: 20px;\n  padding: 0.4rem 1rem 0.4rem 0.65rem;\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  font-size: 0.8rem;\n  color: #555;\n  z-index: 1000;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);\n  white-space: nowrap;\n  pointer-events: none;\n}\n.preview-banner[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      rgba(102, 126, 234, 0.08),\n      rgba(118, 75, 162, 0.08));\n  border-bottom: 1px solid rgba(102, 126, 234, 0.2);\n  padding: 1rem 1.5rem;\n}\n.preview-banner-inner[_ngcontent-%COMP%] {\n  max-width: 900px;\n  margin: 0 auto;\n  display: flex;\n  align-items: center;\n  gap: 1rem;\n  flex-wrap: wrap;\n}\n.preview-icon[_ngcontent-%COMP%] {\n  font-size: 2rem;\n  color: #667eea;\n  flex-shrink: 0;\n}\n.preview-text[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 200px;\n}\n.preview-text[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  display: block;\n  font-size: 0.95rem;\n  color: #1f2937;\n  margin-bottom: 0.2rem;\n}\n.preview-text[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 0.85rem;\n  color: #6b7280;\n  line-height: 1.5;\n}\n.preview-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 0.75rem;\n  flex-shrink: 0;\n}\n.banner-btn[_ngcontent-%COMP%] {\n  padding: 0.5rem 1.25rem;\n  border-radius: 7px;\n  font-size: 0.9rem;\n  font-weight: 600;\n  text-decoration: none;\n  transition: transform 0.15s, box-shadow 0.15s;\n}\n.banner-btn.primary[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n  color: white;\n}\n.banner-btn.primary[_ngcontent-%COMP%]:hover {\n  transform: translateY(-1px);\n  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.35);\n}\n.banner-btn.secondary[_ngcontent-%COMP%] {\n  background: white;\n  color: #667eea;\n  border: 1.5px solid #667eea;\n}\n.banner-btn.secondary[_ngcontent-%COMP%]:hover {\n  background: rgba(102, 126, 234, 0.05);\n}\n.preview-blur[_ngcontent-%COMP%] {\n  pointer-events: none;\n  -webkit-user-select: none;\n  user-select: none;\n}\n.preview-card[_ngcontent-%COMP%] {\n  cursor: default;\n  opacity: 0.85;\n}\n.pro-detail-panel[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  background: white;\n  height: 100%;\n  overflow-y: auto;\n}\n@media (max-width: 768px) {\n  .pro-detail-panel[_ngcontent-%COMP%] {\n    position: fixed;\n    inset: 0;\n    z-index: 200;\n    height: 100dvh;\n  }\n}\n.pd-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.75rem;\n  padding: 1rem 1.25rem;\n  background:\n    linear-gradient(\n      135deg,\n      #667eea 0%,\n      #764ba2 100%);\n  color: white;\n  position: sticky;\n  top: 0;\n  z-index: 1;\n  flex-shrink: 0;\n}\n.pd-back-btn[_ngcontent-%COMP%] {\n  background: rgba(255, 255, 255, 0.2);\n  border: none;\n  border-radius: 50%;\n  width: 36px;\n  height: 36px;\n  min-width: 36px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: white;\n  cursor: pointer;\n  transition: background 0.15s;\n}\n.pd-back-btn[_ngcontent-%COMP%]:hover {\n  background: rgba(255, 255, 255, 0.32);\n}\n.pd-back-btn[_ngcontent-%COMP%]   .material-icons[_ngcontent-%COMP%] {\n  font-size: 1.2rem;\n}\n.pd-title[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 0;\n}\n.pd-name[_ngcontent-%COMP%] {\n  display: block;\n  font-weight: 700;\n  font-size: 1rem;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.pd-business[_ngcontent-%COMP%] {\n  display: block;\n  font-size: 0.82rem;\n  opacity: 0.85;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.pd-verified[_ngcontent-%COMP%] {\n  font-size: 1.25rem;\n  color: #a5f3c4;\n  flex-shrink: 0;\n}\n.pd-meta[_ngcontent-%COMP%] {\n  padding: 0.85rem 1.25rem;\n  background: #fafafa;\n  border-bottom: 1px solid #f0f0f0;\n  display: flex;\n  flex-direction: column;\n  gap: 0.4rem;\n  flex-shrink: 0;\n}\n.pd-meta-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.4rem;\n  font-size: 0.85rem;\n  color: #555;\n}\n.pd-meta-row[_ngcontent-%COMP%]   .material-icons[_ngcontent-%COMP%] {\n  font-size: 1rem;\n  color: #667eea;\n}\n.pd-services-section[_ngcontent-%COMP%] {\n  flex: 1;\n  padding: 1rem 1.25rem;\n}\n.pd-section-title[_ngcontent-%COMP%] {\n  font-size: 0.75rem;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  color: #999;\n  margin: 0 0 0.85rem;\n}\n.pd-loading[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: center;\n  padding: 2rem 0;\n}\n.pd-empty[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  color: #aaa;\n  font-size: 0.9rem;\n  padding: 0.5rem 0;\n}\n.pd-empty[_ngcontent-%COMP%]   .material-icons[_ngcontent-%COMP%] {\n  font-size: 1.1rem;\n}\n.pd-service-card[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 1rem;\n  align-items: flex-start;\n  padding: 0.9rem 1rem;\n  border: 1px solid #e8e8e8;\n  border-radius: 10px;\n  margin-bottom: 0.65rem;\n  transition: box-shadow 0.15s;\n}\n.pd-service-card[_ngcontent-%COMP%]:hover {\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);\n}\n.pd-service-info[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 0;\n}\n.pd-service-name[_ngcontent-%COMP%] {\n  font-weight: 600;\n  font-size: 0.95rem;\n  color: #212121;\n  margin-bottom: 0.15rem;\n}\n.pd-service-cat[_ngcontent-%COMP%] {\n  font-size: 0.75rem;\n  color: #667eea;\n  margin-bottom: 0.2rem;\n}\n.pd-service-desc[_ngcontent-%COMP%] {\n  font-size: 0.82rem;\n  color: #666;\n  line-height: 1.45;\n  display: -webkit-box;\n  -webkit-line-clamp: 2;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n}\n.pd-service-right[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-end;\n  gap: 0.5rem;\n  flex-shrink: 0;\n}\n.pd-service-price[_ngcontent-%COMP%] {\n  font-weight: 700;\n  font-size: 1rem;\n  color: #2e7d32;\n  white-space: nowrap;\n}\n.pd-post-btn[_ngcontent-%COMP%] {\n  background: var(--color-primary, #667eea);\n  color: white;\n  border: none;\n  border-radius: 7px;\n  padding: 0.4rem 0.85rem;\n  font-size: 0.82rem;\n  font-weight: 600;\n  cursor: pointer;\n  white-space: nowrap;\n  font-family: inherit;\n  transition: opacity 0.15s;\n}\n.pd-post-btn[_ngcontent-%COMP%]:hover {\n  opacity: 0.88;\n}\n.pd-cta[_ngcontent-%COMP%] {\n  padding: 1rem 1.25rem 1.5rem;\n  border-top: 1px solid #f0f0f0;\n  text-align: center;\n  flex-shrink: 0;\n}\n.pd-cta[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 0.85rem;\n  color: #888;\n  margin: 0 0 0.75rem;\n}\n.pd-rating-inline[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 2px;\n}\n.pd-star[_ngcontent-%COMP%] {\n  color: #d1d5db;\n  font-size: 15px;\n  line-height: 1;\n}\n.pd-star.filled[_ngcontent-%COMP%] {\n  color: #f59e0b;\n}\n.pd-star.sm[_ngcontent-%COMP%] {\n  font-size: 13px;\n}\n.pd-rating-num[_ngcontent-%COMP%] {\n  font-size: 0.88rem;\n  font-weight: 700;\n  color: #1f2937;\n  margin-left: 3px;\n}\n.pd-rating-count[_ngcontent-%COMP%] {\n  font-size: 0.78rem;\n  color: #6b7280;\n}\n.pd-reviews-section[_ngcontent-%COMP%] {\n  padding: 0 1.25rem 1rem;\n  border-top: 1px solid #f0f0f0;\n  margin-top: 0.25rem;\n  padding-top: 1rem;\n}\n.pd-review-card[_ngcontent-%COMP%] {\n  padding: 0.65rem 0;\n  border-bottom: 1px solid #f3f4f6;\n}\n.pd-review-card[_ngcontent-%COMP%]:last-child {\n  border-bottom: none;\n}\n.pd-review-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 5px;\n  flex-wrap: wrap;\n  margin-bottom: 3px;\n}\n.pd-review-author[_ngcontent-%COMP%] {\n  font-size: 0.8rem;\n  font-weight: 600;\n  color: #374151;\n}\n.pd-review-date[_ngcontent-%COMP%] {\n  font-size: 0.75rem;\n  color: #9ca3af;\n  margin-left: auto;\n}\n.pd-review-comment[_ngcontent-%COMP%] {\n  font-size: 0.82rem;\n  color: #4b5563;\n  margin: 0;\n  line-height: 1.45;\n}\n.pd-post-general-btn[_ngcontent-%COMP%] {\n  background: white;\n  color: var(--color-primary, #667eea);\n  border: 2px solid var(--color-primary, #667eea);\n  border-radius: 8px;\n  padding: 0.6rem 1.5rem;\n  font-size: 0.9rem;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  width: 100%;\n  transition: background 0.15s;\n}\n.pd-post-general-btn[_ngcontent-%COMP%]:hover {\n  background: rgba(102, 126, 234, 0.06);\n}\n.pagination[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0.3rem;\n  padding: 0.75rem 1rem;\n  border-top: 1px solid #f0f0f0;\n  background: #fafafa;\n  flex-shrink: 0;\n  flex-wrap: wrap;\n}\n.pg-btn[_ngcontent-%COMP%] {\n  min-width: 32px;\n  height: 32px;\n  border: 1.5px solid #e0e0e0;\n  border-radius: 6px;\n  background: white;\n  color: #444;\n  font-size: 0.85rem;\n  font-weight: 500;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition:\n    background 0.15s,\n    border-color 0.15s,\n    color 0.15s;\n  padding: 0 0.4rem;\n  font-family: inherit;\n}\n.pg-btn[_ngcontent-%COMP%]   .material-icons[_ngcontent-%COMP%] {\n  font-size: 1.1rem;\n}\n.pg-btn[_ngcontent-%COMP%]:hover:not(:disabled):not(.active) {\n  background: #f0f0f0;\n  border-color: #bbb;\n}\n.pg-btn.active[_ngcontent-%COMP%] {\n  background: #667eea;\n  border-color: #667eea;\n  color: white;\n  font-weight: 700;\n}\n.pg-btn[_ngcontent-%COMP%]:disabled {\n  opacity: 0.35;\n  cursor: default;\n}\n.pg-gap[_ngcontent-%COMP%] {\n  color: #aaa;\n  font-size: 0.9rem;\n  padding: 0 0.15rem;\n}\n@media (max-width: 768px) {\n  .body-split[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n    grid-template-rows: auto 320px;\n  }\n  .body-split.map-hidden[_ngcontent-%COMP%] {\n    grid-template-rows: 1fr;\n  }\n  .list-panel[_ngcontent-%COMP%] {\n    overflow-y: auto;\n    max-height: 50vh;\n    border-right: none;\n    border-bottom: 1px solid #e0e0e0;\n  }\n  .map-panel[_ngcontent-%COMP%] {\n    min-height: 320px;\n  }\n}\n/*# sourceMappingURL=find-a-pro.css.map */'] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(FindAProComponent, [{
@@ -1921,6 +1964,7 @@ var FindAProComponent = class _FindAProComponent {
             <div class="pro-location">
               <span class="material-icons loc-icon">place</span>
               {{ getLocation(pro) }}
+              <span *ngIf="pro.distanceKm != null" class="pro-distance">\xB7 {{ pro.distanceKm }} km away</span>
             </div>
             <div *ngIf="pro.serviceRadiusKm" class="pro-radius">
               {{ 'FIND_PRO.SERVICE_RADIUS' | translate }} {{ pro.serviceRadiusKm }} km
@@ -2044,7 +2088,7 @@ var FindAProComponent = class _FindAProComponent {
     </div>
   </div>
 </div>
-`, styles: ['@charset "UTF-8";\n\n/* src/app/features/find-a-pro/find-a-pro.scss */\n.find-pro-page {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  min-height: 100vh;\n  background: #f5f6fa;\n}\n.page-header {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea 0%,\n      #764ba2 100%);\n  color: white;\n  padding: 1.5rem 2rem 1rem;\n}\n.page-header .header-inner {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 1rem;\n  margin-bottom: 1rem;\n}\n.page-header h1 {\n  margin: 0 0 0.25rem;\n  font-size: 1.6rem;\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n}\n.page-header h1 .material-icons {\n  font-size: 1.8rem;\n}\n.page-header .subtitle {\n  margin: 0;\n  opacity: 0.85;\n  font-size: 0.95rem;\n}\n.map-toggle-btn {\n  display: flex;\n  align-items: center;\n  gap: 0.4rem;\n  background: rgba(255, 255, 255, 0.18);\n  color: white;\n  border: 1.5px solid rgba(255, 255, 255, 0.4);\n  border-radius: 6px;\n  padding: 0.5rem 1rem;\n  font-size: 0.9rem;\n  font-weight: 600;\n  cursor: pointer;\n  transition: background 0.2s;\n}\n.map-toggle-btn:hover {\n  background: rgba(255, 255, 255, 0.28);\n}\n.map-toggle-btn .material-icons {\n  font-size: 1.1rem;\n}\n.filter-bar {\n  display: flex;\n  gap: 0.75rem;\n  flex-wrap: wrap;\n}\n.search-wrap {\n  flex: 1;\n  min-width: 200px;\n  position: relative;\n  display: flex;\n  align-items: center;\n  background: rgba(255, 255, 255, 0.15);\n  border: 1.5px solid rgba(255, 255, 255, 0.35);\n  border-radius: 6px;\n  padding: 0 0.5rem;\n}\n.search-wrap .search-icon {\n  color: rgba(255, 255, 255, 0.7);\n  font-size: 1.2rem;\n}\n.search-wrap .search-input {\n  flex: 1;\n  background: none;\n  border: none;\n  outline: none;\n  color: white;\n  font-size: 0.95rem;\n  padding: 0.5rem 0.5rem;\n}\n.search-wrap .search-input::placeholder {\n  color: rgba(255, 255, 255, 0.6);\n}\n.search-wrap .clear-btn {\n  background: none;\n  border: none;\n  cursor: pointer;\n  padding: 0;\n  color: rgba(255, 255, 255, 0.7);\n  display: flex;\n  align-items: center;\n}\n.search-wrap .clear-btn .material-icons {\n  font-size: 1.1rem;\n}\n.cat-select {\n  background: rgba(255, 255, 255, 0.15);\n  border: 1.5px solid rgba(255, 255, 255, 0.35);\n  border-radius: 6px;\n  color: white;\n  padding: 0.5rem 0.75rem;\n  font-size: 0.9rem;\n  cursor: pointer;\n  outline: none;\n  min-width: 160px;\n}\n.cat-select option {\n  color: #333;\n  background: white;\n}\n.location-filter-bar {\n  display: flex;\n  gap: 0.5rem;\n  flex-wrap: wrap;\n  margin-top: 0.5rem;\n  align-items: center;\n}\n.loc-select {\n  background: rgba(255, 255, 255, 0.15);\n  border: 1.5px solid rgba(255, 255, 255, 0.35);\n  border-radius: 6px;\n  color: white;\n  padding: 0.4rem 0.65rem;\n  font-size: 0.85rem;\n  cursor: pointer;\n  outline: none;\n  min-width: 130px;\n}\n.loc-select option {\n  color: #333;\n  background: white;\n}\n.loc-select:disabled {\n  opacity: 0.45;\n  cursor: default;\n}\n.loc-clear-btn {\n  display: flex;\n  align-items: center;\n  gap: 0.25rem;\n  background: rgba(255, 255, 255, 0.18);\n  color: white;\n  border: 1.5px solid rgba(255, 255, 255, 0.4);\n  border-radius: 6px;\n  padding: 0.4rem 0.75rem;\n  font-size: 0.82rem;\n  font-weight: 600;\n  cursor: pointer;\n  transition: background 0.2s;\n  white-space: nowrap;\n}\n.loc-clear-btn:hover {\n  background: rgba(255, 255, 255, 0.28);\n}\n.loc-clear-btn .material-icons {\n  font-size: 0.95rem;\n}\n.alert-error {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  background: #ffebee;\n  color: #c62828;\n  padding: 0.75rem 1.5rem;\n  font-size: 0.9rem;\n}\n.body-split {\n  display: grid;\n  grid-template-columns: 380px 1fr;\n  height: calc(100vh - 160px);\n  overflow: hidden;\n  min-height: 0;\n}\n.body-split.map-hidden {\n  grid-template-columns: 1fr;\n  height: auto;\n}\n@media (max-width: 768px) {\n  .body-split {\n    grid-template-columns: 1fr;\n    grid-template-rows: 320px 320px;\n    height: auto;\n  }\n  .body-split.map-hidden {\n    grid-template-rows: auto;\n  }\n}\n.list-panel {\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  background: white;\n  border-right: 1px solid #e0e0e0;\n  height: 100%;\n}\n.loading-wrap {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 1rem;\n  padding: 3rem;\n  color: #666;\n}\n.empty-state {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0.5rem;\n  padding: 3rem;\n  color: #999;\n  text-align: center;\n}\n.empty-state .material-icons {\n  font-size: 3rem;\n}\n.results-meta {\n  padding: 0.75rem 1rem;\n  font-size: 0.85rem;\n  color: #666;\n  border-bottom: 1px solid #f0f0f0;\n  background: #fafafa;\n}\n.results-meta .no-loc-note {\n  color: #f57c00;\n  margin-left: 0.25rem;\n}\n.pro-list {\n  display: flex;\n  flex-direction: column;\n}\n.pro-card {\n  display: flex;\n  gap: 0.75rem;\n  align-items: flex-start;\n  padding: 0.9rem 1rem;\n  border-bottom: 1px solid #f0f0f0;\n  cursor: pointer;\n  transition: background 0.15s;\n  position: relative;\n}\n.pro-card:hover {\n  background: #f5f5f5;\n}\n.pro-card.highlighted {\n  background: #ede7f6;\n  border-left: 3px solid #667eea;\n}\n.pro-card.no-location {\n  opacity: 0.75;\n}\n.pro-avatar {\n  width: 44px;\n  height: 44px;\n  min-width: 44px;\n  border-radius: 50%;\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n  color: white;\n  font-size: 1.3rem;\n  font-weight: 700;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.pro-info {\n  flex: 1;\n  min-width: 0;\n}\n.pro-info .pro-name {\n  font-weight: 600;\n  font-size: 0.95rem;\n  color: #212121;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.pro-info .pro-business {\n  font-size: 0.85rem;\n  color: #555;\n  margin-bottom: 0.2rem;\n}\n.pro-info .pro-location {\n  display: flex;\n  align-items: center;\n  gap: 0.2rem;\n  font-size: 0.78rem;\n  color: #888;\n  margin-bottom: 0.25rem;\n}\n.pro-info .pro-location .loc-icon {\n  font-size: 0.95rem;\n  color: #e91e63;\n}\n.pro-info .pro-radius {\n  font-size: 0.75rem;\n  color: #667eea;\n  margin-bottom: 0.25rem;\n}\n.pro-services {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 0.25rem;\n  margin-top: 0.25rem;\n}\n.service-chip {\n  background: #ede7f6;\n  color: #5e35b1;\n  font-size: 0.7rem;\n  padding: 0.15rem 0.45rem;\n  border-radius: 10px;\n  white-space: nowrap;\n}\n.service-chip.more {\n  background: #e0e0e0;\n  color: #555;\n}\n.pro-right-col {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0.25rem;\n  flex-shrink: 0;\n  padding-top: 0.15rem;\n}\n.verified-icon {\n  font-size: 1.1rem;\n  color: #43a047;\n}\n.no-loc-icon {\n  font-size: 1rem;\n  color: #bbb;\n}\n.chevron-icon {\n  font-size: 1.1rem;\n  color: #ccc;\n  margin-top: auto;\n}\n.pro-card.selected {\n  background: #ede7f6;\n  border-left: 3px solid #667eea;\n}\n.map-panel {\n  position: relative;\n  overflow: hidden;\n  height: 100%;\n}\n.pro-map-el {\n  width: 100%;\n  height: 100%;\n  min-height: 400px;\n}\n.map-geocoding-indicator {\n  position: absolute;\n  bottom: 1rem;\n  left: 50%;\n  transform: translateX(-50%);\n  background: rgba(255, 255, 255, 0.92);\n  border-radius: 20px;\n  padding: 0.4rem 1rem 0.4rem 0.65rem;\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  font-size: 0.8rem;\n  color: #555;\n  z-index: 1000;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);\n  white-space: nowrap;\n  pointer-events: none;\n}\n.preview-banner {\n  background:\n    linear-gradient(\n      135deg,\n      rgba(102, 126, 234, 0.08),\n      rgba(118, 75, 162, 0.08));\n  border-bottom: 1px solid rgba(102, 126, 234, 0.2);\n  padding: 1rem 1.5rem;\n}\n.preview-banner-inner {\n  max-width: 900px;\n  margin: 0 auto;\n  display: flex;\n  align-items: center;\n  gap: 1rem;\n  flex-wrap: wrap;\n}\n.preview-icon {\n  font-size: 2rem;\n  color: #667eea;\n  flex-shrink: 0;\n}\n.preview-text {\n  flex: 1;\n  min-width: 200px;\n}\n.preview-text strong {\n  display: block;\n  font-size: 0.95rem;\n  color: #1f2937;\n  margin-bottom: 0.2rem;\n}\n.preview-text p {\n  margin: 0;\n  font-size: 0.85rem;\n  color: #6b7280;\n  line-height: 1.5;\n}\n.preview-actions {\n  display: flex;\n  gap: 0.75rem;\n  flex-shrink: 0;\n}\n.banner-btn {\n  padding: 0.5rem 1.25rem;\n  border-radius: 7px;\n  font-size: 0.9rem;\n  font-weight: 600;\n  text-decoration: none;\n  transition: transform 0.15s, box-shadow 0.15s;\n}\n.banner-btn.primary {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n  color: white;\n}\n.banner-btn.primary:hover {\n  transform: translateY(-1px);\n  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.35);\n}\n.banner-btn.secondary {\n  background: white;\n  color: #667eea;\n  border: 1.5px solid #667eea;\n}\n.banner-btn.secondary:hover {\n  background: rgba(102, 126, 234, 0.05);\n}\n.preview-blur {\n  pointer-events: none;\n  -webkit-user-select: none;\n  user-select: none;\n}\n.preview-card {\n  cursor: default;\n  opacity: 0.85;\n}\n.pro-detail-panel {\n  display: flex;\n  flex-direction: column;\n  background: white;\n  height: 100%;\n  overflow-y: auto;\n}\n@media (max-width: 768px) {\n  .pro-detail-panel {\n    position: fixed;\n    inset: 0;\n    z-index: 200;\n    height: 100dvh;\n  }\n}\n.pd-header {\n  display: flex;\n  align-items: center;\n  gap: 0.75rem;\n  padding: 1rem 1.25rem;\n  background:\n    linear-gradient(\n      135deg,\n      #667eea 0%,\n      #764ba2 100%);\n  color: white;\n  position: sticky;\n  top: 0;\n  z-index: 1;\n  flex-shrink: 0;\n}\n.pd-back-btn {\n  background: rgba(255, 255, 255, 0.2);\n  border: none;\n  border-radius: 50%;\n  width: 36px;\n  height: 36px;\n  min-width: 36px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: white;\n  cursor: pointer;\n  transition: background 0.15s;\n}\n.pd-back-btn:hover {\n  background: rgba(255, 255, 255, 0.32);\n}\n.pd-back-btn .material-icons {\n  font-size: 1.2rem;\n}\n.pd-title {\n  flex: 1;\n  min-width: 0;\n}\n.pd-name {\n  display: block;\n  font-weight: 700;\n  font-size: 1rem;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.pd-business {\n  display: block;\n  font-size: 0.82rem;\n  opacity: 0.85;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.pd-verified {\n  font-size: 1.25rem;\n  color: #a5f3c4;\n  flex-shrink: 0;\n}\n.pd-meta {\n  padding: 0.85rem 1.25rem;\n  background: #fafafa;\n  border-bottom: 1px solid #f0f0f0;\n  display: flex;\n  flex-direction: column;\n  gap: 0.4rem;\n  flex-shrink: 0;\n}\n.pd-meta-row {\n  display: flex;\n  align-items: center;\n  gap: 0.4rem;\n  font-size: 0.85rem;\n  color: #555;\n}\n.pd-meta-row .material-icons {\n  font-size: 1rem;\n  color: #667eea;\n}\n.pd-services-section {\n  flex: 1;\n  padding: 1rem 1.25rem;\n}\n.pd-section-title {\n  font-size: 0.75rem;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  color: #999;\n  margin: 0 0 0.85rem;\n}\n.pd-loading {\n  display: flex;\n  justify-content: center;\n  padding: 2rem 0;\n}\n.pd-empty {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  color: #aaa;\n  font-size: 0.9rem;\n  padding: 0.5rem 0;\n}\n.pd-empty .material-icons {\n  font-size: 1.1rem;\n}\n.pd-service-card {\n  display: flex;\n  gap: 1rem;\n  align-items: flex-start;\n  padding: 0.9rem 1rem;\n  border: 1px solid #e8e8e8;\n  border-radius: 10px;\n  margin-bottom: 0.65rem;\n  transition: box-shadow 0.15s;\n}\n.pd-service-card:hover {\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);\n}\n.pd-service-info {\n  flex: 1;\n  min-width: 0;\n}\n.pd-service-name {\n  font-weight: 600;\n  font-size: 0.95rem;\n  color: #212121;\n  margin-bottom: 0.15rem;\n}\n.pd-service-cat {\n  font-size: 0.75rem;\n  color: #667eea;\n  margin-bottom: 0.2rem;\n}\n.pd-service-desc {\n  font-size: 0.82rem;\n  color: #666;\n  line-height: 1.45;\n  display: -webkit-box;\n  -webkit-line-clamp: 2;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n}\n.pd-service-right {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-end;\n  gap: 0.5rem;\n  flex-shrink: 0;\n}\n.pd-service-price {\n  font-weight: 700;\n  font-size: 1rem;\n  color: #2e7d32;\n  white-space: nowrap;\n}\n.pd-post-btn {\n  background: var(--color-primary, #667eea);\n  color: white;\n  border: none;\n  border-radius: 7px;\n  padding: 0.4rem 0.85rem;\n  font-size: 0.82rem;\n  font-weight: 600;\n  cursor: pointer;\n  white-space: nowrap;\n  font-family: inherit;\n  transition: opacity 0.15s;\n}\n.pd-post-btn:hover {\n  opacity: 0.88;\n}\n.pd-cta {\n  padding: 1rem 1.25rem 1.5rem;\n  border-top: 1px solid #f0f0f0;\n  text-align: center;\n  flex-shrink: 0;\n}\n.pd-cta p {\n  font-size: 0.85rem;\n  color: #888;\n  margin: 0 0 0.75rem;\n}\n.pd-rating-inline {\n  display: flex;\n  align-items: center;\n  gap: 2px;\n}\n.pd-star {\n  color: #d1d5db;\n  font-size: 15px;\n  line-height: 1;\n}\n.pd-star.filled {\n  color: #f59e0b;\n}\n.pd-star.sm {\n  font-size: 13px;\n}\n.pd-rating-num {\n  font-size: 0.88rem;\n  font-weight: 700;\n  color: #1f2937;\n  margin-left: 3px;\n}\n.pd-rating-count {\n  font-size: 0.78rem;\n  color: #6b7280;\n}\n.pd-reviews-section {\n  padding: 0 1.25rem 1rem;\n  border-top: 1px solid #f0f0f0;\n  margin-top: 0.25rem;\n  padding-top: 1rem;\n}\n.pd-review-card {\n  padding: 0.65rem 0;\n  border-bottom: 1px solid #f3f4f6;\n}\n.pd-review-card:last-child {\n  border-bottom: none;\n}\n.pd-review-header {\n  display: flex;\n  align-items: center;\n  gap: 5px;\n  flex-wrap: wrap;\n  margin-bottom: 3px;\n}\n.pd-review-author {\n  font-size: 0.8rem;\n  font-weight: 600;\n  color: #374151;\n}\n.pd-review-date {\n  font-size: 0.75rem;\n  color: #9ca3af;\n  margin-left: auto;\n}\n.pd-review-comment {\n  font-size: 0.82rem;\n  color: #4b5563;\n  margin: 0;\n  line-height: 1.45;\n}\n.pd-post-general-btn {\n  background: white;\n  color: var(--color-primary, #667eea);\n  border: 2px solid var(--color-primary, #667eea);\n  border-radius: 8px;\n  padding: 0.6rem 1.5rem;\n  font-size: 0.9rem;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  width: 100%;\n  transition: background 0.15s;\n}\n.pd-post-general-btn:hover {\n  background: rgba(102, 126, 234, 0.06);\n}\n.pagination {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0.3rem;\n  padding: 0.75rem 1rem;\n  border-top: 1px solid #f0f0f0;\n  background: #fafafa;\n  flex-shrink: 0;\n  flex-wrap: wrap;\n}\n.pg-btn {\n  min-width: 32px;\n  height: 32px;\n  border: 1.5px solid #e0e0e0;\n  border-radius: 6px;\n  background: white;\n  color: #444;\n  font-size: 0.85rem;\n  font-weight: 500;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition:\n    background 0.15s,\n    border-color 0.15s,\n    color 0.15s;\n  padding: 0 0.4rem;\n  font-family: inherit;\n}\n.pg-btn .material-icons {\n  font-size: 1.1rem;\n}\n.pg-btn:hover:not(:disabled):not(.active) {\n  background: #f0f0f0;\n  border-color: #bbb;\n}\n.pg-btn.active {\n  background: #667eea;\n  border-color: #667eea;\n  color: white;\n  font-weight: 700;\n}\n.pg-btn:disabled {\n  opacity: 0.35;\n  cursor: default;\n}\n.pg-gap {\n  color: #aaa;\n  font-size: 0.9rem;\n  padding: 0 0.15rem;\n}\n@media (max-width: 768px) {\n  .body-split {\n    grid-template-columns: 1fr;\n    grid-template-rows: auto 320px;\n  }\n  .body-split.map-hidden {\n    grid-template-rows: 1fr;\n  }\n  .list-panel {\n    overflow-y: auto;\n    max-height: 50vh;\n    border-right: none;\n    border-bottom: 1px solid #e0e0e0;\n  }\n  .map-panel {\n    min-height: 320px;\n  }\n}\n/*# sourceMappingURL=find-a-pro.css.map */\n'] }]
+`, styles: ['@charset "UTF-8";\n\n/* src/app/features/find-a-pro/find-a-pro.scss */\n.find-pro-page {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  min-height: 100vh;\n  background: #f5f6fa;\n}\n.page-header {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea 0%,\n      #764ba2 100%);\n  color: white;\n  padding: 1.5rem 2rem 1rem;\n}\n.page-header .header-inner {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 1rem;\n  margin-bottom: 1rem;\n}\n.page-header h1 {\n  margin: 0 0 0.25rem;\n  font-size: 1.6rem;\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n}\n.page-header h1 .material-icons {\n  font-size: 1.8rem;\n}\n.page-header .subtitle {\n  margin: 0;\n  opacity: 0.85;\n  font-size: 0.95rem;\n}\n.map-toggle-btn {\n  display: flex;\n  align-items: center;\n  gap: 0.4rem;\n  background: rgba(255, 255, 255, 0.18);\n  color: white;\n  border: 1.5px solid rgba(255, 255, 255, 0.4);\n  border-radius: 6px;\n  padding: 0.5rem 1rem;\n  font-size: 0.9rem;\n  font-weight: 600;\n  cursor: pointer;\n  transition: background 0.2s;\n}\n.map-toggle-btn:hover {\n  background: rgba(255, 255, 255, 0.28);\n}\n.map-toggle-btn .material-icons {\n  font-size: 1.1rem;\n}\n.filter-bar {\n  display: flex;\n  gap: 0.75rem;\n  flex-wrap: wrap;\n}\n.search-wrap {\n  flex: 1;\n  min-width: 200px;\n  position: relative;\n  display: flex;\n  align-items: center;\n  background: rgba(255, 255, 255, 0.15);\n  border: 1.5px solid rgba(255, 255, 255, 0.35);\n  border-radius: 6px;\n  padding: 0 0.5rem;\n}\n.search-wrap .search-icon {\n  color: rgba(255, 255, 255, 0.7);\n  font-size: 1.2rem;\n}\n.search-wrap .search-input {\n  flex: 1;\n  background: none;\n  border: none;\n  outline: none;\n  color: white;\n  font-size: 0.95rem;\n  padding: 0.5rem 0.5rem;\n}\n.search-wrap .search-input::placeholder {\n  color: rgba(255, 255, 255, 0.6);\n}\n.search-wrap .clear-btn {\n  background: none;\n  border: none;\n  cursor: pointer;\n  padding: 0;\n  color: rgba(255, 255, 255, 0.7);\n  display: flex;\n  align-items: center;\n}\n.search-wrap .clear-btn .material-icons {\n  font-size: 1.1rem;\n}\n.cat-select {\n  background: rgba(255, 255, 255, 0.15);\n  border: 1.5px solid rgba(255, 255, 255, 0.35);\n  border-radius: 6px;\n  color: white;\n  padding: 0.5rem 0.75rem;\n  font-size: 0.9rem;\n  cursor: pointer;\n  outline: none;\n  min-width: 160px;\n}\n.cat-select option {\n  color: #333;\n  background: white;\n}\n.location-filter-bar {\n  display: flex;\n  gap: 0.5rem;\n  flex-wrap: wrap;\n  margin-top: 0.5rem;\n  align-items: center;\n}\n.loc-select {\n  background: rgba(255, 255, 255, 0.15);\n  border: 1.5px solid rgba(255, 255, 255, 0.35);\n  border-radius: 6px;\n  color: white;\n  padding: 0.4rem 0.65rem;\n  font-size: 0.85rem;\n  cursor: pointer;\n  outline: none;\n  min-width: 130px;\n}\n.loc-select option {\n  color: #333;\n  background: white;\n}\n.loc-select:disabled {\n  opacity: 0.45;\n  cursor: default;\n}\n.loc-clear-btn {\n  display: flex;\n  align-items: center;\n  gap: 0.25rem;\n  background: rgba(255, 255, 255, 0.18);\n  color: white;\n  border: 1.5px solid rgba(255, 255, 255, 0.4);\n  border-radius: 6px;\n  padding: 0.4rem 0.75rem;\n  font-size: 0.82rem;\n  font-weight: 600;\n  cursor: pointer;\n  transition: background 0.2s;\n  white-space: nowrap;\n}\n.loc-clear-btn:hover {\n  background: rgba(255, 255, 255, 0.28);\n}\n.loc-clear-btn .material-icons {\n  font-size: 0.95rem;\n}\n.alert-error {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  background: #ffebee;\n  color: #c62828;\n  padding: 0.75rem 1.5rem;\n  font-size: 0.9rem;\n}\n.body-split {\n  display: grid;\n  grid-template-columns: 380px 1fr;\n  height: calc(100vh - 160px);\n  overflow: hidden;\n  min-height: 0;\n}\n.body-split.map-hidden {\n  grid-template-columns: 1fr;\n  height: auto;\n}\n@media (max-width: 768px) {\n  .body-split {\n    grid-template-columns: 1fr;\n    grid-template-rows: 320px 320px;\n    height: auto;\n  }\n  .body-split.map-hidden {\n    grid-template-rows: auto;\n  }\n}\n.list-panel {\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  background: white;\n  border-right: 1px solid #e0e0e0;\n  height: 100%;\n}\n.loading-wrap {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 1rem;\n  padding: 3rem;\n  color: #666;\n}\n.empty-state {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0.5rem;\n  padding: 3rem;\n  color: #999;\n  text-align: center;\n}\n.empty-state .material-icons {\n  font-size: 3rem;\n}\n.results-meta {\n  padding: 0.75rem 1rem;\n  font-size: 0.85rem;\n  color: #666;\n  border-bottom: 1px solid #f0f0f0;\n  background: #fafafa;\n}\n.results-meta .no-loc-note {\n  color: #f57c00;\n  margin-left: 0.25rem;\n}\n.pro-list {\n  display: flex;\n  flex-direction: column;\n}\n.pro-card {\n  display: flex;\n  gap: 0.75rem;\n  align-items: flex-start;\n  padding: 0.9rem 1rem;\n  border-bottom: 1px solid #f0f0f0;\n  cursor: pointer;\n  transition: background 0.15s;\n  position: relative;\n}\n.pro-card:hover {\n  background: #f5f5f5;\n}\n.pro-card.highlighted {\n  background: #ede7f6;\n  border-left: 3px solid #667eea;\n}\n.pro-card.no-location {\n  opacity: 0.75;\n}\n.pro-avatar {\n  width: 44px;\n  height: 44px;\n  min-width: 44px;\n  border-radius: 50%;\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n  color: white;\n  font-size: 1.3rem;\n  font-weight: 700;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.pro-info {\n  flex: 1;\n  min-width: 0;\n}\n.pro-info .pro-name {\n  font-weight: 600;\n  font-size: 0.95rem;\n  color: #212121;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.pro-info .pro-business {\n  font-size: 0.85rem;\n  color: #555;\n  margin-bottom: 0.2rem;\n}\n.pro-info .pro-location {\n  display: flex;\n  align-items: center;\n  gap: 0.2rem;\n  font-size: 0.78rem;\n  color: #888;\n  margin-bottom: 0.25rem;\n}\n.pro-info .pro-location .loc-icon {\n  font-size: 0.95rem;\n  color: #e91e63;\n}\n.pro-info .pro-location .pro-distance {\n  color: #667eea;\n  font-weight: 600;\n}\n.pro-info .pro-radius {\n  font-size: 0.75rem;\n  color: #667eea;\n  margin-bottom: 0.25rem;\n}\n.pro-services {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 0.25rem;\n  margin-top: 0.25rem;\n}\n.service-chip {\n  background: #ede7f6;\n  color: #5e35b1;\n  font-size: 0.7rem;\n  padding: 0.15rem 0.45rem;\n  border-radius: 10px;\n  white-space: nowrap;\n}\n.service-chip.more {\n  background: #e0e0e0;\n  color: #555;\n}\n.pro-right-col {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0.25rem;\n  flex-shrink: 0;\n  padding-top: 0.15rem;\n}\n.verified-icon {\n  font-size: 1.1rem;\n  color: #43a047;\n}\n.no-loc-icon {\n  font-size: 1rem;\n  color: #bbb;\n}\n.chevron-icon {\n  font-size: 1.1rem;\n  color: #ccc;\n  margin-top: auto;\n}\n.pro-card.selected {\n  background: #ede7f6;\n  border-left: 3px solid #667eea;\n}\n.map-panel {\n  position: relative;\n  overflow: hidden;\n  height: 100%;\n}\n.pro-map-el {\n  width: 100%;\n  height: 100%;\n  min-height: 400px;\n}\n.map-geocoding-indicator {\n  position: absolute;\n  bottom: 1rem;\n  left: 50%;\n  transform: translateX(-50%);\n  background: rgba(255, 255, 255, 0.92);\n  border-radius: 20px;\n  padding: 0.4rem 1rem 0.4rem 0.65rem;\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  font-size: 0.8rem;\n  color: #555;\n  z-index: 1000;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);\n  white-space: nowrap;\n  pointer-events: none;\n}\n.preview-banner {\n  background:\n    linear-gradient(\n      135deg,\n      rgba(102, 126, 234, 0.08),\n      rgba(118, 75, 162, 0.08));\n  border-bottom: 1px solid rgba(102, 126, 234, 0.2);\n  padding: 1rem 1.5rem;\n}\n.preview-banner-inner {\n  max-width: 900px;\n  margin: 0 auto;\n  display: flex;\n  align-items: center;\n  gap: 1rem;\n  flex-wrap: wrap;\n}\n.preview-icon {\n  font-size: 2rem;\n  color: #667eea;\n  flex-shrink: 0;\n}\n.preview-text {\n  flex: 1;\n  min-width: 200px;\n}\n.preview-text strong {\n  display: block;\n  font-size: 0.95rem;\n  color: #1f2937;\n  margin-bottom: 0.2rem;\n}\n.preview-text p {\n  margin: 0;\n  font-size: 0.85rem;\n  color: #6b7280;\n  line-height: 1.5;\n}\n.preview-actions {\n  display: flex;\n  gap: 0.75rem;\n  flex-shrink: 0;\n}\n.banner-btn {\n  padding: 0.5rem 1.25rem;\n  border-radius: 7px;\n  font-size: 0.9rem;\n  font-weight: 600;\n  text-decoration: none;\n  transition: transform 0.15s, box-shadow 0.15s;\n}\n.banner-btn.primary {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n  color: white;\n}\n.banner-btn.primary:hover {\n  transform: translateY(-1px);\n  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.35);\n}\n.banner-btn.secondary {\n  background: white;\n  color: #667eea;\n  border: 1.5px solid #667eea;\n}\n.banner-btn.secondary:hover {\n  background: rgba(102, 126, 234, 0.05);\n}\n.preview-blur {\n  pointer-events: none;\n  -webkit-user-select: none;\n  user-select: none;\n}\n.preview-card {\n  cursor: default;\n  opacity: 0.85;\n}\n.pro-detail-panel {\n  display: flex;\n  flex-direction: column;\n  background: white;\n  height: 100%;\n  overflow-y: auto;\n}\n@media (max-width: 768px) {\n  .pro-detail-panel {\n    position: fixed;\n    inset: 0;\n    z-index: 200;\n    height: 100dvh;\n  }\n}\n.pd-header {\n  display: flex;\n  align-items: center;\n  gap: 0.75rem;\n  padding: 1rem 1.25rem;\n  background:\n    linear-gradient(\n      135deg,\n      #667eea 0%,\n      #764ba2 100%);\n  color: white;\n  position: sticky;\n  top: 0;\n  z-index: 1;\n  flex-shrink: 0;\n}\n.pd-back-btn {\n  background: rgba(255, 255, 255, 0.2);\n  border: none;\n  border-radius: 50%;\n  width: 36px;\n  height: 36px;\n  min-width: 36px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: white;\n  cursor: pointer;\n  transition: background 0.15s;\n}\n.pd-back-btn:hover {\n  background: rgba(255, 255, 255, 0.32);\n}\n.pd-back-btn .material-icons {\n  font-size: 1.2rem;\n}\n.pd-title {\n  flex: 1;\n  min-width: 0;\n}\n.pd-name {\n  display: block;\n  font-weight: 700;\n  font-size: 1rem;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.pd-business {\n  display: block;\n  font-size: 0.82rem;\n  opacity: 0.85;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.pd-verified {\n  font-size: 1.25rem;\n  color: #a5f3c4;\n  flex-shrink: 0;\n}\n.pd-meta {\n  padding: 0.85rem 1.25rem;\n  background: #fafafa;\n  border-bottom: 1px solid #f0f0f0;\n  display: flex;\n  flex-direction: column;\n  gap: 0.4rem;\n  flex-shrink: 0;\n}\n.pd-meta-row {\n  display: flex;\n  align-items: center;\n  gap: 0.4rem;\n  font-size: 0.85rem;\n  color: #555;\n}\n.pd-meta-row .material-icons {\n  font-size: 1rem;\n  color: #667eea;\n}\n.pd-services-section {\n  flex: 1;\n  padding: 1rem 1.25rem;\n}\n.pd-section-title {\n  font-size: 0.75rem;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.06em;\n  color: #999;\n  margin: 0 0 0.85rem;\n}\n.pd-loading {\n  display: flex;\n  justify-content: center;\n  padding: 2rem 0;\n}\n.pd-empty {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  color: #aaa;\n  font-size: 0.9rem;\n  padding: 0.5rem 0;\n}\n.pd-empty .material-icons {\n  font-size: 1.1rem;\n}\n.pd-service-card {\n  display: flex;\n  gap: 1rem;\n  align-items: flex-start;\n  padding: 0.9rem 1rem;\n  border: 1px solid #e8e8e8;\n  border-radius: 10px;\n  margin-bottom: 0.65rem;\n  transition: box-shadow 0.15s;\n}\n.pd-service-card:hover {\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);\n}\n.pd-service-info {\n  flex: 1;\n  min-width: 0;\n}\n.pd-service-name {\n  font-weight: 600;\n  font-size: 0.95rem;\n  color: #212121;\n  margin-bottom: 0.15rem;\n}\n.pd-service-cat {\n  font-size: 0.75rem;\n  color: #667eea;\n  margin-bottom: 0.2rem;\n}\n.pd-service-desc {\n  font-size: 0.82rem;\n  color: #666;\n  line-height: 1.45;\n  display: -webkit-box;\n  -webkit-line-clamp: 2;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n}\n.pd-service-right {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-end;\n  gap: 0.5rem;\n  flex-shrink: 0;\n}\n.pd-service-price {\n  font-weight: 700;\n  font-size: 1rem;\n  color: #2e7d32;\n  white-space: nowrap;\n}\n.pd-post-btn {\n  background: var(--color-primary, #667eea);\n  color: white;\n  border: none;\n  border-radius: 7px;\n  padding: 0.4rem 0.85rem;\n  font-size: 0.82rem;\n  font-weight: 600;\n  cursor: pointer;\n  white-space: nowrap;\n  font-family: inherit;\n  transition: opacity 0.15s;\n}\n.pd-post-btn:hover {\n  opacity: 0.88;\n}\n.pd-cta {\n  padding: 1rem 1.25rem 1.5rem;\n  border-top: 1px solid #f0f0f0;\n  text-align: center;\n  flex-shrink: 0;\n}\n.pd-cta p {\n  font-size: 0.85rem;\n  color: #888;\n  margin: 0 0 0.75rem;\n}\n.pd-rating-inline {\n  display: flex;\n  align-items: center;\n  gap: 2px;\n}\n.pd-star {\n  color: #d1d5db;\n  font-size: 15px;\n  line-height: 1;\n}\n.pd-star.filled {\n  color: #f59e0b;\n}\n.pd-star.sm {\n  font-size: 13px;\n}\n.pd-rating-num {\n  font-size: 0.88rem;\n  font-weight: 700;\n  color: #1f2937;\n  margin-left: 3px;\n}\n.pd-rating-count {\n  font-size: 0.78rem;\n  color: #6b7280;\n}\n.pd-reviews-section {\n  padding: 0 1.25rem 1rem;\n  border-top: 1px solid #f0f0f0;\n  margin-top: 0.25rem;\n  padding-top: 1rem;\n}\n.pd-review-card {\n  padding: 0.65rem 0;\n  border-bottom: 1px solid #f3f4f6;\n}\n.pd-review-card:last-child {\n  border-bottom: none;\n}\n.pd-review-header {\n  display: flex;\n  align-items: center;\n  gap: 5px;\n  flex-wrap: wrap;\n  margin-bottom: 3px;\n}\n.pd-review-author {\n  font-size: 0.8rem;\n  font-weight: 600;\n  color: #374151;\n}\n.pd-review-date {\n  font-size: 0.75rem;\n  color: #9ca3af;\n  margin-left: auto;\n}\n.pd-review-comment {\n  font-size: 0.82rem;\n  color: #4b5563;\n  margin: 0;\n  line-height: 1.45;\n}\n.pd-post-general-btn {\n  background: white;\n  color: var(--color-primary, #667eea);\n  border: 2px solid var(--color-primary, #667eea);\n  border-radius: 8px;\n  padding: 0.6rem 1.5rem;\n  font-size: 0.9rem;\n  font-weight: 600;\n  cursor: pointer;\n  font-family: inherit;\n  width: 100%;\n  transition: background 0.15s;\n}\n.pd-post-general-btn:hover {\n  background: rgba(102, 126, 234, 0.06);\n}\n.pagination {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0.3rem;\n  padding: 0.75rem 1rem;\n  border-top: 1px solid #f0f0f0;\n  background: #fafafa;\n  flex-shrink: 0;\n  flex-wrap: wrap;\n}\n.pg-btn {\n  min-width: 32px;\n  height: 32px;\n  border: 1.5px solid #e0e0e0;\n  border-radius: 6px;\n  background: white;\n  color: #444;\n  font-size: 0.85rem;\n  font-weight: 500;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition:\n    background 0.15s,\n    border-color 0.15s,\n    color 0.15s;\n  padding: 0 0.4rem;\n  font-family: inherit;\n}\n.pg-btn .material-icons {\n  font-size: 1.1rem;\n}\n.pg-btn:hover:not(:disabled):not(.active) {\n  background: #f0f0f0;\n  border-color: #bbb;\n}\n.pg-btn.active {\n  background: #667eea;\n  border-color: #667eea;\n  color: white;\n  font-weight: 700;\n}\n.pg-btn:disabled {\n  opacity: 0.35;\n  cursor: default;\n}\n.pg-gap {\n  color: #aaa;\n  font-size: 0.9rem;\n  padding: 0 0.15rem;\n}\n@media (max-width: 768px) {\n  .body-split {\n    grid-template-columns: 1fr;\n    grid-template-rows: auto 320px;\n  }\n  .body-split.map-hidden {\n    grid-template-rows: 1fr;\n  }\n  .list-panel {\n    overflow-y: auto;\n    max-height: 50vh;\n    border-right: none;\n    border-bottom: 1px solid #e0e0e0;\n  }\n  .map-panel {\n    min-height: 320px;\n  }\n}\n/*# sourceMappingURL=find-a-pro.css.map */\n'] }]
   }], () => [{ type: ProBrowseService }, { type: ServiceCategoryService }, { type: ServiceAreaService }, { type: ChangeDetectorRef }, { type: Auth }, { type: AddressService }, { type: MyServicesService }, { type: Router }, { type: ReviewService }, { type: HttpClient }, { type: NgZone }], null);
 })();
 (() => {
@@ -2053,5 +2097,5 @@ var FindAProComponent = class _FindAProComponent {
 export {
   FindAProComponent
 };
-//# sourceMappingURL=chunk-IWNIVERR.js.map
+//# sourceMappingURL=chunk-OIV5DXEN.js.map
 

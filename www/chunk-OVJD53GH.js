@@ -1,6 +1,6 @@
 import {
   BrowseServicesService
-} from "./chunk-OIROAJ5M.js";
+} from "./chunk-RFM3U2WM.js";
 import {
   Auth
 } from "./chunk-YKIUM4NK.js";
@@ -356,5 +356,5 @@ var ServiceDetailComponent = class _ServiceDetailComponent {
 export {
   ServiceDetailComponent
 };
-//# sourceMappingURL=chunk-WJUEKI2W.js.map
+//# sourceMappingURL=chunk-OVJD53GH.js.map
 

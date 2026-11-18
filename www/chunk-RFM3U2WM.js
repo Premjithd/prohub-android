@@ -35,6 +35,12 @@ var BrowseServicesService = class _BrowseServicesService {
       httpParams = httpParams.set("city", params.city);
     if (params.pin)
       httpParams = httpParams.set("pin", params.pin);
+    if (params.lat != null)
+      httpParams = httpParams.set("lat", params.lat);
+    if (params.lng != null)
+      httpParams = httpParams.set("lng", params.lng);
+    if (params.radiusKm != null)
+      httpParams = httpParams.set("radiusKm", params.radiusKm);
     if (params.sortBy)
       httpParams = httpParams.set("sortBy", params.sortBy);
     return this.http.get(this.apiUrl, { params: httpParams }).pipe(map((response) => {
@@ -63,5 +69,5 @@ var BrowseServicesService = class _BrowseServicesService {
 export {
   BrowseServicesService
 };
-//# sourceMappingURL=chunk-OIROAJ5M.js.map
+//# sourceMappingURL=chunk-RFM3U2WM.js.map
 
