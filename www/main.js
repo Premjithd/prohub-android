@@ -18433,7 +18433,7 @@ var FooterComponent = class _FooterComponent {
     MatToolbarModule,
     TranslateModule,
     TranslatePipe
-  ], styles: ["\n\n.footer[_ngcontent-%COMP%] {\n  background: #1f2937;\n  color: #ccc;\n  padding: 40px 20px 20px;\n  font-size: 14px;\n}\n.footer-container[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n  margin-bottom: 20px;\n}\n.footer-column[_ngcontent-%COMP%] {\n  flex: 1 1 180px;\n  margin: 10px;\n}\n.footer-column[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%] {\n  color: #fff;\n  margin-bottom: 12px;\n}\n.footer-column[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%] {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n}\n.footer-column[_ngcontent-%COMP%]   li[_ngcontent-%COMP%] {\n  margin-bottom: 8px;\n}\n.footer-column[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  text-decoration: none;\n  color: #ccc;\n  transition: color 0.2s ease;\n}\n.footer-column[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover {\n  color: var(--color-primary, #667eea);\n}\n.footer-bottom[_ngcontent-%COMP%] {\n  text-align: center;\n  border-top: 1px solid #374151;\n  padding-top: 12px;\n  color: #9ca3af;\n}\n@media (max-width: 768px) {\n  .footer[_ngcontent-%COMP%] {\n    padding: 12px 20px;\n    padding-bottom: calc(var(--bottom-nav-height, 60px) + 8px);\n  }\n  .footer-container[_ngcontent-%COMP%] {\n    display: none;\n  }\n  .footer-bottom[_ngcontent-%COMP%] {\n    border-top: none;\n    padding-top: 0;\n  }\n}\n/*# sourceMappingURL=footer.css.map */"] });
+  ], styles: ["\n\n.footer[_ngcontent-%COMP%] {\n  background: #1f2937;\n  color: #ccc;\n  padding: 40px 20px 20px;\n  font-size: 14px;\n}\n.footer-container[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: 0 auto 20px;\n  display: flex;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 20px;\n}\n.footer-column[_ngcontent-%COMP%] {\n  flex: 1 1 180px;\n}\n.footer-column[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%] {\n  color: #fff;\n  margin-bottom: 12px;\n}\n.footer-column[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%] {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n}\n.footer-column[_ngcontent-%COMP%]   li[_ngcontent-%COMP%] {\n  margin-bottom: 8px;\n}\n.footer-column[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  text-decoration: none;\n  color: #ccc;\n  transition: color 0.2s ease;\n}\n.footer-column[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover {\n  color: var(--color-primary, #667eea);\n}\n.footer-bottom[_ngcontent-%COMP%] {\n  text-align: center;\n  border-top: 1px solid #374151;\n  padding-top: 12px;\n  color: #9ca3af;\n}\n@media (max-width: 768px) {\n  .footer[_ngcontent-%COMP%] {\n    padding: 12px 20px;\n    padding-bottom: calc(var(--bottom-nav-height, 60px) + 8px);\n  }\n  .footer-container[_ngcontent-%COMP%] {\n    display: none;\n  }\n  .footer-bottom[_ngcontent-%COMP%] {\n    border-top: none;\n    padding-top: 0;\n  }\n}\n/*# sourceMappingURL=footer.css.map */"] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(FooterComponent, [{
@@ -18477,7 +18477,7 @@ var FooterComponent = class _FooterComponent {
     <p>{{ 'FOOTER.COPYRIGHT' | translate }}</p>
   </div>
 </footer>
-`, styles: ["/* src/app/layout/footer/footer.scss */\n.footer {\n  background: #1f2937;\n  color: #ccc;\n  padding: 40px 20px 20px;\n  font-size: 14px;\n}\n.footer-container {\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n  margin-bottom: 20px;\n}\n.footer-column {\n  flex: 1 1 180px;\n  margin: 10px;\n}\n.footer-column h4 {\n  color: #fff;\n  margin-bottom: 12px;\n}\n.footer-column ul {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n}\n.footer-column li {\n  margin-bottom: 8px;\n}\n.footer-column a {\n  text-decoration: none;\n  color: #ccc;\n  transition: color 0.2s ease;\n}\n.footer-column a:hover {\n  color: var(--color-primary, #667eea);\n}\n.footer-bottom {\n  text-align: center;\n  border-top: 1px solid #374151;\n  padding-top: 12px;\n  color: #9ca3af;\n}\n@media (max-width: 768px) {\n  .footer {\n    padding: 12px 20px;\n    padding-bottom: calc(var(--bottom-nav-height, 60px) + 8px);\n  }\n  .footer-container {\n    display: none;\n  }\n  .footer-bottom {\n    border-top: none;\n    padding-top: 0;\n  }\n}\n/*# sourceMappingURL=footer.css.map */\n"] }]
+`, styles: ["/* src/app/layout/footer/footer.scss */\n.footer {\n  background: #1f2937;\n  color: #ccc;\n  padding: 40px 20px 20px;\n  font-size: 14px;\n}\n.footer-container {\n  max-width: 1200px;\n  margin: 0 auto 20px;\n  display: flex;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 20px;\n}\n.footer-column {\n  flex: 1 1 180px;\n}\n.footer-column h4 {\n  color: #fff;\n  margin-bottom: 12px;\n}\n.footer-column ul {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n}\n.footer-column li {\n  margin-bottom: 8px;\n}\n.footer-column a {\n  text-decoration: none;\n  color: #ccc;\n  transition: color 0.2s ease;\n}\n.footer-column a:hover {\n  color: var(--color-primary, #667eea);\n}\n.footer-bottom {\n  text-align: center;\n  border-top: 1px solid #374151;\n  padding-top: 12px;\n  color: #9ca3af;\n}\n@media (max-width: 768px) {\n  .footer {\n    padding: 12px 20px;\n    padding-bottom: calc(var(--bottom-nav-height, 60px) + 8px);\n  }\n  .footer-container {\n    display: none;\n  }\n  .footer-bottom {\n    border-top: none;\n    padding-top: 0;\n  }\n}\n/*# sourceMappingURL=footer.css.map */\n"] }]
   }], null, null);
 })();
 (() => {
@@ -19131,7 +19131,7 @@ var routes = [
       },
       {
         path: "settings",
-        loadComponent: () => import("./chunk-JD63C6CY.js").then((m) => m.SettingsComponent),
+        loadComponent: () => import("./chunk-FAZHAY3V.js").then((m) => m.SettingsComponent),
         canActivate: [AuthGuard]
       },
       {
@@ -19148,7 +19148,7 @@ var routes = [
       },
       {
         path: "post-job",
-        loadChildren: () => import("./chunk-Y3BZHY5M.js").then((m) => m.PostJobModule)
+        loadChildren: () => import("./chunk-UV6F25MU.js").then((m) => m.PostJobModule)
       },
       {
         path: "pending-jobs",
@@ -19232,7 +19232,7 @@ var routes = [
       },
       {
         path: "find-a-pro",
-        loadComponent: () => import("./chunk-NUKDQ3SE.js").then((m) => m.FindAProComponent)
+        loadComponent: () => import("./chunk-IWNIVERR.js").then((m) => m.FindAProComponent)
       },
       {
         path: "jobs",

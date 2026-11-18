@@ -1661,10 +1661,22 @@ var FindAProComponent = class _FindAProComponent {
       params["categoryId"] = String(service.serviceCategoryId);
     if (service.name)
       params["title"] = service.name;
+    this.applyRequestedPro(params);
     this.router.navigate(["/post-job"], { queryParams: params });
   }
   postJobGeneral() {
-    this.router.navigate(["/post-job"]);
+    const params = {};
+    this.applyRequestedPro(params);
+    this.router.navigate(["/post-job"], { queryParams: params });
+  }
+  /** Adds the selected pro's id/name to post-job params so it becomes a RequestedProId direct invite. */
+  applyRequestedPro(params) {
+    if (!this.selectedPro)
+      return;
+    params["proId"] = String(this.selectedPro.id);
+    const proLabel = this.selectedPro.businessName || this.selectedPro.proName;
+    if (proLabel)
+      params["proName"] = proLabel;
   }
   toggleMap() {
     this.showMap = !this.showMap;
@@ -2041,5 +2053,5 @@ var FindAProComponent = class _FindAProComponent {
 export {
   FindAProComponent
 };
-//# sourceMappingURL=chunk-NUKDQ3SE.js.map
+//# sourceMappingURL=chunk-IWNIVERR.js.map
 

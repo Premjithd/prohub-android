@@ -71,6 +71,7 @@ import {
   takeUntil,
   ɵsetClassDebugInfo,
   ɵɵadvance,
+  ɵɵattribute,
   ɵɵclassProp,
   ɵɵdefineComponent,
   ɵɵdefineInjector,
@@ -564,54 +565,72 @@ function PostJobComponent_div_37_Template(rf, ctx) {
     \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(38, 33, "POST_JOB.NEXT"));
   }
 }
-function PostJobComponent_div_38_button_7_Template(rf, ctx) {
+function PostJobComponent_div_38_button_11_Template(rf, ctx) {
   if (rf & 1) {
     const _r13 = \u0275\u0275getCurrentView();
     \u0275\u0275elementStart(0, "button", 77);
-    \u0275\u0275listener("click", function PostJobComponent_div_38_button_7_Template_button_click_0_listener() {
+    \u0275\u0275listener("click", function PostJobComponent_div_38_button_11_Template_button_click_0_listener() {
       const range_r14 = \u0275\u0275restoreView(_r13).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.selectBudget(range_r14.value));
     });
-    \u0275\u0275text(1);
+    \u0275\u0275elementStart(1, "span", 78)(2, "span", 79);
+    \u0275\u0275text(3);
     \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(4, "span", 80);
+    \u0275\u0275text(5);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(6, "span", 81);
+    \u0275\u0275text(7, "\u2713");
+    \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
     const range_r14 = ctx.$implicit;
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275classProp("selected", ctx_r1.f["budget"].value === range_r14.value);
-    \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", range_r14.label, " ");
+    \u0275\u0275attribute("aria-pressed", ctx_r1.f["budget"].value === range_r14.value);
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(range_r14.label);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(range_r14.hint);
   }
 }
-function PostJobComponent_div_38_small_8_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "small", 43);
-    \u0275\u0275text(1, " Please select a budget range ");
-    \u0275\u0275elementEnd();
-  }
-}
-function PostJobComponent_div_38_button_13_Template(rf, ctx) {
+function PostJobComponent_div_38_button_18_Template(rf, ctx) {
   if (rf & 1) {
     const _r15 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 78);
-    \u0275\u0275listener("click", function PostJobComponent_div_38_button_13_Template_button_click_0_listener() {
+    \u0275\u0275elementStart(0, "button", 77);
+    \u0275\u0275listener("click", function PostJobComponent_div_38_button_18_Template_button_click_0_listener() {
       const option_r16 = \u0275\u0275restoreView(_r15).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.selectTimeline(option_r16.value));
     });
-    \u0275\u0275text(1);
+    \u0275\u0275elementStart(1, "span", 82);
+    \u0275\u0275text(2);
     \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "span", 78)(4, "span", 79);
+    \u0275\u0275text(5);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(6, "span", 80);
+    \u0275\u0275text(7);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(8, "span", 81);
+    \u0275\u0275text(9, "\u2713");
+    \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
     const option_r16 = ctx.$implicit;
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275classProp("selected", ctx_r1.f["timeline"].value === option_r16.value);
-    \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", option_r16.label, " ");
+    \u0275\u0275attribute("aria-pressed", ctx_r1.f["timeline"].value === option_r16.value);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(option_r16.icon);
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(option_r16.label);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(option_r16.description);
   }
 }
-function PostJobComponent_div_38_small_14_Template(rf, ctx) {
+function PostJobComponent_div_38_small_19_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "small", 43);
     \u0275\u0275text(1, " Please select a timeline ");
@@ -625,59 +644,63 @@ function PostJobComponent_div_38_Template(rf, ctx) {
     \u0275\u0275text(2, "Budget and timeline");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(3, "div", 28)(4, "label");
-    \u0275\u0275text(5, "Your Budget *");
+    \u0275\u0275text(5, "What's your budget? ");
+    \u0275\u0275elementStart(6, "span", 72);
+    \u0275\u0275text(7, "(optional)");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(8, "p", 73);
+    \u0275\u0275text(9, "Pick the range that fits best \u2014 you can finalise exact pricing with pros later.");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "div", 72);
-    \u0275\u0275template(7, PostJobComponent_div_38_button_7_Template, 2, 3, "button", 73);
+    \u0275\u0275elementStart(10, "div", 74);
+    \u0275\u0275template(11, PostJobComponent_div_38_button_11_Template, 8, 5, "button", 75);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(12, "div", 28)(13, "label");
+    \u0275\u0275text(14, "When do you need it done? *");
     \u0275\u0275elementEnd();
-    \u0275\u0275template(8, PostJobComponent_div_38_small_8_Template, 2, 0, "small", 31);
+    \u0275\u0275elementStart(15, "p", 73);
+    \u0275\u0275text(16, "This helps pros who are available in your timeframe reach out first.");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(9, "div", 28)(10, "label");
-    \u0275\u0275text(11, "Timeline *");
+    \u0275\u0275elementStart(17, "div", 74);
+    \u0275\u0275template(18, PostJobComponent_div_38_button_18_Template, 10, 6, "button", 75);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(12, "div", 74);
-    \u0275\u0275template(13, PostJobComponent_div_38_button_13_Template, 2, 3, "button", 75);
+    \u0275\u0275template(19, PostJobComponent_div_38_small_19_Template, 2, 0, "small", 31);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(14, PostJobComponent_div_38_small_14_Template, 2, 0, "small", 31);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(15, "div", 40)(16, "button", 76);
-    \u0275\u0275listener("click", function PostJobComponent_div_38_Template_button_click_16_listener() {
+    \u0275\u0275elementStart(20, "div", 40)(21, "button", 76);
+    \u0275\u0275listener("click", function PostJobComponent_div_38_Template_button_click_21_listener() {
       \u0275\u0275restoreView(_r12);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.previousStep());
     });
-    \u0275\u0275text(17);
-    \u0275\u0275pipe(18, "translate");
+    \u0275\u0275text(22);
+    \u0275\u0275pipe(23, "translate");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(19, "button", 42);
-    \u0275\u0275listener("click", function PostJobComponent_div_38_Template_button_click_19_listener() {
+    \u0275\u0275elementStart(24, "button", 42);
+    \u0275\u0275listener("click", function PostJobComponent_div_38_Template_button_click_24_listener() {
       \u0275\u0275restoreView(_r12);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.nextStep());
     });
-    \u0275\u0275text(20);
-    \u0275\u0275pipe(21, "translate");
+    \u0275\u0275text(25);
+    \u0275\u0275pipe(26, "translate");
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext();
-    \u0275\u0275advance(7);
+    \u0275\u0275advance(11);
     \u0275\u0275property("ngForOf", ctx_r1.budgetRanges);
-    \u0275\u0275advance();
-    \u0275\u0275property("ngIf", (ctx_r1.submitted || ctx_r1.f["budget"].touched) && ctx_r1.f["budget"].errors);
-    \u0275\u0275advance(5);
+    \u0275\u0275advance(7);
     \u0275\u0275property("ngForOf", ctx_r1.timelineOptions);
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", (ctx_r1.submitted || ctx_r1.f["timeline"].touched) && ctx_r1.f["timeline"].errors);
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(18, 6, "POST_JOB.BACK"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(23, 5, "POST_JOB.BACK"));
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(21, 8, "POST_JOB.NEXT"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(26, 7, "POST_JOB.NEXT"));
   }
 }
 function PostJobComponent_div_39_div_34_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 80)(1, "h4");
+    \u0275\u0275elementStart(0, "div", 84)(1, "h4");
     \u0275\u0275text(2, "Requested Pro");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(3, "p");
@@ -692,9 +715,9 @@ function PostJobComponent_div_39_div_34_Template(rf, ctx) {
     \u0275\u0275textInterpolate1("", ctx_r1.requestedProName, " ");
   }
 }
-function PostJobComponent_div_39_small_43_Template(rf, ctx) {
+function PostJobComponent_div_39_small_51_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "small", 43);
+    \u0275\u0275elementStart(0, "small", 93);
     \u0275\u0275text(1);
     \u0275\u0275pipe(2, "translate");
     \u0275\u0275elementEnd();
@@ -710,68 +733,68 @@ function PostJobComponent_div_39_Template(rf, ctx) {
     \u0275\u0275elementStart(0, "div", 27)(1, "h2");
     \u0275\u0275text(2, "Review your job posting");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div", 79)(4, "div", 80)(5, "h4");
+    \u0275\u0275elementStart(3, "div", 83)(4, "div", 84)(5, "h4");
     \u0275\u0275text(6, "Job Title");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(7, "p");
     \u0275\u0275text(8);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(9, "div", 80)(10, "h4");
+    \u0275\u0275elementStart(9, "div", 84)(10, "h4");
     \u0275\u0275text(11, "Category");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(12, "p");
     \u0275\u0275text(13);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(14, "div", 80)(15, "h4");
+    \u0275\u0275elementStart(14, "div", 84)(15, "h4");
     \u0275\u0275text(16, "Description");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(17, "p");
     \u0275\u0275text(18);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(19, "div", 80)(20, "h4");
+    \u0275\u0275elementStart(19, "div", 84)(20, "h4");
     \u0275\u0275text(21, "Location");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(22, "p");
     \u0275\u0275text(23);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(24, "div", 80)(25, "h4");
+    \u0275\u0275elementStart(24, "div", 84)(25, "h4");
     \u0275\u0275text(26, "Budget");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(27, "p");
     \u0275\u0275text(28);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(29, "div", 80)(30, "h4");
+    \u0275\u0275elementStart(29, "div", 84)(30, "h4");
     \u0275\u0275text(31, "Timeline");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(32, "p");
     \u0275\u0275text(33);
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(34, PostJobComponent_div_39_div_34_Template, 7, 1, "div", 81);
+    \u0275\u0275template(34, PostJobComponent_div_39_div_34_Template, 7, 1, "div", 85);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(35, "div", 82)(36, "label", 83);
-    \u0275\u0275element(37, "input", 84);
-    \u0275\u0275elementStart(38, "span", 85);
+    \u0275\u0275elementStart(35, "div", 86)(36, "label", 87);
+    \u0275\u0275element(37, "input", 88);
+    \u0275\u0275elementStart(38, "span", 89);
     \u0275\u0275text(39);
     \u0275\u0275pipe(40, "translate");
-    \u0275\u0275elementStart(41, "a", 86);
+    \u0275\u0275elementStart(41, "a", 90);
     \u0275\u0275text(42, "Terms of Service");
-    \u0275\u0275elementEnd()()();
-    \u0275\u0275template(43, PostJobComponent_div_39_small_43_Template, 3, 3, "small", 31);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(44, "div", 40)(45, "button", 76);
-    \u0275\u0275listener("click", function PostJobComponent_div_39_Template_button_click_45_listener() {
+    \u0275\u0275elementEnd()()()();
+    \u0275\u0275elementStart(43, "div", 40)(44, "button", 76);
+    \u0275\u0275listener("click", function PostJobComponent_div_39_Template_button_click_44_listener() {
       \u0275\u0275restoreView(_r17);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.previousStep());
     });
-    \u0275\u0275text(46);
-    \u0275\u0275pipe(47, "translate");
+    \u0275\u0275text(45);
+    \u0275\u0275pipe(46, "translate");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(48, "button", 87);
-    \u0275\u0275text(49);
+    \u0275\u0275elementStart(47, "button", 91);
+    \u0275\u0275text(48);
+    \u0275\u0275pipe(49, "translate");
     \u0275\u0275pipe(50, "translate");
-    \u0275\u0275pipe(51, "translate");
-    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementEnd()();
+    \u0275\u0275template(51, PostJobComponent_div_39_small_51_Template, 3, 3, "small", 92);
+    \u0275\u0275elementEnd();
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext();
@@ -793,14 +816,14 @@ function PostJobComponent_div_39_Template(rf, ctx) {
     \u0275\u0275classProp("invalid", (ctx_r1.submitted || ctx_r1.f["agreeToTerms"].touched) && ctx_r1.f["agreeToTerms"].errors);
     \u0275\u0275advance(3);
     \u0275\u0275textInterpolate1("", \u0275\u0275pipeBind1(40, 14, "COMMON.AGREE_TERMS"), " ");
-    \u0275\u0275advance(4);
-    \u0275\u0275property("ngIf", (ctx_r1.submitted || ctx_r1.f["agreeToTerms"].touched) && ctx_r1.f["agreeToTerms"].errors);
-    \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(47, 16, "POST_JOB.BACK"));
+    \u0275\u0275advance(6);
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(46, 16, "POST_JOB.BACK"));
     \u0275\u0275advance(2);
     \u0275\u0275property("disabled", ctx_r1.submitted);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r1.submitted ? \u0275\u0275pipeBind1(50, 18, "POST_JOB.SUBMITTING") : \u0275\u0275pipeBind1(51, 20, "POST_JOB.SUBMIT"), " ");
+    \u0275\u0275textInterpolate1(" ", ctx_r1.submitted ? \u0275\u0275pipeBind1(49, 18, "POST_JOB.SUBMITTING") : \u0275\u0275pipeBind1(50, 20, "POST_JOB.SUBMIT"), " ");
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngIf", (ctx_r1.submitted || ctx_r1.f["agreeToTerms"].touched) && ctx_r1.f["agreeToTerms"].errors);
   }
 }
 var PostJobComponent = class _PostJobComponent {
@@ -831,13 +854,13 @@ var PostJobComponent = class _PostJobComponent {
   categoryKeywords = {
     "plumbing": ["tap", "faucet", "leak", "pipe", "drain", "water", "sink", "toilet", "bathroom", "flush", "geyser", "sewage", "basin"],
     "electrical": ["wiring", "socket", "switch", "light", "fan", "power", "short circuit", "mcb", "inverter", "electric", "plug", "bulb", "wire"],
-    "painting": ["paint", "wall", "primer", "whitewash", "distemper", "texture", "putty"],
+    "painting": ["paint", "primer", "whitewash", "distemper", "texture", "putty"],
     "cleaning": ["clean", "sweep", "mop", "dust", "sanitize", "housekeeping", "wash"],
     "ac & appliance repair": ["ac", "air condition", "fridge", "refrigerator", "washing machine", "microwave", "appliance", "cooler", "geyser"],
     "pest control": ["pest", "cockroach", "termite", "ant", "rodent", "mosquito", "bug", "rat"],
     "gardening & landscaping": ["garden", "lawn", "plant", "landscap", "tree", "grass", "hedge"],
     "landscaping": ["garden", "lawn", "plant", "landscap", "tree", "grass"],
-    "masonry & tiling": ["tile", "brick", "cement", "concrete", "masonry", "plaster", "floor", "grout"],
+    "masonry & tiling": ["tile", "brick", "cement", "concrete", "masonry", "plaster", "floor", "grout", "wall", "construct", "build"],
     "waterproofing": ["waterproof", "seepage", "damp", "leak", "terrace"],
     "bathroom renovation": ["bathroom", "renovat", "remodel", "fixture", "washroom"],
     "movers & packers": ["move", "moving", "shift", "relocat", "pack", "transport", "luggage"],
@@ -869,11 +892,11 @@ var PostJobComponent = class _PostJobComponent {
   jobLongitude = null;
   addressSearch$ = new Subject();
   budgetRanges = [
-    { value: "under-100", label: "Under \u20B95,000", icon: "\u{1F4B0}", estimatedBudget: 2500 },
-    { value: "100-250", label: "\u20B95,000 - \u20B912,500", icon: "\u{1F4B0}\u{1F4B0}", estimatedBudget: 8750 },
-    { value: "250-500", label: "\u20B912,500 - \u20B925,000", icon: "\u{1F4B0}\u{1F4B0}\u{1F4B0}", estimatedBudget: 18750 },
-    { value: "500-1000", label: "\u20B925,000 - \u20B950,000", icon: "\u{1F4B0}\u{1F4B0}\u{1F4B0}\u{1F4B0}", estimatedBudget: 37500 },
-    { value: "over-1000", label: "Over \u20B950,000", icon: "\u{1F4B0}\u{1F4B0}\u{1F4B0}\u{1F4B0}\u{1F4B0}", estimatedBudget: 75e3 }
+    { value: "under-100", label: "Under \u20B95,000", icon: "\u{1F4B0}", hint: "Quick fixes & small tasks", estimatedBudget: 2500 },
+    { value: "100-250", label: "\u20B95,000 \u2013 \u20B912,500", icon: "\u{1F4B0}\u{1F4B0}", hint: "Standard repairs & installs", estimatedBudget: 8750 },
+    { value: "250-500", label: "\u20B912,500 \u2013 \u20B925,000", icon: "\u{1F4B0}\u{1F4B0}\u{1F4B0}", hint: "Half-day to multi-room jobs", estimatedBudget: 18750 },
+    { value: "500-1000", label: "\u20B925,000 \u2013 \u20B950,000", icon: "\u{1F4B0}\u{1F4B0}\u{1F4B0}\u{1F4B0}", hint: "Large projects", estimatedBudget: 37500 },
+    { value: "over-1000", label: "Over \u20B950,000", icon: "\u{1F4B0}\u{1F4B0}\u{1F4B0}\u{1F4B0}\u{1F4B0}", hint: "Major / full-home work", estimatedBudget: 75e3 }
   ];
   timelineOptions = [
     { value: "asap", label: "ASAP (within 24 hours)", icon: "\u26A1", description: "Urgent" },
@@ -958,11 +981,13 @@ var PostJobComponent = class _PostJobComponent {
       serviceAddressState: [""],
       serviceAddressCountry: [""],
       serviceAddressPIN: [""],
-      budget: ["", Validators.required],
+      budget: [""],
       timeline: ["", Validators.required],
       // Step 3
       attachments: [""],
-      agreeToTerms: [false, Validators.required]
+      // requiredTrue (not required): a boolean `false` is treated as valid by
+      // Validators.required, so the checkbox must use requiredTrue to error when unticked.
+      agreeToTerms: [false, Validators.requiredTrue]
     });
   }
   /** Decide which categories the picker offers. The full catalogue is never shown:
@@ -1145,7 +1170,8 @@ var PostJobComponent = class _PostJobComponent {
     this.jobForm.patchValue({ category: categoryId });
   }
   selectBudget(budgetValue) {
-    this.jobForm.patchValue({ budget: budgetValue });
+    const next = this.f["budget"].value === budgetValue ? "" : budgetValue;
+    this.jobForm.patchValue({ budget: next });
   }
   selectTimeline(timelineValue) {
     this.jobForm.patchValue({ timeline: timelineValue });
@@ -1159,7 +1185,6 @@ var PostJobComponent = class _PostJobComponent {
     this.markStepFieldsAsTouched(2);
     this.markStepFieldsAsTouched(3);
     if (!this.f["agreeToTerms"].value) {
-      this.errorMessage = "You must agree to the Terms of Service to post a job.";
       this.f["agreeToTerms"].markAsTouched();
       this.submitted = false;
       return;
@@ -1238,7 +1263,7 @@ var PostJobComponent = class _PostJobComponent {
   }
   getBudgetLabel(budgetValue) {
     const budget = this.budgetRanges.find((b) => b.value === budgetValue);
-    return budget ? budget.label : "";
+    return budget ? budget.label : "Not specified";
   }
   getTimelineLabel(timelineValue) {
     const timeline = this.timelineOptions.find((t) => t.value === timelineValue);
@@ -1261,7 +1286,7 @@ var PostJobComponent = class _PostJobComponent {
       let _t;
       \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.addressSearchInput = _t.first);
     }
-  }, decls: 73, vars: 36, consts: [["addressSearchInput", ""], [1, "post-job-wrapper"], [1, "post-job-hero"], [1, "hero-content"], [1, "post-job-section"], [1, "section-container"], [1, "form-wrapper"], ["class", "alert alert-success", 4, "ngIf"], ["class", "alert alert-error", 4, "ngIf"], [1, "steps-indicator"], [1, "step"], [1, "step-num"], [1, "step-label"], [1, "step-line"], ["class", "requested-pro-banner", 4, "ngIf"], [3, "ngSubmit", "formGroup"], ["class", "form-step", 4, "ngIf"], [1, "tips-section"], [1, "tips-grid"], [1, "tip-card"], [1, "tip-icon"], [1, "alert", "alert-success"], [1, "dismiss-btn", 3, "click"], [1, "alert", "alert-error"], [1, "requested-pro-banner"], [1, "rpb-icon"], [1, "rpb-text"], [1, "form-step"], [1, "form-group"], ["for", "title"], ["type", "text", "id", "title", "formControlName", "title", 1, "form-control", 3, "placeholder"], ["class", "error-text", 4, "ngIf"], ["class", "category-grid cat-skel-grid", 4, "ngIf"], ["class", "cat-load-error", 4, "ngIf"], ["class", "cat-empty", 4, "ngIf"], ["class", "category-grid", 4, "ngIf"], ["class", "cat-hint", 4, "ngIf"], ["for", "description"], ["id", "description", "formControlName", "description", "rows", "6", 1, "form-control", "textarea", 3, "placeholder"], [4, "ngIf"], [1, "form-actions"], ["type", "button", "disabled", "", 1, "btn", "btn-secondary"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "error-text"], [1, "category-grid", "cat-skel-grid"], ["class", "cat-skeleton", 4, "ngFor", "ngForOf"], [1, "cat-skeleton"], [1, "cat-load-error"], [1, "material-icons"], ["type", "button", 3, "click"], [1, "cat-empty"], [1, "category-grid"], ["type", "button", "class", "category-btn", 3, "selected", "click", 4, "ngFor", "ngForOf"], ["type", "button", 1, "category-btn", 3, "click"], [1, "category-icon"], [1, "category-name"], [1, "cat-hint"], [1, "autocomplete-container"], ["type", "text", "placeholder", "Enter your city or PIN code", "autocomplete", "off", 1, "form-control", 3, "input", "blur"], ["class", "address-loading", 4, "ngIf"], ["class", "address-dropdown", 4, "ngIf"], [1, "text-hint"], [1, "address-loading"], [1, "address-dropdown"], ["class", "address-item", 3, "mousedown", 4, "ngFor", "ngForOf"], [1, "address-item", 3, "mousedown"], [1, "address-main"], [1, "address-secondary"], [1, "selected-address-box"], [1, "material-icons", "address-pin-icon"], [1, "selected-address-text"], ["type", "button", 1, "btn-clear-address", 3, "click"], [1, "budget-options"], ["type", "button", "class", "budget-btn", 3, "selected", "click", 4, "ngFor", "ngForOf"], [1, "timeline-options"], ["type", "button", "class", "timeline-btn", 3, "selected", "click", 4, "ngFor", "ngForOf"], ["type", "button", 1, "btn", "btn-secondary", 3, "click"], ["type", "button", 1, "budget-btn", 3, "click"], ["type", "button", 1, "timeline-btn", 3, "click"], [1, "review-section"], [1, "review-item"], ["class", "review-item", 4, "ngIf"], [1, "form-group", "checkbox-group"], [1, "terms-label"], ["type", "checkbox", "formControlName", "agreeToTerms"], [1, "checkbox-text"], ["routerLink", "/terms", "target", "_blank"], ["type", "submit", 1, "btn", "btn-success", 3, "disabled"]], template: function PostJobComponent_Template(rf, ctx) {
+  }, decls: 73, vars: 36, consts: [["addressSearchInput", ""], [1, "post-job-wrapper"], [1, "post-job-hero"], [1, "hero-content"], [1, "post-job-section"], [1, "section-container"], [1, "form-wrapper"], ["class", "alert alert-success", 4, "ngIf"], ["class", "alert alert-error", 4, "ngIf"], [1, "steps-indicator"], [1, "step"], [1, "step-num"], [1, "step-label"], [1, "step-line"], ["class", "requested-pro-banner", 4, "ngIf"], [3, "ngSubmit", "formGroup"], ["class", "form-step", 4, "ngIf"], [1, "tips-section"], [1, "tips-grid"], [1, "tip-card"], [1, "tip-icon"], [1, "alert", "alert-success"], [1, "dismiss-btn", 3, "click"], [1, "alert", "alert-error"], [1, "requested-pro-banner"], [1, "rpb-icon"], [1, "rpb-text"], [1, "form-step"], [1, "form-group"], ["for", "title"], ["type", "text", "id", "title", "formControlName", "title", 1, "form-control", 3, "placeholder"], ["class", "error-text", 4, "ngIf"], ["class", "category-grid cat-skel-grid", 4, "ngIf"], ["class", "cat-load-error", 4, "ngIf"], ["class", "cat-empty", 4, "ngIf"], ["class", "category-grid", 4, "ngIf"], ["class", "cat-hint", 4, "ngIf"], ["for", "description"], ["id", "description", "formControlName", "description", "rows", "6", 1, "form-control", "textarea", 3, "placeholder"], [4, "ngIf"], [1, "form-actions"], ["type", "button", "disabled", "", 1, "btn", "btn-secondary"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "error-text"], [1, "category-grid", "cat-skel-grid"], ["class", "cat-skeleton", 4, "ngFor", "ngForOf"], [1, "cat-skeleton"], [1, "cat-load-error"], [1, "material-icons"], ["type", "button", 3, "click"], [1, "cat-empty"], [1, "category-grid"], ["type", "button", "class", "category-btn", 3, "selected", "click", 4, "ngFor", "ngForOf"], ["type", "button", 1, "category-btn", 3, "click"], [1, "category-icon"], [1, "category-name"], [1, "cat-hint"], [1, "autocomplete-container"], ["type", "text", "placeholder", "Enter your city or PIN code", "autocomplete", "off", 1, "form-control", 3, "input", "blur"], ["class", "address-loading", 4, "ngIf"], ["class", "address-dropdown", 4, "ngIf"], [1, "text-hint"], [1, "address-loading"], [1, "address-dropdown"], ["class", "address-item", 3, "mousedown", 4, "ngFor", "ngForOf"], [1, "address-item", 3, "mousedown"], [1, "address-main"], [1, "address-secondary"], [1, "selected-address-box"], [1, "material-icons", "address-pin-icon"], [1, "selected-address-text"], ["type", "button", 1, "btn-clear-address", 3, "click"], [1, "optional-tag"], [1, "field-hint"], [1, "option-grid"], ["type", "button", "class", "option-card option-card--tile", 3, "selected", "click", 4, "ngFor", "ngForOf"], ["type", "button", 1, "btn", "btn-secondary", 3, "click"], ["type", "button", 1, "option-card", "option-card--tile", 3, "click"], [1, "option-body"], [1, "option-title"], [1, "option-sub"], ["aria-hidden", "true", 1, "option-check"], ["aria-hidden", "true", 1, "option-icon"], [1, "review-section"], [1, "review-item"], ["class", "review-item", 4, "ngIf"], [1, "form-group", "checkbox-group"], [1, "terms-label"], ["type", "checkbox", "formControlName", "agreeToTerms"], [1, "checkbox-text"], ["routerLink", "/terms", "target", "_blank"], ["type", "submit", 1, "btn", "btn-success", 3, "disabled"], ["class", "error-text terms-error", 4, "ngIf"], [1, "error-text", "terms-error"]], template: function PostJobComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 1)(1, "section", 2)(2, "div", 3)(3, "h1");
       \u0275\u0275text(4);
@@ -1301,7 +1326,7 @@ var PostJobComponent = class _PostJobComponent {
       \u0275\u0275listener("ngSubmit", function PostJobComponent_Template_form_ngSubmit_36_listener() {
         return ctx.onSubmit();
       });
-      \u0275\u0275template(37, PostJobComponent_div_37_Template, 39, 35, "div", 16)(38, PostJobComponent_div_38_Template, 22, 10, "div", 16)(39, PostJobComponent_div_39_Template, 52, 22, "div", 16);
+      \u0275\u0275template(37, PostJobComponent_div_37_Template, 39, 35, "div", 16)(38, PostJobComponent_div_38_Template, 27, 9, "div", 16)(39, PostJobComponent_div_39_Template, 52, 22, "div", 16);
       \u0275\u0275elementEnd()()()();
       \u0275\u0275elementStart(40, "section", 17)(41, "div", 5)(42, "h2");
       \u0275\u0275text(43, "Tips for Getting Great Bids");
@@ -1379,7 +1404,7 @@ var PostJobComponent = class _PostJobComponent {
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.currentStep === 3);
     }
-  }, dependencies: [CommonModule, NgForOf, NgIf, FormsModule, \u0275NgNoValidate, DefaultValueAccessor, CheckboxControlValueAccessor, NgControlStatus, NgControlStatusGroup, ReactiveFormsModule, FormGroupDirective, FormControlName, RouterModule, RouterLink, MatIconModule, MatSnackBarModule, TranslateModule, TranslatePipe], styles: ["\n\n.post-job-wrapper[_ngcontent-%COMP%] {\n  color: #1f2937;\n  background: #fff;\n}\n.requested-pro-banner[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 10px;\n  margin: 0 0 20px;\n  padding: 14px 16px;\n  background: #eef2ff;\n  border: 1px solid #c7d2fe;\n  border-radius: 10px;\n  color: #3730a3;\n  font-size: 14px;\n  line-height: 1.5;\n}\n.requested-pro-banner[_ngcontent-%COMP%]   .rpb-icon[_ngcontent-%COMP%] {\n  font-size: 18px;\n  line-height: 1.4;\n}\n.requested-pro-banner[_ngcontent-%COMP%]   .rpb-text[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  font-weight: 700;\n}\n.post-job-hero[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n  color: #fff;\n  padding: 80px 20px;\n  text-align: center;\n}\n.hero-content[_ngcontent-%COMP%] {\n  max-width: 800px;\n  margin: 0 auto;\n}\n.hero-content[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: 48px;\n  font-weight: 700;\n  margin-bottom: 16px;\n  line-height: 1.2;\n}\n.hero-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 18px;\n  opacity: 0.95;\n  line-height: 1.6;\n}\n.section-container[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 0 20px;\n}\n.post-job-section[_ngcontent-%COMP%] {\n  padding: 80px 20px;\n  background: #f9fafb;\n}\n.form-wrapper[_ngcontent-%COMP%] {\n  max-width: 700px;\n  margin: 0 auto;\n  background: #fff;\n  border-radius: 12px;\n  padding: 40px;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);\n}\n.alert[_ngcontent-%COMP%] {\n  padding: 12px 16px;\n  border-radius: 8px;\n  margin-bottom: 24px;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  font-weight: 500;\n  animation: _ngcontent-%COMP%_slideDown 0.3s ease;\n}\n.alert.alert-success[_ngcontent-%COMP%] {\n  background: #d4edda;\n  color: #155724;\n  border: 1px solid #c3e6cb;\n}\n.alert.alert-error[_ngcontent-%COMP%] {\n  background: #f8d7da;\n  color: #721c24;\n  border: 1px solid #f5c6cb;\n}\n@keyframes _ngcontent-%COMP%_slideDown {\n  from {\n    opacity: 0;\n    transform: translateY(-10px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.dismiss-btn[_ngcontent-%COMP%] {\n  background: 0;\n  border: 0;\n  font-size: 24px;\n  cursor: pointer;\n  opacity: 0.6;\n  transition: opacity 0.2s;\n}\n.dismiss-btn[_ngcontent-%COMP%]:hover {\n  opacity: 1;\n}\n.steps-indicator[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 40px;\n}\n.step[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 8px;\n  position: relative;\n  flex: 1;\n}\n.step.active[_ngcontent-%COMP%]   .step-num[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n  color: #fff;\n  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);\n}\n.step.completed[_ngcontent-%COMP%]   .step-num[_ngcontent-%COMP%] {\n  background: #10b981;\n  color: #fff;\n}\n.step.active[_ngcontent-%COMP%]   .step-label[_ngcontent-%COMP%] {\n  color: #667eea;\n}\n.step-num[_ngcontent-%COMP%] {\n  width: 40px;\n  height: 40px;\n  border-radius: 50%;\n  background: #e5e7eb;\n  color: #6b7280;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 600;\n  transition: all 0.3s;\n}\n.step-label[_ngcontent-%COMP%] {\n  font-size: 12px;\n  font-weight: 600;\n  color: #6b7280;\n  text-align: center;\n  white-space: nowrap;\n}\n.step-line[_ngcontent-%COMP%] {\n  flex: 1;\n  height: 2px;\n  background: #e5e7eb;\n  margin: 0 8px;\n  transition: background 0.3s;\n}\n.step-line.active[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      90deg,\n      #667eea,\n      #764ba2);\n}\n@media (max-width: 768px) {\n  .steps-indicator[_ngcontent-%COMP%] {\n    margin-bottom: 30px;\n  }\n  .step-label[_ngcontent-%COMP%] {\n    font-size: 11px;\n  }\n  .step-line[_ngcontent-%COMP%] {\n    height: 1px;\n  }\n}\n.form-step[_ngcontent-%COMP%] {\n  animation: fadeIn 0.3s ease;\n}\n.form-step[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 24px;\n  font-weight: 700;\n  margin-bottom: 24px;\n  color: #1f2937;\n}\n.form-group[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n}\n.form-group[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  display: block;\n  margin-bottom: 8px;\n  font-weight: 600;\n  color: #374151;\n  font-size: 14px;\n}\n.form-control[_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 10px 12px;\n  border: 1px solid #d1d5db;\n  border-radius: 6px;\n  font-size: 14px;\n  transition: all 0.2s;\n}\n.form-control[_ngcontent-%COMP%]:focus {\n  outline: 0;\n  border-color: #667eea;\n  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);\n}\n.form-control.is-invalid[_ngcontent-%COMP%] {\n  border-color: #dc2626;\n}\n.form-control.textarea[_ngcontent-%COMP%] {\n  resize: vertical;\n}\n.error-text[_ngcontent-%COMP%] {\n  display: block;\n  color: #dc2626;\n  font-size: 12px;\n  margin-top: 4px;\n}\n.cat-skeleton[_ngcontent-%COMP%] {\n  height: 72px;\n  border-radius: 8px;\n  background:\n    linear-gradient(\n      90deg,\n      #f0f0f0 25%,\n      #e0e0e0 50%,\n      #f0f0f0 75%);\n  background-size: 200% 100%;\n  animation: _ngcontent-%COMP%_shimmer 1.4s infinite;\n}\n@keyframes _ngcontent-%COMP%_shimmer {\n  0% {\n    background-position: 200% 0;\n  }\n  100% {\n    background-position: -200% 0;\n  }\n}\n.cat-load-error[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 14px;\n  border-radius: 8px;\n  background: #fff3cd;\n  color: #856404;\n  font-size: 0.875rem;\n}\n.cat-load-error[_ngcontent-%COMP%]   .material-icons[_ngcontent-%COMP%] {\n  font-size: 1.1rem;\n}\n.cat-load-error[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  margin-left: auto;\n  padding: 4px 12px;\n  border: 1px solid #856404;\n  border-radius: 6px;\n  background: none;\n  color: #856404;\n  font-size: 0.8rem;\n  cursor: pointer;\n}\n.cat-load-error[_ngcontent-%COMP%]   button[_ngcontent-%COMP%]:hover {\n  background: #f5dda0;\n}\n.cat-empty[_ngcontent-%COMP%] {\n  color: #6b7280;\n  font-size: 0.875rem;\n  margin: 8px 0 0;\n}\n.cat-hint[_ngcontent-%COMP%] {\n  color: #6b7280;\n  font-size: 0.875rem;\n  margin: 8px 0 0;\n  font-style: italic;\n}\n.category-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));\n  gap: 12px;\n}\n.category-btn[_ngcontent-%COMP%] {\n  padding: 12px;\n  border: 2px solid #e5e7eb;\n  background: #fff;\n  border-radius: 8px;\n  cursor: pointer;\n  transition: all 0.2s;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 8px;\n}\n.category-btn[_ngcontent-%COMP%]:hover {\n  border-color: #667eea;\n  background: #f3f4f6;\n}\n.category-btn.selected[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n  color: #fff;\n  border-color: #667eea;\n}\n.category-icon[_ngcontent-%COMP%] {\n  font-size: 24px;\n}\n.category-name[_ngcontent-%COMP%] {\n  font-size: 12px;\n  font-weight: 600;\n  text-align: center;\n}\n@media (max-width: 768px) {\n  .category-grid[_ngcontent-%COMP%] {\n    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));\n  }\n}\n.budget-options[_ngcontent-%COMP%], \n.timeline-options[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n}\n.budget-btn[_ngcontent-%COMP%], \n.timeline-btn[_ngcontent-%COMP%] {\n  padding: 12px 16px;\n  border: 2px solid #e5e7eb;\n  background: #fff;\n  border-radius: 6px;\n  cursor: pointer;\n  transition: all 0.2s;\n  font-size: 14px;\n  text-align: left;\n  font-weight: 500;\n}\n.budget-btn[_ngcontent-%COMP%]:hover, \n.timeline-btn[_ngcontent-%COMP%]:hover {\n  border-color: #667eea;\n  background: #f3f4f6;\n}\n.budget-btn.selected[_ngcontent-%COMP%], \n.timeline-btn.selected[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n  color: #fff;\n  border-color: #667eea;\n}\n.review-section[_ngcontent-%COMP%] {\n  background: #f9fafb;\n  border-radius: 8px;\n  padding: 24px;\n  margin-bottom: 24px;\n}\n.review-item[_ngcontent-%COMP%] {\n  margin-bottom: 20px;\n}\n.review-item[_ngcontent-%COMP%]:last-child {\n  margin-bottom: 0;\n}\n.review-item[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: #6b7280;\n  text-transform: uppercase;\n  margin-bottom: 6px;\n  letter-spacing: 0.5px;\n}\n.review-item[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: #1f2937;\n  line-height: 1.6;\n  margin: 0;\n}\n.checkbox-group[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n}\n.checkbox-group[_ngcontent-%COMP%]   .terms-label[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  font-weight: 500;\n  cursor: pointer;\n  margin-bottom: 12px;\n  padding: 16px;\n  border: 2px solid #e5e7eb;\n  border-radius: 8px;\n  background: #f9fafb;\n  transition: all 0.3s ease;\n}\n.checkbox-group[_ngcontent-%COMP%]   .terms-label[_ngcontent-%COMP%]:hover {\n  border-color: #d1d5db;\n  background: #f3f4f6;\n}\n.checkbox-group[_ngcontent-%COMP%]   .terms-label.invalid[_ngcontent-%COMP%] {\n  border-color: #dc2626;\n  background: #fef2f2;\n}\n.checkbox-group[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 8px;\n  font-weight: 500;\n  cursor: pointer;\n  margin-bottom: 0;\n}\n.checkbox-group[_ngcontent-%COMP%]   input[type=checkbox][_ngcontent-%COMP%] {\n  margin-top: 4px;\n  cursor: pointer;\n  width: 18px;\n  height: 18px;\n  min-width: 18px;\n  accent-color: #667eea;\n}\n.checkbox-group[_ngcontent-%COMP%]   .checkbox-text[_ngcontent-%COMP%] {\n  flex: 1;\n  line-height: 1.5;\n}\n.checkbox-group[_ngcontent-%COMP%]   .checkbox-text[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  color: #667eea;\n  text-decoration: none;\n  font-weight: 600;\n}\n.checkbox-group[_ngcontent-%COMP%]   .checkbox-text[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover {\n  text-decoration: underline;\n}\n.checkbox-group[_ngcontent-%COMP%]   input[type=checkbox].is-invalid[_ngcontent-%COMP%] {\n  border-color: #dc2626;\n}\n.btn[_ngcontent-%COMP%] {\n  padding: 10px 24px;\n  border: 0;\n  border-radius: 6px;\n  font-weight: 600;\n  font-size: 14px;\n  cursor: pointer;\n  transition: all 0.2s;\n  min-height: 44px;\n}\n.btn[_ngcontent-%COMP%]:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.btn.btn-primary[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n  color: #fff;\n}\n.btn.btn-primary[_ngcontent-%COMP%]:hover:not(:disabled) {\n  transform: translateY(-2px);\n  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);\n}\n.btn.btn-secondary[_ngcontent-%COMP%] {\n  background: #e5e7eb;\n  color: #374151;\n}\n.btn.btn-secondary[_ngcontent-%COMP%]:hover:not(:disabled) {\n  background: #d1d5db;\n}\n.btn.btn-success[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #10b981,\n      #059669);\n  color: #fff;\n  width: 100%;\n}\n.btn.btn-success[_ngcontent-%COMP%]:hover:not(:disabled) {\n  transform: translateY(-2px);\n  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);\n}\n.tips-section[_ngcontent-%COMP%] {\n  padding: 80px 20px;\n  background: #fff;\n}\n.tips-section[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 32px;\n  font-weight: 700;\n  text-align: center;\n  margin-bottom: 48px;\n  color: #1f2937;\n}\n.tips-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n  gap: 24px;\n}\n.tip-card[_ngcontent-%COMP%] {\n  background: #f9fafb;\n  border-radius: 12px;\n  padding: 24px;\n  text-align: center;\n  transition: all 0.3s;\n  border: 1px solid #e5e7eb;\n}\n.tip-card[_ngcontent-%COMP%]:hover {\n  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);\n  transform: translateY(-4px);\n}\n.tip-card[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 18px;\n  font-weight: 700;\n  margin-bottom: 12px;\n  color: #1f2937;\n}\n.tip-card[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: #6b7280;\n  line-height: 1.6;\n  margin: 0;\n}\n.tip-icon[_ngcontent-%COMP%] {\n  font-size: 40px;\n  margin-bottom: 16px;\n}\n@media (max-width: 768px) {\n  .post-job-section[_ngcontent-%COMP%] {\n    padding: 60px 20px;\n  }\n  .form-wrapper[_ngcontent-%COMP%] {\n    padding: 24px;\n  }\n  .tips-section[_ngcontent-%COMP%] {\n    padding: 60px 20px;\n  }\n  .tips-section[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n    font-size: 24px;\n    margin-bottom: 32px;\n  }\n  .tips-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n}\n.autocomplete-container[_ngcontent-%COMP%] {\n  position: relative;\n}\n.address-dropdown[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  right: 0;\n  background: #fff;\n  border: 1px solid #e5e7eb;\n  border-radius: 6px;\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);\n  z-index: 1000;\n  max-height: 240px;\n  overflow-y: auto;\n}\n.address-item[_ngcontent-%COMP%] {\n  padding: 10px 14px;\n  cursor: pointer;\n  border-bottom: 1px solid #f3f4f6;\n}\n.address-item[_ngcontent-%COMP%]:last-child {\n  border-bottom: none;\n}\n.address-item[_ngcontent-%COMP%]:hover {\n  background: #f9fafb;\n}\n.address-item[_ngcontent-%COMP%]   .address-main[_ngcontent-%COMP%] {\n  font-size: 14px;\n  font-weight: 500;\n  color: #1f2937;\n}\n.address-item[_ngcontent-%COMP%]   .address-secondary[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: #6b7280;\n  margin-top: 2px;\n}\n.address-loading[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  right: 0;\n  background: #fff;\n  border: 1px solid #e5e7eb;\n  border-radius: 6px;\n  padding: 10px 14px;\n  font-size: 13px;\n  color: #6b7280;\n  z-index: 1000;\n}\n.selected-address-box[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 14px;\n  background: #f0fdf4;\n  border: 1.5px solid #86efac;\n  border-radius: 6px;\n  font-size: 14px;\n  color: #166534;\n}\n.selected-address-box[_ngcontent-%COMP%]   .address-pin-icon[_ngcontent-%COMP%] {\n  font-size: 18px;\n  color: #16a34a;\n}\n.selected-address-box[_ngcontent-%COMP%]   .selected-address-text[_ngcontent-%COMP%] {\n  flex: 1;\n  font-weight: 500;\n}\n.selected-address-box[_ngcontent-%COMP%]   .btn-clear-address[_ngcontent-%COMP%] {\n  background: none;\n  border: 1px solid #86efac;\n  border-radius: 4px;\n  padding: 2px 10px;\n  font-size: 12px;\n  color: #166534;\n  cursor: pointer;\n  white-space: nowrap;\n}\n.selected-address-box[_ngcontent-%COMP%]   .btn-clear-address[_ngcontent-%COMP%]:hover {\n  background: #dcfce7;\n}\n.text-hint[_ngcontent-%COMP%] {\n  display: block;\n  margin-top: 4px;\n  font-size: 12px;\n  color: #9ca3af;\n}\n/*# sourceMappingURL=post-job.css.map */"] });
+  }, dependencies: [CommonModule, NgForOf, NgIf, FormsModule, \u0275NgNoValidate, DefaultValueAccessor, CheckboxControlValueAccessor, NgControlStatus, NgControlStatusGroup, ReactiveFormsModule, FormGroupDirective, FormControlName, RouterModule, RouterLink, MatIconModule, MatSnackBarModule, TranslateModule, TranslatePipe], styles: ["\n\n.post-job-wrapper[_ngcontent-%COMP%] {\n  color: #1f2937;\n  background: #fff;\n}\n.requested-pro-banner[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 10px;\n  margin: 0 0 20px;\n  padding: 14px 16px;\n  background: #eef2ff;\n  border: 1px solid #c7d2fe;\n  border-radius: 10px;\n  color: #3730a3;\n  font-size: 14px;\n  line-height: 1.5;\n}\n.requested-pro-banner[_ngcontent-%COMP%]   .rpb-icon[_ngcontent-%COMP%] {\n  font-size: 18px;\n  line-height: 1.4;\n}\n.requested-pro-banner[_ngcontent-%COMP%]   .rpb-text[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  font-weight: 700;\n}\n.post-job-hero[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n  color: #fff;\n  padding: 80px 20px;\n  text-align: center;\n}\n.hero-content[_ngcontent-%COMP%] {\n  max-width: 800px;\n  margin: 0 auto;\n}\n.hero-content[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: 48px;\n  font-weight: 700;\n  margin-bottom: 16px;\n  line-height: 1.2;\n}\n.hero-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 18px;\n  opacity: 0.95;\n  line-height: 1.6;\n}\n.section-container[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 0 20px;\n}\n.post-job-section[_ngcontent-%COMP%] {\n  padding: 80px 20px;\n  background: #f9fafb;\n}\n.form-wrapper[_ngcontent-%COMP%] {\n  max-width: 700px;\n  margin: 0 auto;\n  background: #fff;\n  border-radius: 12px;\n  padding: 40px;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);\n}\n.alert[_ngcontent-%COMP%] {\n  padding: 12px 16px;\n  border-radius: 8px;\n  margin-bottom: 24px;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  font-weight: 500;\n  animation: _ngcontent-%COMP%_slideDown 0.3s ease;\n}\n.alert.alert-success[_ngcontent-%COMP%] {\n  background: #d4edda;\n  color: #155724;\n  border: 1px solid #c3e6cb;\n}\n.alert.alert-error[_ngcontent-%COMP%] {\n  background: #f8d7da;\n  color: #721c24;\n  border: 1px solid #f5c6cb;\n}\n@keyframes _ngcontent-%COMP%_slideDown {\n  from {\n    opacity: 0;\n    transform: translateY(-10px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.dismiss-btn[_ngcontent-%COMP%] {\n  background: 0;\n  border: 0;\n  font-size: 24px;\n  cursor: pointer;\n  opacity: 0.6;\n  transition: opacity 0.2s;\n}\n.dismiss-btn[_ngcontent-%COMP%]:hover {\n  opacity: 1;\n}\n.steps-indicator[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 40px;\n}\n.step[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 8px;\n  position: relative;\n  flex: 1;\n}\n.step.active[_ngcontent-%COMP%]   .step-num[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n  color: #fff;\n  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);\n}\n.step.completed[_ngcontent-%COMP%]   .step-num[_ngcontent-%COMP%] {\n  background: #10b981;\n  color: #fff;\n}\n.step.active[_ngcontent-%COMP%]   .step-label[_ngcontent-%COMP%] {\n  color: #667eea;\n}\n.step-num[_ngcontent-%COMP%] {\n  width: 40px;\n  height: 40px;\n  border-radius: 50%;\n  background: #e5e7eb;\n  color: #6b7280;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 600;\n  transition: all 0.3s;\n}\n.step-label[_ngcontent-%COMP%] {\n  font-size: 12px;\n  font-weight: 600;\n  color: #6b7280;\n  text-align: center;\n  white-space: nowrap;\n}\n.step-line[_ngcontent-%COMP%] {\n  flex: 1;\n  height: 2px;\n  background: #e5e7eb;\n  margin: 0 8px;\n  transition: background 0.3s;\n}\n.step-line.active[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      90deg,\n      #667eea,\n      #764ba2);\n}\n@media (max-width: 768px) {\n  .steps-indicator[_ngcontent-%COMP%] {\n    margin-bottom: 30px;\n  }\n  .step-label[_ngcontent-%COMP%] {\n    font-size: 11px;\n  }\n  .step-line[_ngcontent-%COMP%] {\n    height: 1px;\n  }\n}\n.form-step[_ngcontent-%COMP%] {\n  animation: fadeIn 0.3s ease;\n}\n.form-step[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 24px;\n  font-weight: 700;\n  margin-bottom: 24px;\n  color: #1f2937;\n}\n.form-group[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n}\n.form-group[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  display: block;\n  margin-bottom: 8px;\n  font-weight: 600;\n  color: #374151;\n  font-size: 14px;\n}\n.form-control[_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 10px 12px;\n  border: 1px solid #d1d5db;\n  border-radius: 6px;\n  font-size: 14px;\n  transition: all 0.2s;\n}\n.form-control[_ngcontent-%COMP%]:focus {\n  outline: 0;\n  border-color: #667eea;\n  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);\n}\n.form-control.is-invalid[_ngcontent-%COMP%] {\n  border-color: #dc2626;\n}\n.form-control.textarea[_ngcontent-%COMP%] {\n  resize: vertical;\n}\n.error-text[_ngcontent-%COMP%] {\n  display: block;\n  color: #dc2626;\n  font-size: 12px;\n  margin-top: 4px;\n}\n.terms-error[_ngcontent-%COMP%] {\n  margin-top: 12px;\n  text-align: right;\n}\n.cat-skeleton[_ngcontent-%COMP%] {\n  height: 72px;\n  border-radius: 8px;\n  background:\n    linear-gradient(\n      90deg,\n      #f0f0f0 25%,\n      #e0e0e0 50%,\n      #f0f0f0 75%);\n  background-size: 200% 100%;\n  animation: _ngcontent-%COMP%_shimmer 1.4s infinite;\n}\n@keyframes _ngcontent-%COMP%_shimmer {\n  0% {\n    background-position: 200% 0;\n  }\n  100% {\n    background-position: -200% 0;\n  }\n}\n.cat-load-error[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 14px;\n  border-radius: 8px;\n  background: #fff3cd;\n  color: #856404;\n  font-size: 0.875rem;\n}\n.cat-load-error[_ngcontent-%COMP%]   .material-icons[_ngcontent-%COMP%] {\n  font-size: 1.1rem;\n}\n.cat-load-error[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  margin-left: auto;\n  padding: 4px 12px;\n  border: 1px solid #856404;\n  border-radius: 6px;\n  background: none;\n  color: #856404;\n  font-size: 0.8rem;\n  cursor: pointer;\n}\n.cat-load-error[_ngcontent-%COMP%]   button[_ngcontent-%COMP%]:hover {\n  background: #f5dda0;\n}\n.cat-empty[_ngcontent-%COMP%] {\n  color: #6b7280;\n  font-size: 0.875rem;\n  margin: 8px 0 0;\n}\n.cat-hint[_ngcontent-%COMP%] {\n  color: #6b7280;\n  font-size: 0.875rem;\n  margin: 8px 0 0;\n  font-style: italic;\n}\n.category-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));\n  gap: 12px;\n}\n.category-btn[_ngcontent-%COMP%] {\n  padding: 12px;\n  border: 2px solid #e5e7eb;\n  background: #fff;\n  border-radius: 8px;\n  cursor: pointer;\n  transition: all 0.2s;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 8px;\n}\n.category-btn[_ngcontent-%COMP%]:hover {\n  border-color: #667eea;\n  background: #f3f4f6;\n}\n.category-btn.selected[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n  color: #fff;\n  border-color: #667eea;\n}\n.category-icon[_ngcontent-%COMP%] {\n  font-size: 24px;\n}\n.category-name[_ngcontent-%COMP%] {\n  font-size: 12px;\n  font-weight: 600;\n  text-align: center;\n}\n@media (max-width: 768px) {\n  .category-grid[_ngcontent-%COMP%] {\n    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));\n  }\n}\n.optional-tag[_ngcontent-%COMP%] {\n  font-size: 12px;\n  font-weight: 500;\n  color: #9ca3af;\n}\n.field-hint[_ngcontent-%COMP%] {\n  margin: -2px 0 12px;\n  font-size: 13px;\n  color: #6b7280;\n  line-height: 1.4;\n}\n.option-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 10px;\n}\n@media (max-width: 480px) {\n  .option-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n}\n.option-card[_ngcontent-%COMP%] {\n  position: relative;\n  display: flex;\n  align-items: center;\n  gap: 14px;\n  width: 100%;\n  padding: 14px 16px;\n  border: 2px solid #e5e7eb;\n  background: #fff;\n  border-radius: 10px;\n  cursor: pointer;\n  text-align: left;\n  transition:\n    border-color 0.18s,\n    background 0.18s,\n    box-shadow 0.18s,\n    transform 0.18s;\n}\n.option-card[_ngcontent-%COMP%]:hover {\n  border-color: #a5b4fc;\n  background: #f9faff;\n}\n.option-card[_ngcontent-%COMP%]:focus-visible {\n  outline: none;\n  border-color: #667eea;\n  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.25);\n}\n.option-card[_ngcontent-%COMP%]   .option-icon[_ngcontent-%COMP%] {\n  flex: 0 0 auto;\n  font-size: 18px;\n  line-height: 1;\n}\n.option-card[_ngcontent-%COMP%]   .option-body[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n}\n.option-card[_ngcontent-%COMP%]   .option-title[_ngcontent-%COMP%] {\n  font-size: 14px;\n  font-weight: 600;\n  color: #1f2937;\n}\n.option-card[_ngcontent-%COMP%]   .option-sub[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: #6b7280;\n}\n.option-card[_ngcontent-%COMP%]   .option-check[_ngcontent-%COMP%] {\n  flex: 0 0 auto;\n  margin-left: auto;\n  display: grid;\n  place-items: center;\n  width: 22px;\n  height: 22px;\n  border-radius: 50%;\n  background: #fff;\n  color: #fff;\n  font-size: 13px;\n  font-weight: 700;\n  opacity: 0;\n  transform: scale(0.6);\n  transition: opacity 0.18s, transform 0.18s;\n}\n.option-card.selected[_ngcontent-%COMP%] {\n  border-color: #667eea;\n  background:\n    linear-gradient(\n      135deg,\n      rgba(102, 126, 234, 0.12),\n      rgba(118, 75, 162, 0.12));\n  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.15);\n}\n.option-card.selected[_ngcontent-%COMP%]   .option-title[_ngcontent-%COMP%] {\n  color: #4338ca;\n}\n.option-card.selected[_ngcontent-%COMP%]   .option-sub[_ngcontent-%COMP%] {\n  color: #6366f1;\n}\n.option-card.selected[_ngcontent-%COMP%]   .option-check[_ngcontent-%COMP%] {\n  opacity: 1;\n  transform: scale(1);\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n}\n.option-card--tile[_ngcontent-%COMP%] {\n  flex-direction: column;\n  align-items: flex-start;\n  gap: 8px;\n  padding: 16px;\n}\n.option-card--tile[_ngcontent-%COMP%]   .option-icon[_ngcontent-%COMP%] {\n  font-size: 24px;\n}\n.option-card--tile[_ngcontent-%COMP%]   .option-check[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  margin-left: 0;\n}\n.review-section[_ngcontent-%COMP%] {\n  background: #f9fafb;\n  border-radius: 8px;\n  padding: 24px;\n  margin-bottom: 24px;\n}\n.review-item[_ngcontent-%COMP%] {\n  margin-bottom: 20px;\n}\n.review-item[_ngcontent-%COMP%]:last-child {\n  margin-bottom: 0;\n}\n.review-item[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%] {\n  font-size: 13px;\n  font-weight: 600;\n  color: #6b7280;\n  text-transform: uppercase;\n  margin-bottom: 6px;\n  letter-spacing: 0.5px;\n}\n.review-item[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: #1f2937;\n  line-height: 1.6;\n  margin: 0;\n}\n.checkbox-group[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n}\n.checkbox-group[_ngcontent-%COMP%]   .terms-label[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  font-weight: 500;\n  cursor: pointer;\n  margin-bottom: 12px;\n  padding: 16px;\n  border: 2px solid #e5e7eb;\n  border-radius: 8px;\n  background: #f9fafb;\n  transition: all 0.3s ease;\n}\n.checkbox-group[_ngcontent-%COMP%]   .terms-label[_ngcontent-%COMP%]:hover {\n  border-color: #d1d5db;\n  background: #f3f4f6;\n}\n.checkbox-group[_ngcontent-%COMP%]   .terms-label.invalid[_ngcontent-%COMP%] {\n  border-color: #dc2626;\n  background: #fef2f2;\n}\n.checkbox-group[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: flex-start;\n  gap: 8px;\n  font-weight: 500;\n  cursor: pointer;\n  margin-bottom: 0;\n}\n.checkbox-group[_ngcontent-%COMP%]   input[type=checkbox][_ngcontent-%COMP%] {\n  margin-top: 4px;\n  cursor: pointer;\n  width: 18px;\n  height: 18px;\n  min-width: 18px;\n  accent-color: #667eea;\n}\n.checkbox-group[_ngcontent-%COMP%]   .checkbox-text[_ngcontent-%COMP%] {\n  flex: 1;\n  line-height: 1.5;\n}\n.checkbox-group[_ngcontent-%COMP%]   .checkbox-text[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  color: #667eea;\n  text-decoration: none;\n  font-weight: 600;\n}\n.checkbox-group[_ngcontent-%COMP%]   .checkbox-text[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover {\n  text-decoration: underline;\n}\n.checkbox-group[_ngcontent-%COMP%]   input[type=checkbox].is-invalid[_ngcontent-%COMP%] {\n  border-color: #dc2626;\n}\n.btn[_ngcontent-%COMP%] {\n  padding: 10px 24px;\n  border: 0;\n  border-radius: 6px;\n  font-weight: 600;\n  font-size: 14px;\n  cursor: pointer;\n  transition: all 0.2s;\n  min-height: 44px;\n}\n.btn[_ngcontent-%COMP%]:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.btn.btn-primary[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n  color: #fff;\n}\n.btn.btn-primary[_ngcontent-%COMP%]:hover:not(:disabled) {\n  transform: translateY(-2px);\n  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);\n}\n.btn.btn-secondary[_ngcontent-%COMP%] {\n  background: #e5e7eb;\n  color: #374151;\n}\n.btn.btn-secondary[_ngcontent-%COMP%]:hover:not(:disabled) {\n  background: #d1d5db;\n}\n.btn.btn-success[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #10b981,\n      #059669);\n  color: #fff;\n  width: 100%;\n}\n.btn.btn-success[_ngcontent-%COMP%]:hover:not(:disabled) {\n  transform: translateY(-2px);\n  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);\n}\n.tips-section[_ngcontent-%COMP%] {\n  padding: 80px 20px;\n  background: #fff;\n}\n.tips-section[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 32px;\n  font-weight: 700;\n  text-align: center;\n  margin-bottom: 48px;\n  color: #1f2937;\n}\n.tips-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n  gap: 24px;\n}\n.tip-card[_ngcontent-%COMP%] {\n  background: #f9fafb;\n  border-radius: 12px;\n  padding: 24px;\n  text-align: center;\n  transition: all 0.3s;\n  border: 1px solid #e5e7eb;\n}\n.tip-card[_ngcontent-%COMP%]:hover {\n  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);\n  transform: translateY(-4px);\n}\n.tip-card[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 18px;\n  font-weight: 700;\n  margin-bottom: 12px;\n  color: #1f2937;\n}\n.tip-card[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: #6b7280;\n  line-height: 1.6;\n  margin: 0;\n}\n.tip-icon[_ngcontent-%COMP%] {\n  font-size: 40px;\n  margin-bottom: 16px;\n}\n@media (max-width: 768px) {\n  .post-job-section[_ngcontent-%COMP%] {\n    padding: 60px 20px;\n  }\n  .form-wrapper[_ngcontent-%COMP%] {\n    padding: 24px;\n  }\n  .tips-section[_ngcontent-%COMP%] {\n    padding: 60px 20px;\n  }\n  .tips-section[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n    font-size: 24px;\n    margin-bottom: 32px;\n  }\n  .tips-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n}\n.autocomplete-container[_ngcontent-%COMP%] {\n  position: relative;\n}\n.address-dropdown[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  right: 0;\n  background: #fff;\n  border: 1px solid #e5e7eb;\n  border-radius: 6px;\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);\n  z-index: 1000;\n  max-height: 240px;\n  overflow-y: auto;\n}\n.address-item[_ngcontent-%COMP%] {\n  padding: 10px 14px;\n  cursor: pointer;\n  border-bottom: 1px solid #f3f4f6;\n}\n.address-item[_ngcontent-%COMP%]:last-child {\n  border-bottom: none;\n}\n.address-item[_ngcontent-%COMP%]:hover {\n  background: #f9fafb;\n}\n.address-item[_ngcontent-%COMP%]   .address-main[_ngcontent-%COMP%] {\n  font-size: 14px;\n  font-weight: 500;\n  color: #1f2937;\n}\n.address-item[_ngcontent-%COMP%]   .address-secondary[_ngcontent-%COMP%] {\n  font-size: 12px;\n  color: #6b7280;\n  margin-top: 2px;\n}\n.address-loading[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  right: 0;\n  background: #fff;\n  border: 1px solid #e5e7eb;\n  border-radius: 6px;\n  padding: 10px 14px;\n  font-size: 13px;\n  color: #6b7280;\n  z-index: 1000;\n}\n.selected-address-box[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 14px;\n  background: #f0fdf4;\n  border: 1.5px solid #86efac;\n  border-radius: 6px;\n  font-size: 14px;\n  color: #166534;\n}\n.selected-address-box[_ngcontent-%COMP%]   .address-pin-icon[_ngcontent-%COMP%] {\n  font-size: 18px;\n  color: #16a34a;\n}\n.selected-address-box[_ngcontent-%COMP%]   .selected-address-text[_ngcontent-%COMP%] {\n  flex: 1;\n  font-weight: 500;\n}\n.selected-address-box[_ngcontent-%COMP%]   .btn-clear-address[_ngcontent-%COMP%] {\n  background: none;\n  border: 1px solid #86efac;\n  border-radius: 4px;\n  padding: 2px 10px;\n  font-size: 12px;\n  color: #166534;\n  cursor: pointer;\n  white-space: nowrap;\n}\n.selected-address-box[_ngcontent-%COMP%]   .btn-clear-address[_ngcontent-%COMP%]:hover {\n  background: #dcfce7;\n}\n.text-hint[_ngcontent-%COMP%] {\n  display: block;\n  margin-top: 4px;\n  font-size: 12px;\n  color: #9ca3af;\n}\n/*# sourceMappingURL=post-job.css.map */"] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(PostJobComponent, [{
@@ -1567,35 +1592,45 @@ var PostJobComponent = class _PostJobComponent {
 \r
             <!-- Budget -->\r
             <div class="form-group">\r
-              <label>Your Budget *</label>\r
-              <div class="budget-options">\r
+              <label>What's your budget? <span class="optional-tag">(optional)</span></label>\r
+              <p class="field-hint">Pick the range that fits best \u2014 you can finalise exact pricing with pros later.</p>\r
+              <div class="option-grid">\r
                 <button\r
                   *ngFor="let range of budgetRanges"\r
                   type="button"\r
-                  class="budget-btn"\r
+                  class="option-card option-card--tile"\r
                   [class.selected]="f['budget'].value === range.value"\r
+                  [attr.aria-pressed]="f['budget'].value === range.value"\r
                   (click)="selectBudget(range.value)"\r
                 >\r
-                  {{ range.label }}\r
+                  <span class="option-body">\r
+                    <span class="option-title">{{ range.label }}</span>\r
+                    <span class="option-sub">{{ range.hint }}</span>\r
+                  </span>\r
+                  <span class="option-check" aria-hidden="true">\u2713</span>\r
                 </button>\r
               </div>\r
-              <small *ngIf="(submitted || f['budget'].touched) && f['budget'].errors" class="error-text">\r
-                Please select a budget range\r
-              </small>\r
             </div>\r
 \r
             <!-- Timeline -->\r
             <div class="form-group">\r
-              <label>Timeline *</label>\r
-              <div class="timeline-options">\r
+              <label>When do you need it done? *</label>\r
+              <p class="field-hint">This helps pros who are available in your timeframe reach out first.</p>\r
+              <div class="option-grid">\r
                 <button\r
                   *ngFor="let option of timelineOptions"\r
                   type="button"\r
-                  class="timeline-btn"\r
+                  class="option-card option-card--tile"\r
                   [class.selected]="f['timeline'].value === option.value"\r
+                  [attr.aria-pressed]="f['timeline'].value === option.value"\r
                   (click)="selectTimeline(option.value)"\r
                 >\r
-                  {{ option.label }}\r
+                  <span class="option-icon" aria-hidden="true">{{ option.icon }}</span>\r
+                  <span class="option-body">\r
+                    <span class="option-title">{{ option.label }}</span>\r
+                    <span class="option-sub">{{ option.description }}</span>\r
+                  </span>\r
+                  <span class="option-check" aria-hidden="true">\u2713</span>\r
                 </button>\r
               </div>\r
               <small *ngIf="(submitted || f['timeline'].touched) && f['timeline'].errors" class="error-text">\r
@@ -1653,9 +1688,6 @@ var PostJobComponent = class _PostJobComponent {
                 />\r
                 <span class="checkbox-text">{{ 'COMMON.AGREE_TERMS' | translate }} <a routerLink="/terms" target="_blank">Terms of Service</a></span>\r
               </label>\r
-              <small *ngIf="(submitted || f['agreeToTerms'].touched) && f['agreeToTerms'].errors" class="error-text">\r
-                {{ 'COMMON.TERMS_REQUIRED' | translate }}\r
-              </small>\r
             </div>\r
 \r
             <div class="form-actions">\r
@@ -1664,6 +1696,10 @@ var PostJobComponent = class _PostJobComponent {
                 {{ submitted ? ('POST_JOB.SUBMITTING' | translate) : ('POST_JOB.SUBMIT' | translate) }}\r
               </button>\r
             </div>\r
+\r
+            <small *ngIf="(submitted || f['agreeToTerms'].touched) && f['agreeToTerms'].errors" class="error-text terms-error">\r
+              {{ 'COMMON.TERMS_REQUIRED' | translate }}\r
+            </small>\r
           </div>\r
         </form>\r
       </div>\r
@@ -1699,7 +1735,7 @@ var PostJobComponent = class _PostJobComponent {
     </div>\r
   </section>\r
 </div>\r
-`, styles: ["/* src/app/features/post-job/post-job.scss */\n.post-job-wrapper {\n  color: #1f2937;\n  background: #fff;\n}\n.requested-pro-banner {\n  display: flex;\n  align-items: flex-start;\n  gap: 10px;\n  margin: 0 0 20px;\n  padding: 14px 16px;\n  background: #eef2ff;\n  border: 1px solid #c7d2fe;\n  border-radius: 10px;\n  color: #3730a3;\n  font-size: 14px;\n  line-height: 1.5;\n}\n.requested-pro-banner .rpb-icon {\n  font-size: 18px;\n  line-height: 1.4;\n}\n.requested-pro-banner .rpb-text strong {\n  font-weight: 700;\n}\n.post-job-hero {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n  color: #fff;\n  padding: 80px 20px;\n  text-align: center;\n}\n.hero-content {\n  max-width: 800px;\n  margin: 0 auto;\n}\n.hero-content h1 {\n  font-size: 48px;\n  font-weight: 700;\n  margin-bottom: 16px;\n  line-height: 1.2;\n}\n.hero-content p {\n  font-size: 18px;\n  opacity: 0.95;\n  line-height: 1.6;\n}\n.section-container {\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 0 20px;\n}\n.post-job-section {\n  padding: 80px 20px;\n  background: #f9fafb;\n}\n.form-wrapper {\n  max-width: 700px;\n  margin: 0 auto;\n  background: #fff;\n  border-radius: 12px;\n  padding: 40px;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);\n}\n.alert {\n  padding: 12px 16px;\n  border-radius: 8px;\n  margin-bottom: 24px;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  font-weight: 500;\n  animation: slideDown 0.3s ease;\n}\n.alert.alert-success {\n  background: #d4edda;\n  color: #155724;\n  border: 1px solid #c3e6cb;\n}\n.alert.alert-error {\n  background: #f8d7da;\n  color: #721c24;\n  border: 1px solid #f5c6cb;\n}\n@keyframes slideDown {\n  from {\n    opacity: 0;\n    transform: translateY(-10px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.dismiss-btn {\n  background: 0;\n  border: 0;\n  font-size: 24px;\n  cursor: pointer;\n  opacity: 0.6;\n  transition: opacity 0.2s;\n}\n.dismiss-btn:hover {\n  opacity: 1;\n}\n.steps-indicator {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 40px;\n}\n.step {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 8px;\n  position: relative;\n  flex: 1;\n}\n.step.active .step-num {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n  color: #fff;\n  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);\n}\n.step.completed .step-num {\n  background: #10b981;\n  color: #fff;\n}\n.step.active .step-label {\n  color: #667eea;\n}\n.step-num {\n  width: 40px;\n  height: 40px;\n  border-radius: 50%;\n  background: #e5e7eb;\n  color: #6b7280;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 600;\n  transition: all 0.3s;\n}\n.step-label {\n  font-size: 12px;\n  font-weight: 600;\n  color: #6b7280;\n  text-align: center;\n  white-space: nowrap;\n}\n.step-line {\n  flex: 1;\n  height: 2px;\n  background: #e5e7eb;\n  margin: 0 8px;\n  transition: background 0.3s;\n}\n.step-line.active {\n  background:\n    linear-gradient(\n      90deg,\n      #667eea,\n      #764ba2);\n}\n@media (max-width: 768px) {\n  .steps-indicator {\n    margin-bottom: 30px;\n  }\n  .step-label {\n    font-size: 11px;\n  }\n  .step-line {\n    height: 1px;\n  }\n}\n.form-step {\n  animation: fadeIn 0.3s ease;\n}\n.form-step h2 {\n  font-size: 24px;\n  font-weight: 700;\n  margin-bottom: 24px;\n  color: #1f2937;\n}\n.form-group {\n  margin-bottom: 24px;\n}\n.form-group label {\n  display: block;\n  margin-bottom: 8px;\n  font-weight: 600;\n  color: #374151;\n  font-size: 14px;\n}\n.form-control {\n  width: 100%;\n  padding: 10px 12px;\n  border: 1px solid #d1d5db;\n  border-radius: 6px;\n  font-size: 14px;\n  transition: all 0.2s;\n}\n.form-control:focus {\n  outline: 0;\n  border-color: #667eea;\n  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);\n}\n.form-control.is-invalid {\n  border-color: #dc2626;\n}\n.form-control.textarea {\n  resize: vertical;\n}\n.error-text {\n  display: block;\n  color: #dc2626;\n  font-size: 12px;\n  margin-top: 4px;\n}\n.cat-skeleton {\n  height: 72px;\n  border-radius: 8px;\n  background:\n    linear-gradient(\n      90deg,\n      #f0f0f0 25%,\n      #e0e0e0 50%,\n      #f0f0f0 75%);\n  background-size: 200% 100%;\n  animation: shimmer 1.4s infinite;\n}\n@keyframes shimmer {\n  0% {\n    background-position: 200% 0;\n  }\n  100% {\n    background-position: -200% 0;\n  }\n}\n.cat-load-error {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 14px;\n  border-radius: 8px;\n  background: #fff3cd;\n  color: #856404;\n  font-size: 0.875rem;\n}\n.cat-load-error .material-icons {\n  font-size: 1.1rem;\n}\n.cat-load-error button {\n  margin-left: auto;\n  padding: 4px 12px;\n  border: 1px solid #856404;\n  border-radius: 6px;\n  background: none;\n  color: #856404;\n  font-size: 0.8rem;\n  cursor: pointer;\n}\n.cat-load-error button:hover {\n  background: #f5dda0;\n}\n.cat-empty {\n  color: #6b7280;\n  font-size: 0.875rem;\n  margin: 8px 0 0;\n}\n.cat-hint {\n  color: #6b7280;\n  font-size: 0.875rem;\n  margin: 8px 0 0;\n  font-style: italic;\n}\n.category-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));\n  gap: 12px;\n}\n.category-btn {\n  padding: 12px;\n  border: 2px solid #e5e7eb;\n  background: #fff;\n  border-radius: 8px;\n  cursor: pointer;\n  transition: all 0.2s;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 8px;\n}\n.category-btn:hover {\n  border-color: #667eea;\n  background: #f3f4f6;\n}\n.category-btn.selected {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n  color: #fff;\n  border-color: #667eea;\n}\n.category-icon {\n  font-size: 24px;\n}\n.category-name {\n  font-size: 12px;\n  font-weight: 600;\n  text-align: center;\n}\n@media (max-width: 768px) {\n  .category-grid {\n    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));\n  }\n}\n.budget-options,\n.timeline-options {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n}\n.budget-btn,\n.timeline-btn {\n  padding: 12px 16px;\n  border: 2px solid #e5e7eb;\n  background: #fff;\n  border-radius: 6px;\n  cursor: pointer;\n  transition: all 0.2s;\n  font-size: 14px;\n  text-align: left;\n  font-weight: 500;\n}\n.budget-btn:hover,\n.timeline-btn:hover {\n  border-color: #667eea;\n  background: #f3f4f6;\n}\n.budget-btn.selected,\n.timeline-btn.selected {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n  color: #fff;\n  border-color: #667eea;\n}\n.review-section {\n  background: #f9fafb;\n  border-radius: 8px;\n  padding: 24px;\n  margin-bottom: 24px;\n}\n.review-item {\n  margin-bottom: 20px;\n}\n.review-item:last-child {\n  margin-bottom: 0;\n}\n.review-item h4 {\n  font-size: 13px;\n  font-weight: 600;\n  color: #6b7280;\n  text-transform: uppercase;\n  margin-bottom: 6px;\n  letter-spacing: 0.5px;\n}\n.review-item p {\n  font-size: 14px;\n  color: #1f2937;\n  line-height: 1.6;\n  margin: 0;\n}\n.checkbox-group {\n  margin-bottom: 24px;\n}\n.checkbox-group .terms-label {\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  font-weight: 500;\n  cursor: pointer;\n  margin-bottom: 12px;\n  padding: 16px;\n  border: 2px solid #e5e7eb;\n  border-radius: 8px;\n  background: #f9fafb;\n  transition: all 0.3s ease;\n}\n.checkbox-group .terms-label:hover {\n  border-color: #d1d5db;\n  background: #f3f4f6;\n}\n.checkbox-group .terms-label.invalid {\n  border-color: #dc2626;\n  background: #fef2f2;\n}\n.checkbox-group label {\n  display: flex;\n  align-items: flex-start;\n  gap: 8px;\n  font-weight: 500;\n  cursor: pointer;\n  margin-bottom: 0;\n}\n.checkbox-group input[type=checkbox] {\n  margin-top: 4px;\n  cursor: pointer;\n  width: 18px;\n  height: 18px;\n  min-width: 18px;\n  accent-color: #667eea;\n}\n.checkbox-group .checkbox-text {\n  flex: 1;\n  line-height: 1.5;\n}\n.checkbox-group .checkbox-text a {\n  color: #667eea;\n  text-decoration: none;\n  font-weight: 600;\n}\n.checkbox-group .checkbox-text a:hover {\n  text-decoration: underline;\n}\n.checkbox-group input[type=checkbox].is-invalid {\n  border-color: #dc2626;\n}\n.btn {\n  padding: 10px 24px;\n  border: 0;\n  border-radius: 6px;\n  font-weight: 600;\n  font-size: 14px;\n  cursor: pointer;\n  transition: all 0.2s;\n  min-height: 44px;\n}\n.btn:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.btn.btn-primary {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n  color: #fff;\n}\n.btn.btn-primary:hover:not(:disabled) {\n  transform: translateY(-2px);\n  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);\n}\n.btn.btn-secondary {\n  background: #e5e7eb;\n  color: #374151;\n}\n.btn.btn-secondary:hover:not(:disabled) {\n  background: #d1d5db;\n}\n.btn.btn-success {\n  background:\n    linear-gradient(\n      135deg,\n      #10b981,\n      #059669);\n  color: #fff;\n  width: 100%;\n}\n.btn.btn-success:hover:not(:disabled) {\n  transform: translateY(-2px);\n  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);\n}\n.tips-section {\n  padding: 80px 20px;\n  background: #fff;\n}\n.tips-section h2 {\n  font-size: 32px;\n  font-weight: 700;\n  text-align: center;\n  margin-bottom: 48px;\n  color: #1f2937;\n}\n.tips-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n  gap: 24px;\n}\n.tip-card {\n  background: #f9fafb;\n  border-radius: 12px;\n  padding: 24px;\n  text-align: center;\n  transition: all 0.3s;\n  border: 1px solid #e5e7eb;\n}\n.tip-card:hover {\n  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);\n  transform: translateY(-4px);\n}\n.tip-card h3 {\n  font-size: 18px;\n  font-weight: 700;\n  margin-bottom: 12px;\n  color: #1f2937;\n}\n.tip-card p {\n  font-size: 14px;\n  color: #6b7280;\n  line-height: 1.6;\n  margin: 0;\n}\n.tip-icon {\n  font-size: 40px;\n  margin-bottom: 16px;\n}\n@media (max-width: 768px) {\n  .post-job-section {\n    padding: 60px 20px;\n  }\n  .form-wrapper {\n    padding: 24px;\n  }\n  .tips-section {\n    padding: 60px 20px;\n  }\n  .tips-section h2 {\n    font-size: 24px;\n    margin-bottom: 32px;\n  }\n  .tips-grid {\n    grid-template-columns: 1fr;\n  }\n}\n.autocomplete-container {\n  position: relative;\n}\n.address-dropdown {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  right: 0;\n  background: #fff;\n  border: 1px solid #e5e7eb;\n  border-radius: 6px;\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);\n  z-index: 1000;\n  max-height: 240px;\n  overflow-y: auto;\n}\n.address-item {\n  padding: 10px 14px;\n  cursor: pointer;\n  border-bottom: 1px solid #f3f4f6;\n}\n.address-item:last-child {\n  border-bottom: none;\n}\n.address-item:hover {\n  background: #f9fafb;\n}\n.address-item .address-main {\n  font-size: 14px;\n  font-weight: 500;\n  color: #1f2937;\n}\n.address-item .address-secondary {\n  font-size: 12px;\n  color: #6b7280;\n  margin-top: 2px;\n}\n.address-loading {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  right: 0;\n  background: #fff;\n  border: 1px solid #e5e7eb;\n  border-radius: 6px;\n  padding: 10px 14px;\n  font-size: 13px;\n  color: #6b7280;\n  z-index: 1000;\n}\n.selected-address-box {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 14px;\n  background: #f0fdf4;\n  border: 1.5px solid #86efac;\n  border-radius: 6px;\n  font-size: 14px;\n  color: #166534;\n}\n.selected-address-box .address-pin-icon {\n  font-size: 18px;\n  color: #16a34a;\n}\n.selected-address-box .selected-address-text {\n  flex: 1;\n  font-weight: 500;\n}\n.selected-address-box .btn-clear-address {\n  background: none;\n  border: 1px solid #86efac;\n  border-radius: 4px;\n  padding: 2px 10px;\n  font-size: 12px;\n  color: #166534;\n  cursor: pointer;\n  white-space: nowrap;\n}\n.selected-address-box .btn-clear-address:hover {\n  background: #dcfce7;\n}\n.text-hint {\n  display: block;\n  margin-top: 4px;\n  font-size: 12px;\n  color: #9ca3af;\n}\n/*# sourceMappingURL=post-job.css.map */\n"] }]
+`, styles: ["/* src/app/features/post-job/post-job.scss */\n.post-job-wrapper {\n  color: #1f2937;\n  background: #fff;\n}\n.requested-pro-banner {\n  display: flex;\n  align-items: flex-start;\n  gap: 10px;\n  margin: 0 0 20px;\n  padding: 14px 16px;\n  background: #eef2ff;\n  border: 1px solid #c7d2fe;\n  border-radius: 10px;\n  color: #3730a3;\n  font-size: 14px;\n  line-height: 1.5;\n}\n.requested-pro-banner .rpb-icon {\n  font-size: 18px;\n  line-height: 1.4;\n}\n.requested-pro-banner .rpb-text strong {\n  font-weight: 700;\n}\n.post-job-hero {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n  color: #fff;\n  padding: 80px 20px;\n  text-align: center;\n}\n.hero-content {\n  max-width: 800px;\n  margin: 0 auto;\n}\n.hero-content h1 {\n  font-size: 48px;\n  font-weight: 700;\n  margin-bottom: 16px;\n  line-height: 1.2;\n}\n.hero-content p {\n  font-size: 18px;\n  opacity: 0.95;\n  line-height: 1.6;\n}\n.section-container {\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 0 20px;\n}\n.post-job-section {\n  padding: 80px 20px;\n  background: #f9fafb;\n}\n.form-wrapper {\n  max-width: 700px;\n  margin: 0 auto;\n  background: #fff;\n  border-radius: 12px;\n  padding: 40px;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);\n}\n.alert {\n  padding: 12px 16px;\n  border-radius: 8px;\n  margin-bottom: 24px;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  font-weight: 500;\n  animation: slideDown 0.3s ease;\n}\n.alert.alert-success {\n  background: #d4edda;\n  color: #155724;\n  border: 1px solid #c3e6cb;\n}\n.alert.alert-error {\n  background: #f8d7da;\n  color: #721c24;\n  border: 1px solid #f5c6cb;\n}\n@keyframes slideDown {\n  from {\n    opacity: 0;\n    transform: translateY(-10px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.dismiss-btn {\n  background: 0;\n  border: 0;\n  font-size: 24px;\n  cursor: pointer;\n  opacity: 0.6;\n  transition: opacity 0.2s;\n}\n.dismiss-btn:hover {\n  opacity: 1;\n}\n.steps-indicator {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 40px;\n}\n.step {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 8px;\n  position: relative;\n  flex: 1;\n}\n.step.active .step-num {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n  color: #fff;\n  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);\n}\n.step.completed .step-num {\n  background: #10b981;\n  color: #fff;\n}\n.step.active .step-label {\n  color: #667eea;\n}\n.step-num {\n  width: 40px;\n  height: 40px;\n  border-radius: 50%;\n  background: #e5e7eb;\n  color: #6b7280;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: 600;\n  transition: all 0.3s;\n}\n.step-label {\n  font-size: 12px;\n  font-weight: 600;\n  color: #6b7280;\n  text-align: center;\n  white-space: nowrap;\n}\n.step-line {\n  flex: 1;\n  height: 2px;\n  background: #e5e7eb;\n  margin: 0 8px;\n  transition: background 0.3s;\n}\n.step-line.active {\n  background:\n    linear-gradient(\n      90deg,\n      #667eea,\n      #764ba2);\n}\n@media (max-width: 768px) {\n  .steps-indicator {\n    margin-bottom: 30px;\n  }\n  .step-label {\n    font-size: 11px;\n  }\n  .step-line {\n    height: 1px;\n  }\n}\n.form-step {\n  animation: fadeIn 0.3s ease;\n}\n.form-step h2 {\n  font-size: 24px;\n  font-weight: 700;\n  margin-bottom: 24px;\n  color: #1f2937;\n}\n.form-group {\n  margin-bottom: 24px;\n}\n.form-group label {\n  display: block;\n  margin-bottom: 8px;\n  font-weight: 600;\n  color: #374151;\n  font-size: 14px;\n}\n.form-control {\n  width: 100%;\n  padding: 10px 12px;\n  border: 1px solid #d1d5db;\n  border-radius: 6px;\n  font-size: 14px;\n  transition: all 0.2s;\n}\n.form-control:focus {\n  outline: 0;\n  border-color: #667eea;\n  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);\n}\n.form-control.is-invalid {\n  border-color: #dc2626;\n}\n.form-control.textarea {\n  resize: vertical;\n}\n.error-text {\n  display: block;\n  color: #dc2626;\n  font-size: 12px;\n  margin-top: 4px;\n}\n.terms-error {\n  margin-top: 12px;\n  text-align: right;\n}\n.cat-skeleton {\n  height: 72px;\n  border-radius: 8px;\n  background:\n    linear-gradient(\n      90deg,\n      #f0f0f0 25%,\n      #e0e0e0 50%,\n      #f0f0f0 75%);\n  background-size: 200% 100%;\n  animation: shimmer 1.4s infinite;\n}\n@keyframes shimmer {\n  0% {\n    background-position: 200% 0;\n  }\n  100% {\n    background-position: -200% 0;\n  }\n}\n.cat-load-error {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 14px;\n  border-radius: 8px;\n  background: #fff3cd;\n  color: #856404;\n  font-size: 0.875rem;\n}\n.cat-load-error .material-icons {\n  font-size: 1.1rem;\n}\n.cat-load-error button {\n  margin-left: auto;\n  padding: 4px 12px;\n  border: 1px solid #856404;\n  border-radius: 6px;\n  background: none;\n  color: #856404;\n  font-size: 0.8rem;\n  cursor: pointer;\n}\n.cat-load-error button:hover {\n  background: #f5dda0;\n}\n.cat-empty {\n  color: #6b7280;\n  font-size: 0.875rem;\n  margin: 8px 0 0;\n}\n.cat-hint {\n  color: #6b7280;\n  font-size: 0.875rem;\n  margin: 8px 0 0;\n  font-style: italic;\n}\n.category-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));\n  gap: 12px;\n}\n.category-btn {\n  padding: 12px;\n  border: 2px solid #e5e7eb;\n  background: #fff;\n  border-radius: 8px;\n  cursor: pointer;\n  transition: all 0.2s;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 8px;\n}\n.category-btn:hover {\n  border-color: #667eea;\n  background: #f3f4f6;\n}\n.category-btn.selected {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n  color: #fff;\n  border-color: #667eea;\n}\n.category-icon {\n  font-size: 24px;\n}\n.category-name {\n  font-size: 12px;\n  font-weight: 600;\n  text-align: center;\n}\n@media (max-width: 768px) {\n  .category-grid {\n    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));\n  }\n}\n.optional-tag {\n  font-size: 12px;\n  font-weight: 500;\n  color: #9ca3af;\n}\n.field-hint {\n  margin: -2px 0 12px;\n  font-size: 13px;\n  color: #6b7280;\n  line-height: 1.4;\n}\n.option-grid {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 10px;\n}\n@media (max-width: 480px) {\n  .option-grid {\n    grid-template-columns: 1fr;\n  }\n}\n.option-card {\n  position: relative;\n  display: flex;\n  align-items: center;\n  gap: 14px;\n  width: 100%;\n  padding: 14px 16px;\n  border: 2px solid #e5e7eb;\n  background: #fff;\n  border-radius: 10px;\n  cursor: pointer;\n  text-align: left;\n  transition:\n    border-color 0.18s,\n    background 0.18s,\n    box-shadow 0.18s,\n    transform 0.18s;\n}\n.option-card:hover {\n  border-color: #a5b4fc;\n  background: #f9faff;\n}\n.option-card:focus-visible {\n  outline: none;\n  border-color: #667eea;\n  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.25);\n}\n.option-card .option-icon {\n  flex: 0 0 auto;\n  font-size: 18px;\n  line-height: 1;\n}\n.option-card .option-body {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n}\n.option-card .option-title {\n  font-size: 14px;\n  font-weight: 600;\n  color: #1f2937;\n}\n.option-card .option-sub {\n  font-size: 12px;\n  color: #6b7280;\n}\n.option-card .option-check {\n  flex: 0 0 auto;\n  margin-left: auto;\n  display: grid;\n  place-items: center;\n  width: 22px;\n  height: 22px;\n  border-radius: 50%;\n  background: #fff;\n  color: #fff;\n  font-size: 13px;\n  font-weight: 700;\n  opacity: 0;\n  transform: scale(0.6);\n  transition: opacity 0.18s, transform 0.18s;\n}\n.option-card.selected {\n  border-color: #667eea;\n  background:\n    linear-gradient(\n      135deg,\n      rgba(102, 126, 234, 0.12),\n      rgba(118, 75, 162, 0.12));\n  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.15);\n}\n.option-card.selected .option-title {\n  color: #4338ca;\n}\n.option-card.selected .option-sub {\n  color: #6366f1;\n}\n.option-card.selected .option-check {\n  opacity: 1;\n  transform: scale(1);\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n}\n.option-card--tile {\n  flex-direction: column;\n  align-items: flex-start;\n  gap: 8px;\n  padding: 16px;\n}\n.option-card--tile .option-icon {\n  font-size: 24px;\n}\n.option-card--tile .option-check {\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  margin-left: 0;\n}\n.review-section {\n  background: #f9fafb;\n  border-radius: 8px;\n  padding: 24px;\n  margin-bottom: 24px;\n}\n.review-item {\n  margin-bottom: 20px;\n}\n.review-item:last-child {\n  margin-bottom: 0;\n}\n.review-item h4 {\n  font-size: 13px;\n  font-weight: 600;\n  color: #6b7280;\n  text-transform: uppercase;\n  margin-bottom: 6px;\n  letter-spacing: 0.5px;\n}\n.review-item p {\n  font-size: 14px;\n  color: #1f2937;\n  line-height: 1.6;\n  margin: 0;\n}\n.checkbox-group {\n  margin-bottom: 24px;\n}\n.checkbox-group .terms-label {\n  display: flex;\n  align-items: flex-start;\n  gap: 12px;\n  font-weight: 500;\n  cursor: pointer;\n  margin-bottom: 12px;\n  padding: 16px;\n  border: 2px solid #e5e7eb;\n  border-radius: 8px;\n  background: #f9fafb;\n  transition: all 0.3s ease;\n}\n.checkbox-group .terms-label:hover {\n  border-color: #d1d5db;\n  background: #f3f4f6;\n}\n.checkbox-group .terms-label.invalid {\n  border-color: #dc2626;\n  background: #fef2f2;\n}\n.checkbox-group label {\n  display: flex;\n  align-items: flex-start;\n  gap: 8px;\n  font-weight: 500;\n  cursor: pointer;\n  margin-bottom: 0;\n}\n.checkbox-group input[type=checkbox] {\n  margin-top: 4px;\n  cursor: pointer;\n  width: 18px;\n  height: 18px;\n  min-width: 18px;\n  accent-color: #667eea;\n}\n.checkbox-group .checkbox-text {\n  flex: 1;\n  line-height: 1.5;\n}\n.checkbox-group .checkbox-text a {\n  color: #667eea;\n  text-decoration: none;\n  font-weight: 600;\n}\n.checkbox-group .checkbox-text a:hover {\n  text-decoration: underline;\n}\n.checkbox-group input[type=checkbox].is-invalid {\n  border-color: #dc2626;\n}\n.btn {\n  padding: 10px 24px;\n  border: 0;\n  border-radius: 6px;\n  font-weight: 600;\n  font-size: 14px;\n  cursor: pointer;\n  transition: all 0.2s;\n  min-height: 44px;\n}\n.btn:disabled {\n  opacity: 0.6;\n  cursor: not-allowed;\n}\n.btn.btn-primary {\n  background:\n    linear-gradient(\n      135deg,\n      #667eea,\n      #764ba2);\n  color: #fff;\n}\n.btn.btn-primary:hover:not(:disabled) {\n  transform: translateY(-2px);\n  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);\n}\n.btn.btn-secondary {\n  background: #e5e7eb;\n  color: #374151;\n}\n.btn.btn-secondary:hover:not(:disabled) {\n  background: #d1d5db;\n}\n.btn.btn-success {\n  background:\n    linear-gradient(\n      135deg,\n      #10b981,\n      #059669);\n  color: #fff;\n  width: 100%;\n}\n.btn.btn-success:hover:not(:disabled) {\n  transform: translateY(-2px);\n  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);\n}\n.tips-section {\n  padding: 80px 20px;\n  background: #fff;\n}\n.tips-section h2 {\n  font-size: 32px;\n  font-weight: 700;\n  text-align: center;\n  margin-bottom: 48px;\n  color: #1f2937;\n}\n.tips-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n  gap: 24px;\n}\n.tip-card {\n  background: #f9fafb;\n  border-radius: 12px;\n  padding: 24px;\n  text-align: center;\n  transition: all 0.3s;\n  border: 1px solid #e5e7eb;\n}\n.tip-card:hover {\n  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);\n  transform: translateY(-4px);\n}\n.tip-card h3 {\n  font-size: 18px;\n  font-weight: 700;\n  margin-bottom: 12px;\n  color: #1f2937;\n}\n.tip-card p {\n  font-size: 14px;\n  color: #6b7280;\n  line-height: 1.6;\n  margin: 0;\n}\n.tip-icon {\n  font-size: 40px;\n  margin-bottom: 16px;\n}\n@media (max-width: 768px) {\n  .post-job-section {\n    padding: 60px 20px;\n  }\n  .form-wrapper {\n    padding: 24px;\n  }\n  .tips-section {\n    padding: 60px 20px;\n  }\n  .tips-section h2 {\n    font-size: 24px;\n    margin-bottom: 32px;\n  }\n  .tips-grid {\n    grid-template-columns: 1fr;\n  }\n}\n.autocomplete-container {\n  position: relative;\n}\n.address-dropdown {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  right: 0;\n  background: #fff;\n  border: 1px solid #e5e7eb;\n  border-radius: 6px;\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);\n  z-index: 1000;\n  max-height: 240px;\n  overflow-y: auto;\n}\n.address-item {\n  padding: 10px 14px;\n  cursor: pointer;\n  border-bottom: 1px solid #f3f4f6;\n}\n.address-item:last-child {\n  border-bottom: none;\n}\n.address-item:hover {\n  background: #f9fafb;\n}\n.address-item .address-main {\n  font-size: 14px;\n  font-weight: 500;\n  color: #1f2937;\n}\n.address-item .address-secondary {\n  font-size: 12px;\n  color: #6b7280;\n  margin-top: 2px;\n}\n.address-loading {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  right: 0;\n  background: #fff;\n  border: 1px solid #e5e7eb;\n  border-radius: 6px;\n  padding: 10px 14px;\n  font-size: 13px;\n  color: #6b7280;\n  z-index: 1000;\n}\n.selected-address-box {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 14px;\n  background: #f0fdf4;\n  border: 1.5px solid #86efac;\n  border-radius: 6px;\n  font-size: 14px;\n  color: #166534;\n}\n.selected-address-box .address-pin-icon {\n  font-size: 18px;\n  color: #16a34a;\n}\n.selected-address-box .selected-address-text {\n  flex: 1;\n  font-weight: 500;\n}\n.selected-address-box .btn-clear-address {\n  background: none;\n  border: 1px solid #86efac;\n  border-radius: 4px;\n  padding: 2px 10px;\n  font-size: 12px;\n  color: #166534;\n  cursor: pointer;\n  white-space: nowrap;\n}\n.selected-address-box .btn-clear-address:hover {\n  background: #dcfce7;\n}\n.text-hint {\n  display: block;\n  margin-top: 4px;\n  font-size: 12px;\n  color: #9ca3af;\n}\n/*# sourceMappingURL=post-job.css.map */\n"] }]
   }], () => [{ type: FormBuilder }, { type: Router }, { type: ActivatedRoute }, { type: JobService }, { type: ServiceCategoryService }, { type: AddressService }, { type: Object, decorators: [{
     type: Inject,
     args: [PLATFORM_ID]
@@ -1758,7 +1794,7 @@ var ServiceAreaNoticeComponent = class _ServiceAreaNoticeComponent {
   }], () => [{ type: MatSnackBarRef }], null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ServiceAreaNoticeComponent, { className: "ServiceAreaNoticeComponent", filePath: "src/app/features/post-job/post-job.ts", lineNumber: 563 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ServiceAreaNoticeComponent, { className: "ServiceAreaNoticeComponent", filePath: "src/app/features/post-job/post-job.ts", lineNumber: 568 });
 })();
 
 // src/app/features/post-job/post-job-routing-module.ts
@@ -1808,5 +1844,5 @@ var PostJobModule = class _PostJobModule {
 export {
   PostJobModule
 };
-//# sourceMappingURL=chunk-Y3BZHY5M.js.map
+//# sourceMappingURL=chunk-UV6F25MU.js.map
 
